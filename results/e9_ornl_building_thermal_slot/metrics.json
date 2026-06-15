@@ -1,0 +1,283 @@
+{
+  "experiment_id": "E9_ornl_building_thermal_slot",
+  "summary": {
+    "train_scenario": "Base_Heating",
+    "test_scenario": "Base_Cooling",
+    "test_b0_rollout_nrmse": 225.26934696578624,
+    "test_b3_rollout_nrmse": 206.7111240886524,
+    "test_b1_rollout_nrmse": 1.6396632942809783,
+    "test_b3_vs_b0_improvement_percent": 8.23823708245243,
+    "test_b3_vs_b1_gap_nrmse": 205.07146079437143
+  },
+  "metrics_by_split": [
+    {
+      "model": "B0_fixed_envelope",
+      "split": "train",
+      "scenario": "Base_Heating",
+      "n_samples": 9918,
+      "derivative_rmse_c": 3.664665238220682e-05,
+      "derivative_nrmse": 0.843995668635142,
+      "derivative_mae_c": 2.2088557776611068e-05,
+      "derivative_bias_c": -2.7110520142811565e-20,
+      "rollout_rmse_c": 1.3874634261638084,
+      "rollout_nrmse": 4.188801069531563,
+      "rollout_mae_c": 1.1104258069452002,
+      "rollout_bias_c": 0.8100181271006672
+    },
+    {
+      "model": "B0_fixed_envelope",
+      "split": "test",
+      "scenario": "Base_Cooling",
+      "n_samples": 9920,
+      "derivative_rmse_c": 6.533870604299874e-05,
+      "derivative_nrmse": 1.5307696999629126,
+      "derivative_mae_c": 5.974866831854808e-05,
+      "derivative_bias_c": -5.209627405527801e-05,
+      "rollout_rmse_c": 38.9812951174663,
+      "rollout_nrmse": 225.26934696578624,
+      "rollout_mae_c": 31.0685363617469,
+      "rollout_bias_c": -31.068490496265646
+    },
+    {
+      "model": "B3_weather_adaptive_envelope_slot",
+      "split": "train",
+      "scenario": "Base_Heating",
+      "n_samples": 9918,
+      "derivative_rmse_c": 3.637507355353559e-05,
+      "derivative_nrmse": 0.8377410358053555,
+      "derivative_mae_c": 2.256878304474273e-05,
+      "derivative_bias_c": -7.695889588927153e-21,
+      "rollout_rmse_c": 0.9171043548911965,
+      "rollout_nrmse": 2.7687704268081736,
+      "rollout_mae_c": 0.7735108904347409,
+      "rollout_bias_c": 0.3048880884450857
+    },
+    {
+      "model": "B3_weather_adaptive_envelope_slot",
+      "split": "test",
+      "scenario": "Base_Cooling",
+      "n_samples": 9920,
+      "derivative_rmse_c": 6.375656199760689e-05,
+      "derivative_nrmse": 1.493702878283451,
+      "derivative_mae_c": 5.812973570701552e-05,
+      "derivative_bias_c": -4.9716096126960155e-05,
+      "rollout_rmse_c": 35.76992360787897,
+      "rollout_nrmse": 206.7111240886524,
+      "rollout_mae_c": 28.450188951779072,
+      "rollout_bias_c": -28.450142123872542
+    },
+    {
+      "model": "B1_full_linear_features",
+      "split": "train",
+      "scenario": "Base_Heating",
+      "n_samples": 9918,
+      "derivative_rmse_c": 3.3345266215896156e-05,
+      "derivative_nrmse": 0.7679626494169652,
+      "derivative_mae_c": 2.147395235581117e-05,
+      "derivative_bias_c": 2.1391074925586157e-19,
+      "rollout_rmse_c": 0.13328037206041254,
+      "rollout_nrmse": 0.40237814886250406,
+      "rollout_mae_c": 0.10439941267296525,
+      "rollout_bias_c": 0.004709757860474989
+    },
+    {
+      "model": "B1_full_linear_features",
+      "split": "test",
+      "scenario": "Base_Cooling",
+      "n_samples": 9920,
+      "derivative_rmse_c": 4.7474648739999776e-05,
+      "derivative_nrmse": 1.1122466024923867,
+      "derivative_mae_c": 2.8842555052574895e-05,
+      "derivative_bias_c": 1.3239565024011745e-05,
+      "rollout_rmse_c": 0.2837323392132502,
+      "rollout_nrmse": 1.6396632942809783,
+      "rollout_mae_c": 0.2138760668326505,
+      "rollout_bias_c": 0.18500766580460892
+    }
+  ],
+  "coefficients": [
+    {
+      "model": "B0_fixed_envelope",
+      "feature": "1",
+      "coefficient": -5.5326652580943736e-05
+    },
+    {
+      "model": "B0_fixed_envelope",
+      "feature": "Tout-Tzone",
+      "coefficient": -3.0856778734508194e-06
+    },
+    {
+      "model": "B0_fixed_envelope",
+      "feature": "HVAC",
+      "coefficient": 1.5648111945797403e-06
+    },
+    {
+      "model": "B0_fixed_envelope",
+      "feature": "Solar",
+      "coefficient": 2.5972343551888694e-05
+    },
+    {
+      "model": "B3_weather_adaptive_envelope_slot",
+      "feature": "1",
+      "coefficient": -5.449063765826684e-05
+    },
+    {
+      "model": "B3_weather_adaptive_envelope_slot",
+      "feature": "Tout-Tzone",
+      "coefficient": -3.271572480283452e-06
+    },
+    {
+      "model": "B3_weather_adaptive_envelope_slot",
+      "feature": "(Tout-Tzone)*wind",
+      "coefficient": 4.3087081525591405e-07
+    },
+    {
+      "model": "B3_weather_adaptive_envelope_slot",
+      "feature": "(Tout-Tzone)*solar",
+      "coefficient": -9.040039175178594e-08
+    },
+    {
+      "model": "B3_weather_adaptive_envelope_slot",
+      "feature": "HVAC",
+      "coefficient": 1.6620695378227956e-06
+    },
+    {
+      "model": "B3_weather_adaptive_envelope_slot",
+      "feature": "Solar",
+      "coefficient": 2.689696146918352e-05
+    },
+    {
+      "model": "B1_full_linear_features",
+      "feature": "1",
+      "coefficient": 0.001389264506414571
+    },
+    {
+      "model": "B1_full_linear_features",
+      "feature": "Tout-Tzone",
+      "coefficient": 6.282657530932458e-08
+    },
+    {
+      "model": "B1_full_linear_features",
+      "feature": "(Tout-Tzone)*wind",
+      "coefficient": -9.479010119298521e-07
+    },
+    {
+      "model": "B1_full_linear_features",
+      "feature": "(Tout-Tzone)*solar",
+      "coefficient": 6.946023772061212e-07
+    },
+    {
+      "model": "B1_full_linear_features",
+      "feature": "HVAC",
+      "coefficient": -1.4121411698175051e-06
+    },
+    {
+      "model": "B1_full_linear_features",
+      "feature": "Solar",
+      "coefficient": 4.9078569043915226e-05
+    },
+    {
+      "model": "B1_full_linear_features",
+      "feature": "wind",
+      "coefficient": -1.4628293550106106e-05
+    },
+    {
+      "model": "B1_full_linear_features",
+      "feature": "RH",
+      "coefficient": 9.962194831668106e-06
+    },
+    {
+      "model": "B1_full_linear_features",
+      "feature": "Tzone",
+      "coefficient": -6.817909848799255e-05
+    }
+  ],
+  "scaling": {
+    "hvac": 3.8688482210830704,
+    "solar": 297.34939397761906,
+    "wind": 1.3407984760858989,
+    "rh": 21.513180799122217
+  },
+  "raw_files": [
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_Base_Cooling.csv",
+      "size_bytes": 6957847,
+      "sha256": "44c1b04d9a54eb46dbe520942b0aab8445e8f22caa8f089c00bbdf602f70feb0"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_Base_Heating.csv",
+      "size_bytes": 7333141,
+      "sha256": "3fe474f72ba4641104a9db9ee634b91ce005a3e705bf1d7a8dabff156727592c"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_FF_Cooling.csv",
+      "size_bytes": 3497606,
+      "sha256": "533a016701426452572167a49363f8ffbbc967372c71dbd82b89592eed12ef27"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_FF_Heating.csv",
+      "size_bytes": 3546063,
+      "sha256": "22266a1f8fe75d085b1c5dd321f153365eccc1a217049b2ea3debb8b70fec132"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_Information.csv",
+      "size_bytes": 3692,
+      "sha256": "94b7968505900084a47d8e684d945f7da420557007aa227c3b8aaa424904ceb4"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_Pre_Heating.csv",
+      "size_bytes": 4842237,
+      "sha256": "c9152889caf56fabd5f3b4407f9edee17a0b3eac9f3971015e711e21284d91dc"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_SB_Cooling.csv",
+      "size_bytes": 6676383,
+      "sha256": "7a81893513279e0481b9888ae5b0b5b8414c809fd18ef0f10a454d52af1730ba"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_SB_Heating.csv",
+      "size_bytes": 5570180,
+      "sha256": "aabc94b41e039c76edfa186ca0f219db3d3e89cc7091f289efc86d3b81cec3c5"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_Base_Cooling.csv",
+      "size_bytes": 765520,
+      "sha256": "dd7f8abc12647cc2cf41869609311806a7649b122f346645477a4eaad4806df2"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_Base_Heating.csv",
+      "size_bytes": 747202,
+      "sha256": "b04009bbde3efc4c319b2f23687d8642638755fea39b2189ea34819a579960b7"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_FF_Cooling.csv",
+      "size_bytes": 633314,
+      "sha256": "8cb06d014546a148efa7f938f7f0f0ab001d7042d58837116ce4e737329c2c95"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_FF_Heating.csv",
+      "size_bytes": 635643,
+      "sha256": "3ce5911e2026095c82049ad96186d9166835ac2b1679d624e4737acd77ab2dc6"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_Information.csv",
+      "size_bytes": 285,
+      "sha256": "c2203f7efbf3b0bad763d7de041a44c66e2cb730e1bc94d20124a78cf5e92706"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_Pre_Heating.csv",
+      "size_bytes": 544315,
+      "sha256": "26e05a69158615bc91d47de2f44c6f16f38eb5a5ff2de5554ec0cb7af4a11786"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_SB_Cooling.csv",
+      "size_bytes": 853699,
+      "sha256": "21882cde02c37f951bac76b7c60bfb280a718c08eb15a160625b9c13ccdc32e4"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_SB_Heating.csv",
+      "size_bytes": 649539,
+      "sha256": "ddc1e668b4021df8d874c852d87cfe81784d487697ae06734af3dd660eb4cb04"
+    }
+  ]
+}

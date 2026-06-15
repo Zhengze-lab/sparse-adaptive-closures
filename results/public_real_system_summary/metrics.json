@@ -1,0 +1,52 @@
+{
+  "rows": [
+    {
+      "case_id": "E6",
+      "system": "Cascaded Tanks",
+      "role": "real positive",
+      "source": "Nonlinear Benchmark / 4TU ResearchData",
+      "metric": "rollout NRMSE",
+      "baseline": "B0 linear outflow",
+      "slot_model": "B3 level-adaptive sqrt outflow slot",
+      "baseline_error": 0.5386502216209509,
+      "slot_error": 0.329923957008933,
+      "improvement_percent": 38.7498707387331
+    },
+    {
+      "case_id": "E7",
+      "system": "EMPS",
+      "role": "real positive",
+      "source": "Nonlinear Benchmark EMPS",
+      "metric": "inverse-dynamics force NRMSE",
+      "baseline": "B0 symmetric Coulomb friction",
+      "slot_model": "B3 asymmetric friction slot",
+      "baseline_error": 0.07196356738410793,
+      "slot_error": 0.0670009531898922,
+      "improvement_percent": 6.896009153809194
+    },
+    {
+      "case_id": "E8",
+      "system": "PMSM motor temperature",
+      "role": "engineering boundary",
+      "source": "Kaggle Electric Motor Temperature",
+      "metric": "PM-temperature rollout NRMSE",
+      "baseline": "B0 fixed cooling coefficient",
+      "slot_model": "B3 operating-adaptive cooling slot",
+      "baseline_error": 0.3123728225889525,
+      "slot_error": 0.33660975418255307,
+      "improvement_percent": -7.758975762591758
+    },
+    {
+      "case_id": "E9",
+      "system": "ORNL building thermal",
+      "role": "application boundary",
+      "source": "figshare / Scientific Data",
+      "metric": "mean-zone-temperature rollout NRMSE",
+      "baseline": "B0 fixed envelope coefficient",
+      "slot_model": "B3 weather-adaptive envelope slot",
+      "baseline_error": 225.26934696578624,
+      "slot_error": 206.7111240886524,
+      "improvement_percent": 8.23823708245243
+    }
+  ]
+}

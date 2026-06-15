@@ -1,0 +1,61 @@
+{
+  "experiment_id": "BATT3b_lfp_ocv_residual_diagnostics",
+  "description": "Diagnose whether battery voltage residuals are dominated by OCV mode, hysteresis, SOC initialization, or current-dependent ECM structure.",
+  "source_dataset": "battery_lfp_ocv_dyn",
+  "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+  "source_doi": "10.17632/p8kf893yv3.1",
+  "license": "CC BY 4.0",
+  "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+  "ocv_grid_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_grid.csv",
+  "dynamic_script": "script1",
+  "fit_stride": 20,
+  "prediction_sample_stride": 30,
+  "initialization_window_s": 300.0,
+  "score_start_s": 300.0,
+  "current_deadband_a": 0.02,
+  "ocv_training_temperatures_c": [
+    -25,
+    -5,
+    5,
+    15,
+    25,
+    45
+  ],
+  "heldout_temperature_validation_c": [
+    -15,
+    35
+  ],
+  "variants": [
+    "ocv_mean",
+    "ocv_charge",
+    "ocv_discharge",
+    "direction_switch",
+    "fitted_hysteresis_gain"
+  ],
+  "created_at_utc": "2026-06-13T09:08:40.196764+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "script": "scripts/run_batt3b_ocv_residual_diagnostics.py",
+  "outputs": {
+    "metrics_by_trajectory_csv": "results/battery_lfp_ocv_residual_diagnostics/metrics_by_trajectory.csv",
+    "metrics_by_split_csv": "results/battery_lfp_ocv_residual_diagnostics/metrics_by_split.csv",
+    "residual_samples_csv": "results/battery_lfp_ocv_residual_diagnostics/residual_samples.csv",
+    "residual_feature_summary_csv": "results/battery_lfp_ocv_residual_diagnostics/residual_feature_summary.csv",
+    "residual_by_current_direction_csv": "results/battery_lfp_ocv_residual_diagnostics/residual_by_current_direction.csv",
+    "residual_by_soc_bin_csv": "results/battery_lfp_ocv_residual_diagnostics/residual_by_soc_bin.csv",
+    "metrics_json": "results/battery_lfp_ocv_residual_diagnostics/metrics.json",
+    "figures": [
+      "results/battery_lfp_ocv_residual_diagnostics/figures/ocv_mode_rmse_by_split.svg",
+      "results/battery_lfp_ocv_residual_diagnostics/figures/ocv_mode_rmse_by_split_zh.svg",
+      "results/battery_lfp_ocv_residual_diagnostics/figures/validation_residual_by_soc.svg",
+      "results/battery_lfp_ocv_residual_diagnostics/figures/validation_residual_by_soc_zh.svg"
+    ],
+    "provenance_json": "data/provenance/batt3b_ocv_residual_diagnostics_provenance.json"
+  },
+  "test_usage_rule": "Global hysteresis gain is fitted only on split=train. Non-train records use a short prefix for initial SOC estimation and are scored after the initialization window.",
+  "next_action": "Use diagnostics to decide whether BATT-4 should target OCV/hysteresis slots before RC coefficient slots."
+}

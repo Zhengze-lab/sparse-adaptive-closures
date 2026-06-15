@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.DS_Store
+
+# Large third-party raw data should be downloaded by users.
+data/raw/external/**
+!data/raw/external/.gitkeep
+
+# Temporary and local QA outputs.
+tmp/
+scratch/
+*.log
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Regenerable high-resolution raster exports.
+*.tiff
+*.tif
+

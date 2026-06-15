@@ -1,0 +1,4 @@
+case_id,selected_candidate,coefficient_slot,slot_input_z,candidate_library,validation_rollout_nrmse,test_rollout_nrmse,train_residual_reduction,condition_number
+E3_pendulum,stiffness_theta_even,stiffness coefficient,theta,"1, theta^2, theta^4, theta^6",5.682704258e-07,0.0007072745043,1,63.26200132
+E4_drag,drag_v_abs,drag coefficient,v,"1, abs(v)",1.952434643e-16,1.896805263e-16,1,5.373566286
+E5_monod,growth_rate_rational_S,growth rate,S,a*S/(1+b*S),1.786542781e-16,1.88857765e-16,1,7.16749006

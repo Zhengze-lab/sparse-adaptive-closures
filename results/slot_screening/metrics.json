@@ -1,0 +1,36 @@
+{
+  "experiment_id": "slot_screening",
+  "selection_rule": "choose the physically admissible candidate with finite identifiable design and lowest validation rollout NRMSE",
+  "test_usage_rule": "test_extrap splits are used only after the slot/library decision is frozen",
+  "n_candidates": 14,
+  "n_selected": 3,
+  "selected_candidates": {
+    "E3_pendulum": "stiffness_theta_even",
+    "E4_drag": "drag_v_abs",
+    "E5_monod": "growth_rate_rational_S"
+  },
+  "all_selected_are_expected_correct": true,
+  "case_metrics": {
+    "E3_pendulum": {
+      "selected_candidate": "stiffness_theta_even",
+      "validation_rollout_nrmse": 5.682704257557426e-07,
+      "test_rollout_nrmse": 0.0007072745042867153,
+      "train_residual_reduction": 0.9999999999999707,
+      "condition_number": 63.26200132274036
+    },
+    "E4_drag": {
+      "selected_candidate": "drag_v_abs",
+      "validation_rollout_nrmse": 1.9524346426647568e-16,
+      "test_rollout_nrmse": 1.8968052633832006e-16,
+      "train_residual_reduction": 1.0,
+      "condition_number": 5.373566285947955
+    },
+    "E5_monod": {
+      "selected_candidate": "growth_rate_rational_S",
+      "validation_rollout_nrmse": 1.7865427810608082e-16,
+      "test_rollout_nrmse": 1.8885776503024343e-16,
+      "train_residual_reduction": 1.0,
+      "condition_number": 7.167490060113097
+    }
+  }
+}

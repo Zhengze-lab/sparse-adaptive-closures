@@ -1,0 +1,36 @@
+{
+  "experiment_id": "ablation_suite",
+  "n_bootstrap_synthetic": 24,
+  "n_bootstrap_emps": 80,
+  "n_e6_starts": 2,
+  "random_seed": 20260614,
+  "thresholds": [
+    1e-10,
+    1e-08,
+    1e-06,
+    0.0001,
+    0.01
+  ],
+  "e6_free_oe_max_nfev": 25,
+  "e6_free_oe_fit_stride": 16,
+  "e6_free_oe_l2": 0.0001,
+  "e4_noise_levels": [
+    0.0,
+    0.01,
+    0.03,
+    0.05
+  ],
+  "created_at_utc": "2026-06-15T07:14:32.263410+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "scipy": "1.16.3",
+  "outputs": {
+    "synthetic_ablation_results": "results/ablation_suite/synthetic_ablation_results.csv",
+    "bootstrap_statistics": "results/ablation_suite/bootstrap_statistics.csv",
+    "e6_output_error_comparators": "results/ablation_suite/e6_output_error_comparators.csv",
+    "e6_multistart_details": "results/ablation_suite/e6_multistart_details.csv",
+    "e4_noise_backend_ablation": "results/ablation_suite/e4_noise_backend_ablation.csv",
+    "battery_physical_constraint_ablation": "results/ablation_suite/battery_physical_constraint_ablation.csv",
+    "metrics_json": "results/ablation_suite/metrics.json"
+  }
+}

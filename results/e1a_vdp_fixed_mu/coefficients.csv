@@ -1,0 +1,6 @@
+term,degree,b3_coefficient,expected_coefficient,abs_error,active
+x1^0,0,1.999999999999997,2,3.33066907387547e-15,True
+x1^1,1,0,0,0,False
+x1^2,2,-2,-2,4.440892098500626e-16,True
+x1^3,3,0,0,0,False
+x1^4,4,0,0,0,False

@@ -1,0 +1,60 @@
+{
+  "experiment_id": "BATT4c_lfp_narrow_dynamic_pilot",
+  "description": "Narrow no-intercept q_tau dynamic residual pilot on top of the physics-filtered BATT-4a R0(T) slot.",
+  "source_dataset": "battery_lfp_ocv_dyn",
+  "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+  "source_doi": "10.17632/p8kf893yv3.1",
+  "license": "CC BY 4.0",
+  "baseline_experiment": "BATT4a2_lfp_filtered_r0_slot_ecm",
+  "diagnostic_experiment": "BATT4b_lfp_r0_residual_diagnostics",
+  "base_model": "BATT4a2_R0T_physical",
+  "selected_r0_model": "BATT4a_R0_slot_filtered_T_only_STLSQ_dense",
+  "selected_feature_set": "T_only",
+  "ocv_curve": "discharge",
+  "current_convention": "I_model=I_raw",
+  "dynamic_model_form": "Vhat = OCV_discharge(s,T) - R0(T) I - k q_tau; q_tau[k+1]=exp(-dt/tau) q_tau[k] + (1-exp(-dt/tau)) I[k]",
+  "dynamic_tau_grid_s": [
+    20.0,
+    50.0,
+    100.0,
+    200.0,
+    500.0,
+    1000.0
+  ],
+  "gain_fit": "no_intercept_train_residual_lstsq",
+  "selection_rule": "Select the lowest validation-temperature RMSE among q_tau candidates that do not worsen validation RMSE relative to R0(T).",
+  "fit_stride": 20,
+  "prediction_sample_stride": 30,
+  "score_start_s": 300.0,
+  "initialization_window_s": 300.0,
+  "created_at_utc": "2026-06-13T10:45:46.969180+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "script": "scripts/run_batt4c_narrow_dynamic_pilot.py",
+  "inputs": {
+    "batt4a2_coefficients_csv": "results/battery_lfp_r0_slot_filtered_ecm/coefficients.csv",
+    "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+    "ocv_grid_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_grid.csv"
+  },
+  "outputs": {
+    "metrics_by_trajectory_csv": "results/battery_lfp_narrow_dynamic_pilot/metrics_by_trajectory.csv",
+    "metrics_by_split_csv": "results/battery_lfp_narrow_dynamic_pilot/metrics_by_split.csv",
+    "candidate_scan_csv": "results/battery_lfp_narrow_dynamic_pilot/candidate_scan.csv",
+    "predictions_sample_csv": "results/battery_lfp_narrow_dynamic_pilot/predictions_sample.csv",
+    "fit_summary_csv": "results/battery_lfp_narrow_dynamic_pilot/fit_summary.csv",
+    "metrics_json": "results/battery_lfp_narrow_dynamic_pilot/metrics.json",
+    "figures": [
+      "results/battery_lfp_narrow_dynamic_pilot/figures/candidate_scan.svg",
+      "results/battery_lfp_narrow_dynamic_pilot/figures/candidate_scan_zh.svg",
+      "results/battery_lfp_narrow_dynamic_pilot/figures/rmse_by_split.svg",
+      "results/battery_lfp_narrow_dynamic_pilot/figures/rmse_by_split_zh.svg"
+    ],
+    "provenance_json": "data/provenance/batt4c_narrow_dynamic_pilot_provenance.json"
+  },
+  "test_usage_rule": "R0(T) coefficients are fixed from BATT-4a2. The q_tau gain is fitted only on train residuals without an intercept; non-train records use only prefix SOC initialization.",
+  "next_action": "Compare the selected narrow dynamic pilot against a cell-transfer/SOC/OCV correction route before claiming broad battery ECM transfer."
+}

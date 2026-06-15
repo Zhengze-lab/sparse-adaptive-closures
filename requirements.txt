@@ -1,0 +1,19 @@
+# Core runtime used by the current Meta-SINDy experiments.
+# PySINDy 2.1.0 requires numpy>=2.0. The local environment also has qpth 0.0.18,
+# which declares numpy<2; qpth is not used by these experiments.
+numpy==2.4.6
+scipy==1.16.3
+scikit-learn==1.8.0
+pysindy==2.1.0
+derivative==0.6.3
+nonlinear-benchmarks==1.0.1
+
+# Optional analysis and publication-figure helpers.
+# The current scripts avoid depending on pandas/matplotlib for core execution,
+# but keeping them available is useful for ad hoc table inspection and figures.
+pandas>=2.2
+matplotlib>=3.9
+
+# Optional data-download helper for the PMSM Electric Motor Temperature dataset.
+# Kaggle credentials or an existing local cache may be required for reproduction.
+kaggle>=2.2

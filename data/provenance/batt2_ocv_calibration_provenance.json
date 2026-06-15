@@ -1,0 +1,57 @@
+{
+  "experiment_id": "BATT2_lfp_ocv_calibration",
+  "description": "OCV(SOC,T) calibration from LiFePO4 OCV data for the battery ECM route.",
+  "source_dataset": "battery_lfp_ocv_dyn",
+  "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+  "source_doi": "10.17632/p8kf893yv3.1",
+  "license": "CC BY 4.0",
+  "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+  "soc_grid_start": 0.02,
+  "soc_grid_end": 0.98,
+  "soc_grid_count": 97,
+  "used_scripts": {
+    "script1": "discharge curve; SOC = 1 - normalized disAh",
+    "script3": "charge curve; SOC = normalized chgAh"
+  },
+  "excluded_ocv_files": "A002_02 repeat OCV files are excluded from first-pass calibration and reserved for repeatability checks.",
+  "heldout_temperatures_c": [
+    -15,
+    35
+  ],
+  "training_temperatures_c": [
+    -25,
+    -5,
+    5,
+    15,
+    25,
+    45
+  ],
+  "models": [
+    "linear_temperature_interpolation",
+    "least_squares_polynomial_soc7_temp2"
+  ],
+  "created_at_utc": "2026-06-13T08:36:32.980679+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "script": "scripts/run_batt2_ocv_calibration.py",
+  "outputs": {
+    "ocv_curves_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_curves.csv",
+    "ocv_grid_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_grid.csv",
+    "metrics_by_curve_csv": "results/battery_lfp_ocv_calibration/metrics_by_curve.csv",
+    "heldout_predictions_csv": "results/battery_lfp_ocv_calibration/heldout_predictions.csv",
+    "figures": [
+      "results/battery_lfp_ocv_calibration/figures/ocv_curves_by_temperature.svg",
+      "results/battery_lfp_ocv_calibration/figures/ocv_curves_by_temperature_zh.svg",
+      "results/battery_lfp_ocv_calibration/figures/heldout_ocv_error.svg",
+      "results/battery_lfp_ocv_calibration/figures/heldout_ocv_error_zh.svg"
+    ],
+    "metrics_json": "results/battery_lfp_ocv_calibration/metrics.json",
+    "provenance_json": "data/provenance/batt2_ocv_calibration_provenance.json"
+  },
+  "test_usage_rule": "Temperatures -15 C and 35 C are held out from calibration and used only for BATT-2 OCV validation.",
+  "next_action": "Use the calibrated OCV baseline to build BATT-3 constant first-order ECM output-error baseline."
+}

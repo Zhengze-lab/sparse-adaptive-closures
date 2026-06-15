@@ -1,0 +1,3 @@
+term,b3_coefficient,reference_coefficient,abs_error,active
+1,0.08000000000000007,0.08,6.938893903907228e-17,True
+abs(v),0.5499999999999998,0.55,2.220446049250313e-16,True

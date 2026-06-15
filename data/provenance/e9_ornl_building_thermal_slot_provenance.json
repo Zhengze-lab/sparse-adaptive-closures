@@ -1,0 +1,116 @@
+{
+  "experiment_id": "E9_ornl_building_thermal_slot",
+  "description": "ORNL multizone building thermal RC test: fixed envelope coefficient vs weather-adaptive envelope slot.",
+  "source_dataset": "Datasets of a Multizone Office Building under Different HVAC System Operation Scenarios",
+  "source_doi": "10.6084/m9.figshare.20520438.v3",
+  "source_url": "https://figshare.com/articles/dataset/Scientific_Journal_Data_Empirical_HVAC_Operation/20520438",
+  "license": "CC BY 4.0",
+  "train_scenario": "Base_Heating",
+  "test_scenario": "Base_Cooling",
+  "sample_time_s": 60.0,
+  "savgol_window": 121,
+  "savgol_polyorder": 3,
+  "edge_trim": 80,
+  "prediction_sample_stride": 20,
+  "models": {
+    "B0_fixed_envelope": "dT/dt = a_env*(Tout-T) + a_hvac*AF*(Tsup-T) + a_solar*GloSolar + b",
+    "B3_weather_adaptive_envelope_slot": "dT/dt = p_env(WS,GloSolar)*(Tout-T) + a_hvac*AF*(Tsup-T) + a_solar*GloSolar + b",
+    "B1_full_linear_features": "wider linear feature model over envelope, HVAC, solar, wind, humidity"
+  },
+  "created_at_utc": "2026-06-14T04:02:59.211265+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "pandas": "3.0.3"
+  },
+  "outputs": {
+    "metrics_json": "results/e9_ornl_building_thermal_slot/metrics.json",
+    "metrics_by_split_csv": "results/e9_ornl_building_thermal_slot/metrics_by_split.csv",
+    "coefficients_csv": "results/e9_ornl_building_thermal_slot/coefficients.csv",
+    "prediction_sample_csv": "results/e9_ornl_building_thermal_slot/prediction_sample.csv"
+  },
+  "raw_files": [
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_Base_Cooling.csv",
+      "size_bytes": 6957847,
+      "sha256": "44c1b04d9a54eb46dbe520942b0aab8445e8f22caa8f089c00bbdf602f70feb0"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_Base_Heating.csv",
+      "size_bytes": 7333141,
+      "sha256": "3fe474f72ba4641104a9db9ee634b91ce005a3e705bf1d7a8dabff156727592c"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_FF_Cooling.csv",
+      "size_bytes": 3497606,
+      "sha256": "533a016701426452572167a49363f8ffbbc967372c71dbd82b89592eed12ef27"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_FF_Heating.csv",
+      "size_bytes": 3546063,
+      "sha256": "22266a1f8fe75d085b1c5dd321f153365eccc1a217049b2ea3debb8b70fec132"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_Information.csv",
+      "size_bytes": 3692,
+      "sha256": "94b7968505900084a47d8e684d945f7da420557007aa227c3b8aaa424904ceb4"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_Pre_Heating.csv",
+      "size_bytes": 4842237,
+      "sha256": "c9152889caf56fabd5f3b4407f9edee17a0b3eac9f3971015e711e21284d91dc"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_SB_Cooling.csv",
+      "size_bytes": 6676383,
+      "sha256": "7a81893513279e0481b9888ae5b0b5b8414c809fd18ef0f10a454d52af1730ba"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Building_SB_Heating.csv",
+      "size_bytes": 5570180,
+      "sha256": "aabc94b41e039c76edfa186ca0f219db3d3e89cc7091f289efc86d3b81cec3c5"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_Base_Cooling.csv",
+      "size_bytes": 765520,
+      "sha256": "dd7f8abc12647cc2cf41869609311806a7649b122f346645477a4eaad4806df2"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_Base_Heating.csv",
+      "size_bytes": 747202,
+      "sha256": "b04009bbde3efc4c319b2f23687d8642638755fea39b2189ea34819a579960b7"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_FF_Cooling.csv",
+      "size_bytes": 633314,
+      "sha256": "8cb06d014546a148efa7f938f7f0f0ab001d7042d58837116ce4e737329c2c95"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_FF_Heating.csv",
+      "size_bytes": 635643,
+      "sha256": "3ce5911e2026095c82049ad96186d9166835ac2b1679d624e4737acd77ab2dc6"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_Information.csv",
+      "size_bytes": 285,
+      "sha256": "c2203f7efbf3b0bad763d7de041a44c66e2cb730e1bc94d20124a78cf5e92706"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_Pre_Heating.csv",
+      "size_bytes": 544315,
+      "sha256": "26e05a69158615bc91d47de2f44c6f16f38eb5a5ff2de5554ec0cb7af4a11786"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_SB_Cooling.csv",
+      "size_bytes": 853699,
+      "sha256": "21882cde02c37f951bac76b7c60bfb280a718c08eb15a160625b9c13ccdc32e4"
+    },
+    {
+      "path": "data/raw/external/ornl_building_thermal/Weather_SB_Heating.csv",
+      "size_bytes": 649539,
+      "sha256": "ddc1e668b4021df8d874c852d87cfe81784d487697ae06734af3dd660eb4cb04"
+    }
+  ]
+}

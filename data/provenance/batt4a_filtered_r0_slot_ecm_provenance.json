@@ -1,0 +1,95 @@
+{
+  "experiment_id": "BATT4a2_lfp_filtered_r0_slot_ecm",
+  "description": "Physics-filtered R0 coefficient-slot ECM after the unconstrained BATT-4a polynomial slot failed high-amplitude extrapolation.",
+  "source_dataset": "battery_lfp_ocv_dyn",
+  "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+  "source_doi": "10.17632/p8kf893yv3.1",
+  "license": "CC BY 4.0",
+  "baseline_experiment": "BATT3c_lfp_discharge_ocv_current_sign_ecm",
+  "failed_diagnostic_experiment": "BATT4a_lfp_r0_slot_ecm",
+  "ocv_curve": "discharge",
+  "current_convention": "I_model=I_raw",
+  "feature_scaling": "sc=s-0.5, Tn=T/25, In=|I|/2, Isat=min(|I|,2)/2",
+  "feature_sets": {
+    "T_only": [
+      "1",
+      "Tn",
+      "Tn^2"
+    ],
+    "T_SOC": [
+      "1",
+      "sc",
+      "sc^2",
+      "Tn",
+      "Tn^2",
+      "sc*Tn"
+    ],
+    "T_SOC_Ilinear": [
+      "1",
+      "sc",
+      "sc^2",
+      "Tn",
+      "Tn^2",
+      "sc*Tn",
+      "In"
+    ],
+    "T_SOC_Isat": [
+      "1",
+      "sc",
+      "sc^2",
+      "Tn",
+      "Tn^2",
+      "sc*Tn",
+      "Isat",
+      "sc*Isat",
+      "Tn*Isat"
+    ]
+  },
+  "thresholds": [
+    0.0,
+    0.01,
+    0.05,
+    0.1
+  ],
+  "physical_selection_rule": "Select the lowest validation RMSE among models with <=1% negative R0 on train/validation/high-amplitude and high-amplitude RMSE no worse than BATT-3c constant ECM.",
+  "max_negative_fraction_for_physical": 0.01,
+  "require_high_amplitude_not_worse_than_constant_ecm": true,
+  "fit_abs_current_min_a": 0.1,
+  "fit_stride": 20,
+  "prediction_sample_stride": 30,
+  "initialization_window_s": 300.0,
+  "score_start_s": 300.0,
+  "pysindy_optimizer": "STLSQ",
+  "pysindy_alpha": 1e-08,
+  "pysindy_max_iter": 30,
+  "alternating_iterations": 3,
+  "active_threshold": 1e-07,
+  "created_at_utc": "2026-06-13T09:54:11.310813+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "pysindy": "2.1.0"
+  },
+  "script": "scripts/run_batt4a_filtered_r0_slot_ecm.py",
+  "outputs": {
+    "metrics_by_trajectory_csv": "results/battery_lfp_r0_slot_filtered_ecm/metrics_by_trajectory.csv",
+    "metrics_by_split_csv": "results/battery_lfp_r0_slot_filtered_ecm/metrics_by_split.csv",
+    "predictions_sample_csv": "results/battery_lfp_r0_slot_filtered_ecm/predictions_sample.csv",
+    "coefficients_csv": "results/battery_lfp_r0_slot_filtered_ecm/coefficients.csv",
+    "threshold_summary_csv": "results/battery_lfp_r0_slot_filtered_ecm/threshold_summary.csv",
+    "improvement_vs_batt3c_constant_ecm_csv": "results/battery_lfp_r0_slot_filtered_ecm/improvement_vs_batt3c_constant_ecm.csv",
+    "fit_summary_csv": "results/battery_lfp_r0_slot_filtered_ecm/fit_summary.csv",
+    "metrics_json": "results/battery_lfp_r0_slot_filtered_ecm/metrics.json",
+    "figures": [
+      "results/battery_lfp_r0_slot_filtered_ecm/figures/rmse_by_split.svg",
+      "results/battery_lfp_r0_slot_filtered_ecm/figures/rmse_by_split_zh.svg",
+      "results/battery_lfp_r0_slot_filtered_ecm/figures/r0_profiles.svg",
+      "results/battery_lfp_r0_slot_filtered_ecm/figures/r0_profiles_zh.svg"
+    ],
+    "provenance_json": "data/provenance/batt4a_filtered_r0_slot_ecm_provenance.json"
+  },
+  "test_usage_rule": "R0 slot coefficients are fitted only on split=train. Non-train records use only the initialization prefix for initial SOC estimation.",
+  "next_action": "Use the selected physical R0(T) model as the BATT-4a positive baseline, then test whether dynamic slots a_tau(z), b_C(z), or cell-transfer terms can address the remaining cross-cell error."
+}

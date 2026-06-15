@@ -1,0 +1,92 @@
+{
+  "dataset_id": "e1b_vdp_multi_mu_trajectories",
+  "experiment_id": "E1b_vdp_multi_mu",
+  "created_at_utc": "2026-06-10T08:03:46.896627+00:00",
+  "source_name": "Designed from DSINDy/WSINDy Van der Pol equation",
+  "source_urls": [
+    "https://www.osti.gov/servlets/purl/2417947",
+    "https://github.com/MathBioCU/WSINDy_ODE"
+  ],
+  "source_access_date": "2026-06-10",
+  "equation_reference": "Van der Pol equation with designed multi-mu train/test split.",
+  "parameters": {
+    "train_mu": [
+      0.5,
+      1.0,
+      2.0,
+      4.0
+    ],
+    "interpolation_mu": [
+      1.5,
+      3.0
+    ],
+    "extrapolation_mu": [
+      5.0
+    ]
+  },
+  "initial_conditions": {
+    "train": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        -2.0,
+        1.0
+      ],
+      [
+        2.0,
+        0.0
+      ]
+    ],
+    "test": [
+      [
+        0.5,
+        -1.0
+      ],
+      [
+        -1.5,
+        0.5
+      ]
+    ]
+  },
+  "time_grid": {
+    "start": 0.0,
+    "end": 30.0,
+    "dt": 0.01
+  },
+  "noise_model": null,
+  "candidate_slots": [
+    {
+      "name": "damping",
+      "g": "x2",
+      "coefficient_function": "p_c(x1, mu)"
+    }
+  ],
+  "expected_coefficients": {
+    "1": 0.0,
+    "x1": 0.0,
+    "x1^2": 0.0,
+    "mu": 1.0,
+    "mu*x1": 0.0,
+    "mu*x1^2": -1.0
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "1.26.4",
+    "scipy": "1.16.3"
+  },
+  "script": "scripts/run_e1b_vdp_multi_mu.py",
+  "outputs": {
+    "trajectory_csv": "data/generated/e1_vdp/e1b_vdp_multi_mu_trajectories.csv",
+    "rollout_summary_csv": "results/e1b_vdp_multi_mu/rollout_summary.csv",
+    "rollout_samples_csv": "results/e1b_vdp_multi_mu/rollout_samples.csv",
+    "coefficients_csv": "results/e1b_vdp_multi_mu/coefficients.csv",
+    "model_coefficients_csv": "results/e1b_vdp_multi_mu/model_coefficients.csv",
+    "metrics_json": "results/e1b_vdp_multi_mu/metrics.json"
+  }
+}

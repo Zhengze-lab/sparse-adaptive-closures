@@ -1,0 +1,46 @@
+{
+  "experiment_id": "SB2_silverbox_stiffness_slot_output_error",
+  "description": "Pilot Duffing-like stiffness coefficient-slot output-error model for the Silverbox input-output benchmark.",
+  "source_dataset": "silverbox_data_audit",
+  "baseline_experiment": "SB1_silverbox_linear_output_error",
+  "dataloader": "nonlinear_benchmarks.Silverbox",
+  "train_fit_fraction": 0.8,
+  "state_initialization_window": 50,
+  "fit_residual_stride": 25,
+  "fit_max_nfev": 35,
+  "init_max_nfev": 60,
+  "max_abs_state": 5.0,
+  "candidate_beta2_scaled": [
+    -1.0,
+    0.0,
+    1.0
+  ],
+  "parameterization": {
+    "c": "positive damping, c=exp(log_c)",
+    "beta0": "positive linear stiffness component, beta0=exp(log_beta0)",
+    "beta2": "signed cubic stiffness component, beta2=beta2_scale*beta2_scaled",
+    "b": "signed input gain, b=b_scale*b_scaled",
+    "x20": "signed initial latent velocity, x20=x2_scale*x20_scaled"
+  },
+  "model_equation": "x1_dot=x2; x2_dot=-c*x2-x1*(beta0+beta2*x1^2)+b*(u-u_offset); y=x1+y_offset",
+  "test_usage_rule": "Official test records are used only after selecting the model by internal train_val validation.",
+  "created_at_utc": "2026-06-13T07:26:35.659513+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "nonlinear-benchmarks": "1.0.1",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "source_files": {
+    "raw_audit_provenance": "data/provenance/silverbox_data_audit_provenance.json",
+    "sb1_metrics": "results/silverbox_sb1_linear_oe/metrics.json"
+  },
+  "outputs": {
+    "candidate_starts_csv": "results/silverbox_sb2_slot_oe/candidate_starts.csv",
+    "metrics_by_record_csv": "results/silverbox_sb2_slot_oe/metrics_by_record.csv",
+    "metrics_json": "results/silverbox_sb2_slot_oe/metrics.json",
+    "hashes_json": "results/silverbox_sb2_slot_oe/hashes.json",
+    "figures": "results/silverbox_sb2_slot_oe/figures/"
+  }
+}

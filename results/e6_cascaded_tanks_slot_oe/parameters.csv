@@ -1,0 +1,15 @@
+model,parameter,value
+B0_linear_outflow,a1,0.014054934722972385
+B0_linear_outflow,a2,1.5489233671044782
+B0_linear_outflow,a3,0.014055352136748179
+B0_linear_outflow,b,0.00026248288391286876
+B0_linear_outflow,x10_estimation,0.03239336969077478
+B0_linear_outflow,start_index,1
+B0_linear_outflow,x10_test_initialized,0.03473484343219838
+B3_sqrt_outflow_slot,k1,3.873018467419106e-05
+B3_sqrt_outflow_slot,k2,72.07173634999414
+B3_sqrt_outflow_slot,k3,0.034718935615832384
+B3_sqrt_outflow_slot,b,1.5509723103369693e-08
+B3_sqrt_outflow_slot,x10_estimation,1.3714184639955033e-06
+B3_sqrt_outflow_slot,start_index,1
+B3_sqrt_outflow_slot,x10_test_initialized,1.4074155216241497e-06

@@ -1,0 +1,106 @@
+{
+  "dataset_id": "e1c_vdp_noisy_state_true_dx",
+  "experiment_id": "E1c_vdp_noisy_state_true_dx",
+  "created_at_utc": "2026-06-10T08:37:20.368968+00:00",
+  "source_name": "Designed from DSINDy/WSINDy Van der Pol equation",
+  "source_urls": [
+    "https://www.osti.gov/servlets/purl/2417947",
+    "https://github.com/MathBioCU/WSINDy_ODE"
+  ],
+  "source_access_date": "2026-06-10",
+  "equation_reference": "Van der Pol equation with parameterized damping coefficient p_c(x1, mu)=mu-mu*x1^2.",
+  "parameters": {
+    "train_mu": [
+      0.5,
+      1.0,
+      2.0,
+      4.0
+    ],
+    "interpolation_mu": [
+      1.5,
+      3.0
+    ],
+    "extrapolation_mu": [
+      5.0
+    ]
+  },
+  "initial_conditions": {
+    "train": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        -2.0,
+        1.0
+      ],
+      [
+        2.0,
+        0.0
+      ]
+    ],
+    "test": [
+      [
+        0.5,
+        -1.0
+      ],
+      [
+        -1.5,
+        0.5
+      ]
+    ]
+  },
+  "time_grid": {
+    "t_end": 20.0,
+    "dt": 0.02
+  },
+  "noise_model": {
+    "type": "Gaussian state-observation noise on training library inputs",
+    "relative_to": "per-state standard deviation over clean training trajectories",
+    "levels": [
+      0.0,
+      0.005,
+      0.01,
+      0.03,
+      0.05
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "derivative_target": "clean true derivatives"
+  },
+  "candidate_slots": [
+    {
+      "name": "damping",
+      "g": "x2",
+      "coefficient_function": "p_c(x1, mu)"
+    }
+  ],
+  "expected_coefficients": {
+    "mu": 1.0,
+    "mu*x1^2": -1.0
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "1.26.4",
+    "scipy": "1.16.3"
+  },
+  "script": "scripts/run_e1c_vdp_noisy_state_true_dx.py",
+  "outputs": {
+    "clean_trajectory_csv": "data/generated/e1_vdp/e1c_vdp_clean_reference_trajectories.csv",
+    "noisy_sample_csv": "data/generated/e1_vdp/e1c_vdp_noisy_state_seed0_training_sample.csv",
+    "seed_metrics_csv": "results/e1c_vdp_noisy_state_true_dx/seed_metrics.csv",
+    "summary_by_noise_csv": "results/e1c_vdp_noisy_state_true_dx/summary_by_noise.csv",
+    "coefficients_seed0_csv": "results/e1c_vdp_noisy_state_true_dx/coefficients_seed0.csv",
+    "model_coefficients_seed0_active_csv": "results/e1c_vdp_noisy_state_true_dx/model_coefficients_seed0_active.csv",
+    "metrics_json": "results/e1c_vdp_noisy_state_true_dx/metrics.json"
+  }
+}

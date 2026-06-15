@@ -1,0 +1,110 @@
+{
+  "dataset_id": "pysindy_e2d_duffing_derivative_estimation",
+  "experiment_id": "E2d_duffing_derivative_estimation_pysindy",
+  "created_at_utc": "2026-06-11T08:56:23.634598+00:00",
+  "source_experiment": "E2c_duffing_noisy_state_pysindy",
+  "source_script": "scripts/run_pysindy_e2c_duffing_noisy_state.py",
+  "script": "scripts/run_pysindy_e2d_duffing_derivative_estimation.py",
+  "purpose": "Estimate derivatives from noisy Duffing states and test the stiffness coefficient slot without clean derivative targets.",
+  "equation_reference": "Duffing stiffness slot p_k(x1)=kappa+epsilon*x1^2 in dx2=-eta*x2-x1*p_k.",
+  "parameters": {
+    "eta": 0.2,
+    "kappa": 0.2,
+    "epsilon": 1.0
+  },
+  "candidate_slots": [
+    {
+      "name": "stiffness",
+      "g": "-x1",
+      "coefficient_function": "p_k(x1)"
+    }
+  ],
+  "expected_coefficients": {
+    "0": 0.2,
+    "1": 0.0,
+    "2": 1.0,
+    "3": 0.0,
+    "4": 0.0
+  },
+  "noise_model": {
+    "type": "Gaussian state-observation noise on training states used for libraries and derivative estimation",
+    "relative_to": "per-state standard deviation over clean training trajectories",
+    "levels": [
+      0.0,
+      0.005,
+      0.01,
+      0.03,
+      0.05
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  "derivative_methods": [
+    {
+      "name": "clean_true_derivative",
+      "family": "clean"
+    },
+    {
+      "name": "finite_difference",
+      "family": "finite_difference",
+      "order": 2
+    },
+    {
+      "name": "smoothed_finite_difference",
+      "family": "smoothed_finite_difference",
+      "order": 2,
+      "smoother_kws": {
+        "window_length": 5,
+        "polyorder": 3,
+        "mode": "interp"
+      }
+    }
+  ],
+  "optimizer_specs": [
+    {
+      "name": "pysindy_stlsq_t1e-2",
+      "family": "pysindy_stlsq",
+      "threshold": 0.01,
+      "alpha": 0.0,
+      "regularizer": "",
+      "reg_weight_lam": ""
+    },
+    {
+      "name": "pysindy_sr3_l0_lam1e-4",
+      "family": "pysindy_sr3",
+      "threshold": "",
+      "alpha": "",
+      "regularizer": "L0",
+      "reg_weight_lam": 0.0001
+    }
+  ],
+  "outputs": {
+    "seed_metrics_csv": "results/pysindy_e2d_duffing_derivative_estimation/seed_metrics.csv",
+    "summary_by_noise_derivative_optimizer_csv": "results/pysindy_e2d_duffing_derivative_estimation/summary_by_noise_derivative_optimizer.csv",
+    "coefficients_seed0_csv": "results/pysindy_e2d_duffing_derivative_estimation/coefficients_seed0.csv",
+    "metrics_json": "results/pysindy_e2d_duffing_derivative_estimation/metrics.json",
+    "figures": [
+      "results/pysindy_e2d_duffing_derivative_estimation/figures/derivative_dx2_nrmse.svg",
+      "results/pysindy_e2d_duffing_derivative_estimation/figures/derivative_dx2_nrmse_zh.svg",
+      "results/pysindy_e2d_duffing_derivative_estimation/figures/coefficient_grid_nrmse.svg",
+      "results/pysindy_e2d_duffing_derivative_estimation/figures/coefficient_grid_nrmse_zh.svg",
+      "results/pysindy_e2d_duffing_derivative_estimation/figures/support_precision.svg",
+      "results/pysindy_e2d_duffing_derivative_estimation/figures/support_precision_zh.svg",
+      "results/pysindy_e2d_duffing_derivative_estimation/figures/test_rollout_nrmse.svg",
+      "results/pysindy_e2d_duffing_derivative_estimation/figures/test_rollout_nrmse_zh.svg"
+    ]
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "scikit_learn": "1.8.0",
+    "pysindy": "2.1.0"
+  },
+  "dependency_note": "PySINDy 2.1.0 required numpy>=2.0; local qpth 0.0.18 declares numpy<2 but is not used by these experiments."
+}

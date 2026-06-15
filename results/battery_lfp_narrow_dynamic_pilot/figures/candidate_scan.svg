@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="990" height="430" viewBox="0 0 990 430">
+  <rect width="990" height="430" fill="#ffffff"/>
+  <text x="82" y="36" font-family="Noto Sans CJK SC, DejaVu Sans, Arial" font-size="20" fill="#111827">BATT-4c narrow dynamic pilot scan</text>
+  <rect x="82.0" y="64.0" width="720.0" height="300.0" fill="#ffffff" stroke="#d1d5db"/>
+  <line x1="82.0" y1="364.0" x2="802.0" y2="364.0" stroke="#6b7280"/>
+  <line x1="82.0" y1="64.0" x2="82.0" y2="364.0" stroke="#6b7280"/>
+  <polyline points="82.00,92.98 104.04,93.00 140.78,92.92 214.24,92.77 434.65,91.87 802.00,91.31" fill="none" stroke="#2563eb" stroke-width="2.5"/>
+  <polyline points="82.00,289.43 104.04,282.23 140.78,278.77 214.24,276.52 434.65,274.23 802.00,273.27" fill="none" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="82.0" y1="91.27" x2="802.0" y2="91.27" stroke="#2563eb" stroke-width="1.3" stroke-dasharray="5 5"/>
+  <line x1="82.0" y1="272.66" x2="802.0" y2="272.66" stroke="#dc2626" stroke-width="1.3" stroke-dasharray="5 5"/>
+  <text x="442.0" y="404" text-anchor="middle" font-family="Noto Sans CJK SC, DejaVu Sans, Arial" font-size="13" fill="#374151">tau (s)</text>
+  <text x="24" y="214.0" transform="rotate(-90 24 214.0)" text-anchor="middle" font-family="Noto Sans CJK SC, DejaVu Sans, Arial" font-size="13" fill="#374151">RMSE (mV)</text>
+  <rect x="830" y="96" width="18" height="11" fill="#2563eb"/>
+  <text x="856" y="106" font-family="Noto Sans CJK SC, DejaVu Sans, Arial" font-size="12" fill="#111827">validation</text>
+  <rect x="830" y="124" width="18" height="11" fill="#dc2626"/>
+  <text x="856" y="134" font-family="Noto Sans CJK SC, DejaVu Sans, Arial" font-size="12" fill="#111827">high amplitude</text>
+</svg>

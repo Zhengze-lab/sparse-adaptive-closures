@@ -1,0 +1,17 @@
+current_convention,split,model,baseline_model,baseline_rmse_mv,model_rmse_mv,improvement_percent
+I_model=-I_raw,test_cell_transfer,ohmic_only,ocv_only,436.6435772917556,436.64357730272764,-2.5128115850011958e-09
+I_model=-I_raw,test_cell_transfer,constant_ecm,ocv_only,436.6435772917556,436.5923057539074,0.011742194438359955
+I_model=-I_raw,test_high_amplitude,ohmic_only,ocv_only,27.184160313577383,27.184160744762096,-1.5861616023806043e-06
+I_model=-I_raw,test_high_amplitude,constant_ecm,ocv_only,27.184160313577383,26.563523695560118,2.2830818052058146
+I_model=-I_raw,train,ohmic_only,ocv_only,59.88782414017522,59.87935231556944,0.014146155295186801
+I_model=-I_raw,train,constant_ecm,ocv_only,59.88782414017522,60.328107465842415,-0.7351800336520078
+I_model=-I_raw,validation_temperature,ohmic_only,ocv_only,91.38858065613626,91.3885807599835,-1.1363262365081646e-07
+I_model=-I_raw,validation_temperature,constant_ecm,ocv_only,91.38858065613626,91.99425599227935,-0.6627472839544813
+I_model=I_raw,test_cell_transfer,ohmic_only,ocv_only,436.6435772917556,436.2182971136297,0.09739755723962597
+I_model=I_raw,test_cell_transfer,constant_ecm,ocv_only,436.6435772917556,435.7990305199436,0.1934178849143388
+I_model=I_raw,test_high_amplitude,ohmic_only,ocv_only,27.184160313577383,41.62984728742219,-53.140088960664976
+I_model=I_raw,test_high_amplitude,constant_ecm,ocv_only,27.184160313577383,35.15674271056976,-29.328043629180613
+I_model=I_raw,train,ohmic_only,ocv_only,59.88782414017522,53.25813135645518,11.070184764439567
+I_model=I_raw,train,constant_ecm,ocv_only,59.88782414017522,52.442672171675596,12.431829132868945
+I_model=I_raw,validation_temperature,ohmic_only,ocv_only,91.38858065613626,80.47388633937413,11.943170840819114
+I_model=I_raw,validation_temperature,constant_ecm,ocv_only,91.38858065613626,79.30612770895797,13.220965749145828

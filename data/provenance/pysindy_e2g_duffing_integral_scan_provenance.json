@@ -1,0 +1,78 @@
+{
+  "dataset_id": "pysindy_e2g_duffing_integral_scan",
+  "experiment_id": "E2g_duffing_integral_scan",
+  "created_at_utc": "2026-06-13T04:43:13.863428+00:00",
+  "system": "E2g_duffing",
+  "source_experiment": "E2d_duffing_derivative_estimation_pysindy",
+  "source_script": "scripts/run_pysindy_e2d_duffing_derivative_estimation.py",
+  "script": "scripts/run_pysindy_e1g_e2g_integral_scan.py",
+  "purpose": "Avoid explicit derivative estimation by fitting integrated Duffing stiffness-slot residuals.",
+  "equation_reference": "Integral form of dx2+eta*x2=-x1*p_k over windows.",
+  "candidate_slots": [
+    {
+      "name": "stiffness",
+      "g": "-x1",
+      "coefficient_function": "p_k(x1)"
+    }
+  ],
+  "scan_config": {
+    "experiment_id": "E1g_E2g_integral_window_scan",
+    "description": "Integral-form coefficient-slot regression to avoid explicit derivative estimation.",
+    "source_experiments": [
+      "E1d_vdp_derivative_estimation_pysindy",
+      "E2d_duffing_derivative_estimation_pysindy"
+    ],
+    "noise_levels_relative_state_std": [
+      0.0,
+      0.005,
+      0.01,
+      0.03,
+      0.05
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "window_steps": [
+      5,
+      10,
+      20,
+      50,
+      100
+    ],
+    "optimizer": {
+      "name": "pysindy_stlsq_t1e-2",
+      "family": "pysindy_stlsq",
+      "threshold": 0.01,
+      "alpha": 0.0,
+      "max_iter": 20
+    },
+    "active_threshold": 1e-06
+  },
+  "outputs": {
+    "seed_metrics_csv": "results/pysindy_e2g_duffing_integral_scan/seed_metrics.csv",
+    "summary_by_noise_window_csv": "results/pysindy_e2g_duffing_integral_scan/summary_by_noise_window.csv",
+    "best_by_noise_csv": "results/pysindy_e2g_duffing_integral_scan/best_by_noise.csv",
+    "coefficients_seed0_csv": "results/pysindy_e2g_duffing_integral_scan/coefficients_seed0.csv",
+    "metrics_json": "results/pysindy_e2g_duffing_integral_scan/metrics.json",
+    "figures": [
+      "results/pysindy_e2g_duffing_integral_scan/figures/high_noise_integral_fit_nrmse.svg",
+      "results/pysindy_e2g_duffing_integral_scan/figures/high_noise_integral_fit_nrmse_zh.svg",
+      "results/pysindy_e2g_duffing_integral_scan/figures/high_noise_coefficient_grid_nrmse.svg",
+      "results/pysindy_e2g_duffing_integral_scan/figures/high_noise_coefficient_grid_nrmse_zh.svg",
+      "results/pysindy_e2g_duffing_integral_scan/figures/high_noise_rollout_nrmse.svg",
+      "results/pysindy_e2g_duffing_integral_scan/figures/high_noise_rollout_nrmse_zh.svg"
+    ]
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "scikit_learn": "1.8.0",
+    "pysindy": "2.1.0"
+  },
+  "dependency_note": "PySINDy 2.1.0 required numpy>=2.0; local qpth 0.0.18 declares numpy<2 but is not used by these experiments."
+}

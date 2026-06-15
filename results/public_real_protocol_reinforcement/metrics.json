@@ -1,0 +1,473 @@
+{
+  "experiment_id": "public_real_protocol_reinforcement",
+  "created_at_utc": "2026-06-15T03:41:17.038747+00:00",
+  "config": {
+    "experiment_id": "public_real_protocol_reinforcement",
+    "description": "Validation-screening and segment-robustness checks for public real-system E6/E7 cases.",
+    "created_for": "public real-system slot-selection protocol reinforcement.",
+    "e6": {
+      "train_fraction": 0.7,
+      "segment_length": 128,
+      "physical_slot_candidates": [
+        "B0_linear_outflow",
+        "B3_sqrt_outflow_slot"
+      ],
+      "free_predictive_baselines": [],
+      "selection_rule": "choose the physically admissible candidate with the lowest validation output-error NRMSE; official test is used only after selection"
+    },
+    "e7": {
+      "train_fraction": 0.7,
+      "segment_length": 248,
+      "physical_slot_candidates": [
+        "B0_viscous",
+        "B0_symmetric_coulomb",
+        "B3_asymmetric_friction_slot"
+      ],
+      "free_predictive_baselines": [
+        "B1_full_polynomial_inverse"
+      ],
+      "selection_rule": "choose among physical friction candidates by validation inverse-dynamics NRMSE; B1 is reported as a freer predictive baseline, not as a coefficient-slot candidate"
+    }
+  },
+  "summary": {
+    "E6_Cascaded_Tanks": {
+      "selected_physical_slot_model": "B3_sqrt_outflow_slot",
+      "validation_b0_nrmse": 0.5523470648174775,
+      "validation_b3_nrmse": 0.3444853866649428,
+      "official_test_b0_nrmse": 0.553019381475095,
+      "official_test_b3_nrmse": 0.3710793648028603,
+      "official_test_improvement_percent": 32.89939245654237,
+      "test_segments": 7,
+      "test_segments_improved": 6
+    },
+    "E7_EMPS": {
+      "selected_physical_slot_model": "B3_asymmetric_friction_slot",
+      "validation_b0_symmetric_nrmse": 0.061697054644883384,
+      "validation_b3_nrmse": 0.05521593017443621,
+      "validation_b1_full_nrmse": 0.052560230060682334,
+      "official_test_b0_symmetric_nrmse": 0.07274939415004039,
+      "official_test_b3_nrmse": 0.06747077219829123,
+      "official_test_b1_full_nrmse": 0.06524387546866699,
+      "official_test_improvement_percent": 7.255898160282111,
+      "test_segments": 10,
+      "test_segments_improved": 10,
+      "test_segments_free_model_best": 7
+    },
+    "n_positive_public_systems_with_validation_selected_slots": 2
+  },
+  "candidate_screening_rows": [
+    {
+      "system": "E6_Cascaded_Tanks",
+      "model": "B0_linear_outflow",
+      "model_role": "physical_slot_candidate",
+      "split": "protocol_train",
+      "n_samples": 717,
+      "score_start_index": 50,
+      "nrmse": 0.5356421169931045,
+      "rmse": 1.116239806738546,
+      "mae": 1.0026116450849025,
+      "fit_percent": 46.43578830068955
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "model": "B0_linear_outflow",
+      "model_role": "physical_slot_candidate",
+      "split": "protocol_validation",
+      "n_samples": 307,
+      "score_start_index": 50,
+      "nrmse": 0.5523470648174775,
+      "rmse": 1.4387294107948478,
+      "mae": 1.1853002002662145,
+      "fit_percent": 44.76529351825225
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "model": "B0_linear_outflow",
+      "model_role": "physical_slot_candidate",
+      "split": "official_test",
+      "n_samples": 1024,
+      "score_start_index": 50,
+      "nrmse": 0.553019381475095,
+      "rmse": 1.1723967268250715,
+      "mae": 1.0299224975106365,
+      "fit_percent": 44.6980618524905
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "model": "B3_sqrt_outflow_slot",
+      "model_role": "physical_slot_candidate",
+      "split": "protocol_train",
+      "n_samples": 717,
+      "score_start_index": 50,
+      "nrmse": 0.28067246450278943,
+      "rmse": 0.584901313011311,
+      "mae": 0.45379277198167556,
+      "fit_percent": 71.93275354972106
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "model": "B3_sqrt_outflow_slot",
+      "model_role": "physical_slot_candidate",
+      "split": "protocol_validation",
+      "n_samples": 307,
+      "score_start_index": 50,
+      "nrmse": 0.3444853866649428,
+      "rmse": 0.897300427490578,
+      "mae": 0.7360268193415526,
+      "fit_percent": 65.55146133350571
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "model": "B3_sqrt_outflow_slot",
+      "model_role": "physical_slot_candidate",
+      "split": "official_test",
+      "n_samples": 1024,
+      "score_start_index": 50,
+      "nrmse": 0.3710793648028603,
+      "rmse": 0.7866853265192342,
+      "mae": 0.6126840401930455,
+      "fit_percent": 62.89206351971397
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B0_viscous",
+      "model_role": "physical_slot_candidate",
+      "split": "protocol_train",
+      "n_samples": 1736,
+      "score_start_index": 0,
+      "nrmse": 0.170808646968366,
+      "rmse": 9.1566248563726,
+      "mae": 7.855174129539417,
+      "fit_percent": 82.91913530316339
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B0_viscous",
+      "model_role": "physical_slot_candidate",
+      "split": "protocol_validation",
+      "n_samples": 744,
+      "score_start_index": 0,
+      "nrmse": 0.17308622667139298,
+      "rmse": 9.078376477195105,
+      "mae": 7.663504890985079,
+      "fit_percent": 82.69137733286071
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B0_viscous",
+      "model_role": "physical_slot_candidate",
+      "split": "official_test",
+      "n_samples": 2480,
+      "score_start_index": 0,
+      "nrmse": 0.1701238265801949,
+      "rmse": 9.660458055697685,
+      "mae": 8.059110470062906,
+      "fit_percent": 82.98761734198051
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B0_symmetric_coulomb",
+      "model_role": "physical_slot_candidate",
+      "split": "protocol_train",
+      "n_samples": 1736,
+      "score_start_index": 0,
+      "nrmse": 0.05989562532078613,
+      "rmse": 3.210854844496617,
+      "mae": 1.8513169008784258,
+      "fit_percent": 94.01043746792139
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B0_symmetric_coulomb",
+      "model_role": "physical_slot_candidate",
+      "split": "protocol_validation",
+      "n_samples": 744,
+      "score_start_index": 0,
+      "nrmse": 0.061697054644883384,
+      "rmse": 3.2360119021122724,
+      "mae": 2.0111010805797824,
+      "fit_percent": 93.83029453551165
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B0_symmetric_coulomb",
+      "model_role": "physical_slot_candidate",
+      "split": "official_test",
+      "n_samples": 2480,
+      "score_start_index": 0,
+      "nrmse": 0.07274939415004039,
+      "rmse": 4.131064324682313,
+      "mae": 2.6981430851240464,
+      "fit_percent": 92.72506058499597
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B3_asymmetric_friction_slot",
+      "model_role": "physical_slot_candidate",
+      "split": "protocol_train",
+      "n_samples": 1736,
+      "score_start_index": 0,
+      "nrmse": 0.05413421438506245,
+      "rmse": 2.9019999971679877,
+      "mae": 1.3876500561391734,
+      "fit_percent": 94.58657856149375
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B3_asymmetric_friction_slot",
+      "model_role": "physical_slot_candidate",
+      "split": "protocol_validation",
+      "n_samples": 744,
+      "score_start_index": 0,
+      "nrmse": 0.05521593017443621,
+      "rmse": 2.896076778042659,
+      "mae": 1.4778535918202431,
+      "fit_percent": 94.47840698255638
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B3_asymmetric_friction_slot",
+      "model_role": "physical_slot_candidate",
+      "split": "official_test",
+      "n_samples": 2480,
+      "score_start_index": 0,
+      "nrmse": 0.06747077219829123,
+      "rmse": 3.8313185043476183,
+      "mae": 2.3706330454227165,
+      "fit_percent": 93.25292278017088
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B1_full_polynomial_inverse",
+      "model_role": "free_predictive_baseline",
+      "split": "protocol_train",
+      "n_samples": 1736,
+      "score_start_index": 0,
+      "nrmse": 0.05070839414322929,
+      "rmse": 2.718350332255863,
+      "mae": 1.3258096229672136,
+      "fit_percent": 94.92916058567708
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B1_full_polynomial_inverse",
+      "model_role": "free_predictive_baseline",
+      "split": "protocol_validation",
+      "n_samples": 744,
+      "score_start_index": 0,
+      "nrmse": 0.052560230060682334,
+      "rmse": 2.756785247417523,
+      "mae": 1.4417963302542594,
+      "fit_percent": 94.74397699393177
+    },
+    {
+      "system": "E7_EMPS",
+      "model": "B1_full_polynomial_inverse",
+      "model_role": "free_predictive_baseline",
+      "split": "official_test",
+      "n_samples": 2480,
+      "score_start_index": 0,
+      "nrmse": 0.06524387546866699,
+      "rmse": 3.7048644803384394,
+      "mae": 2.3724426232423523,
+      "fit_percent": 93.47561245313331
+    }
+  ],
+  "segment_rows": [
+    {
+      "system": "E6_Cascaded_Tanks",
+      "segment_id": 0,
+      "start_index": 50,
+      "stop_index": 178,
+      "B0_nrmse": 0.5500695689664199,
+      "B3_nrmse": 0.3890553726419721,
+      "improvement_percent": 29.271605885596127,
+      "selected_model_better": true
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "segment_id": 1,
+      "start_index": 178,
+      "stop_index": 306,
+      "B0_nrmse": 0.822630264868277,
+      "B3_nrmse": 0.48840199475567075,
+      "improvement_percent": 40.62922121715572,
+      "selected_model_better": true
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "segment_id": 2,
+      "start_index": 306,
+      "stop_index": 434,
+      "B0_nrmse": 0.7038590024669761,
+      "B3_nrmse": 0.4979436600790241,
+      "improvement_percent": 29.255197655529486,
+      "selected_model_better": true
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "segment_id": 3,
+      "start_index": 434,
+      "stop_index": 562,
+      "B0_nrmse": 0.6807417401320958,
+      "B3_nrmse": 0.4785694652557705,
+      "improvement_percent": 29.698821587918847,
+      "selected_model_better": true
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "segment_id": 4,
+      "start_index": 562,
+      "stop_index": 690,
+      "B0_nrmse": 0.8692759419189828,
+      "B3_nrmse": 0.9273633838894495,
+      "improvement_percent": -6.68227879886275,
+      "selected_model_better": false
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "segment_id": 5,
+      "start_index": 690,
+      "stop_index": 818,
+      "B0_nrmse": 0.7555154287318601,
+      "B3_nrmse": 0.40810548858640006,
+      "improvement_percent": 45.983169493784,
+      "selected_model_better": true
+    },
+    {
+      "system": "E6_Cascaded_Tanks",
+      "segment_id": 6,
+      "start_index": 818,
+      "stop_index": 946,
+      "B0_nrmse": 0.904469106953164,
+      "B3_nrmse": 0.7016788148953397,
+      "improvement_percent": 22.42091968635092,
+      "selected_model_better": true
+    },
+    {
+      "system": "E7_EMPS",
+      "segment_id": 0,
+      "start_index": 0,
+      "stop_index": 248,
+      "B0_nrmse": 0.10769807692016717,
+      "B3_nrmse": 0.10026530851273219,
+      "B1_nrmse": 0.09824935964318013,
+      "improvement_percent": 6.901486656019525,
+      "selected_model_better": true,
+      "free_model_best": true
+    },
+    {
+      "system": "E7_EMPS",
+      "segment_id": 1,
+      "start_index": 248,
+      "stop_index": 496,
+      "B0_nrmse": 0.08405850151642986,
+      "B3_nrmse": 0.08047630750909228,
+      "B1_nrmse": 0.07519943180889756,
+      "improvement_percent": 4.261548734172258,
+      "selected_model_better": true,
+      "free_model_best": true
+    },
+    {
+      "system": "E7_EMPS",
+      "segment_id": 2,
+      "start_index": 496,
+      "stop_index": 744,
+      "B0_nrmse": 0.07414730078174123,
+      "B3_nrmse": 0.06532587630532528,
+      "B1_nrmse": 0.06417087491623523,
+      "improvement_percent": 11.897161978131264,
+      "selected_model_better": true,
+      "free_model_best": true
+    },
+    {
+      "system": "E7_EMPS",
+      "segment_id": 3,
+      "start_index": 744,
+      "stop_index": 992,
+      "B0_nrmse": 0.08804612074382476,
+      "B3_nrmse": 0.08194674789431167,
+      "B1_nrmse": 0.07767593081632997,
+      "improvement_percent": 6.927474825676382,
+      "selected_model_better": true,
+      "free_model_best": true
+    },
+    {
+      "system": "E7_EMPS",
+      "segment_id": 4,
+      "start_index": 992,
+      "stop_index": 1240,
+      "B0_nrmse": 0.1036120045588484,
+      "B3_nrmse": 0.0984415762874118,
+      "B1_nrmse": 0.09455122884583958,
+      "improvement_percent": 4.990182646741437,
+      "selected_model_better": true,
+      "free_model_best": true
+    },
+    {
+      "system": "E7_EMPS",
+      "segment_id": 5,
+      "start_index": 1240,
+      "stop_index": 1488,
+      "B0_nrmse": 0.08536884522592361,
+      "B3_nrmse": 0.0789510449292172,
+      "B1_nrmse": 0.07907092851271644,
+      "improvement_percent": 7.517731181348513,
+      "selected_model_better": true,
+      "free_model_best": false
+    },
+    {
+      "system": "E7_EMPS",
+      "segment_id": 6,
+      "start_index": 1488,
+      "stop_index": 1736,
+      "B0_nrmse": 0.07925346220413651,
+      "B3_nrmse": 0.07631802494758683,
+      "B1_nrmse": 0.0717628500147939,
+      "improvement_percent": 3.703859963857166,
+      "selected_model_better": true,
+      "free_model_best": true
+    },
+    {
+      "system": "E7_EMPS",
+      "segment_id": 7,
+      "start_index": 1736,
+      "stop_index": 1984,
+      "B0_nrmse": 0.0705783069261486,
+      "B3_nrmse": 0.06110264861727897,
+      "B1_nrmse": 0.06158522433186246,
+      "improvement_percent": 13.425737626130248,
+      "selected_model_better": true,
+      "free_model_best": false
+    },
+    {
+      "system": "E7_EMPS",
+      "segment_id": 8,
+      "start_index": 1984,
+      "stop_index": 2232,
+      "B0_nrmse": 0.0833929264716457,
+      "B3_nrmse": 0.07725154485351206,
+      "B1_nrmse": 0.07356324928541325,
+      "improvement_percent": 7.364391535320163,
+      "selected_model_better": true,
+      "free_model_best": true
+    },
+    {
+      "system": "E7_EMPS",
+      "segment_id": 9,
+      "start_index": 2232,
+      "stop_index": 2480,
+      "B0_nrmse": 0.0896045063305207,
+      "B3_nrmse": 0.08213096939245773,
+      "B1_nrmse": 0.08366635570491071,
+      "improvement_percent": 8.340581566841756,
+      "selected_model_better": true,
+      "free_model_best": false
+    }
+  ],
+  "software": {
+    "python": "3.13.9",
+    "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+    "numpy": "2.4.6"
+  }
+}

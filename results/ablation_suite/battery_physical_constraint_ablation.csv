@@ -1,0 +1,4 @@
+case_id,ablation,model,active_terms,validation_rmse_mv,validation_r0_negative_fraction,high_amplitude_rmse_mv,high_amplitude_r0_negative_fraction,cell_transfer_rmse_mv,cell_transfer_r0_negative_fraction
+Battery,physical_constraint,unconstrained_broad_R0,10,69.9114980066268,0.11447002141327624,281.1028184877777,0.5393056259503295,436.8409390673976,0.4965594868963174
+Battery,physical_constraint,physical_filtered_T_only,3,71.83994372929314,0.0,24.06134807798182,0.0,436.5653478288773,0.0
+Battery,physical_constraint,validation_optimized_broad_still_negative,4,69.0911517958361,0.10603854389721627,16.402985504110546,0.36388748099341106,436.0527528386082,0.3254682920613346

@@ -1,0 +1,22 @@
+{
+  "experiment_id": "PYS2_PYS3_e1b_b2_b3_probe",
+  "created_at_utc": "2026-06-10T13:35:43.541916+00:00",
+  "source_experiment": "E1b_vdp_multi_mu",
+  "source_script": "scripts/run_e1b_vdp_multi_mu.py",
+  "script": "scripts/run_pysindy_e1b_b2_b3_probe.py",
+  "purpose": "Validate PySINDy as a mature B2 residual baseline and B3 coefficient-slot optimizer backend on E1b.",
+  "outputs": {
+    "comparison_by_split_csv": "results/pysindy_e1b_b2_b3_probe/comparison_by_split.csv",
+    "b3_optimizer_comparison_csv": "results/pysindy_e1b_b2_b3_probe/b3_optimizer_comparison.csv",
+    "model_coefficients_csv": "results/pysindy_e1b_b2_b3_probe/model_coefficients.csv",
+    "metrics_json": "results/pysindy_e1b_b2_b3_probe/metrics.json"
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "scikit_learn": "1.8.0",
+    "pysindy": "2.1.0"
+  },
+  "dependency_note": "PySINDy 2.1.0 required numpy>=2.0; local qpth 0.0.18 declares numpy<2 but is not used by these experiments."
+}

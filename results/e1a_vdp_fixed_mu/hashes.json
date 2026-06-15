@@ -1,0 +1,8 @@
+{
+  "trajectory_csv_sha256": "3cfd512f58c412e05b1d26a51e68ff974b42ff1d1dd380d516c83ccf2bd037a3",
+  "rollout_csv_sha256": "898b8abc901450f0d6a1bc08d18302df63059b69cef963c821c714fa9f6df23e",
+  "coefficients_csv_sha256": "28e609cbecaa4c7e74a6fdc85da89bfabdd93596497e1270b56df66f98057ddc",
+  "model_coefficients_csv_sha256": "8a4532a986be5657a8b88b0913e6cf46a23315aaa43fc79b171197c9bc664457",
+  "metrics_json_sha256": "dc904ea3b2c9460fc22a5bba0bce161a7112688cf06fbb55e1dda8207365a11b",
+  "provenance_json_sha256": "5f51f307b6c5275077e2e0ef878c266f559f0fa148fbb43e9a6d6ce0e621f01a"
+}

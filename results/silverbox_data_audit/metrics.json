@@ -1,0 +1,114 @@
+{
+  "dataset_id": "silverbox_data_audit",
+  "records": [
+    {
+      "record": "train_val",
+      "split": "train_val",
+      "sample_count": 65062,
+      "u_shape": "(65062,)",
+      "y_shape": "(65062,)",
+      "sampling_time_s": 0.0016384041943147375,
+      "state_initialization_window_length": null,
+      "u_mean": 0.006142380733678717,
+      "u_std": 0.022210311585621843,
+      "u_min": -0.08931886802374502,
+      "u_max": 0.10140027374826022,
+      "y_mean": 0.0007860185372262017,
+      "y_std": 0.054543655886917744,
+      "y_min": -0.21384534476118278,
+      "y_max": 0.2163327680143353
+    },
+    {
+      "record": "test_multisine",
+      "split": "test",
+      "sample_count": 21688,
+      "u_shape": "(21688,)",
+      "y_shape": "(21688,)",
+      "sampling_time_s": 0.0016384041943147375,
+      "state_initialization_window_length": 50,
+      "u_mean": 0.006271588526386835,
+      "u_std": 0.022213753997506195,
+      "u_min": -0.0816928493677813,
+      "u_max": 0.09443282078351477,
+      "y_mean": 0.0009503230302331817,
+      "y_std": 0.05427786058473945,
+      "y_min": -0.2280732329903054,
+      "y_max": 0.23120895801653968
+    },
+    {
+      "record": "test_arrow_full",
+      "split": "test",
+      "sample_count": 40475,
+      "u_shape": "(40475,)",
+      "y_shape": "(40475,)",
+      "sampling_time_s": 0.0016384041943147375,
+      "state_initialization_window_length": 50,
+      "u_mean": 0.006190694209986429,
+      "u_std": 0.022296071128178933,
+      "u_min": -0.12315043861930608,
+      "u_max": 0.14944989893682067,
+      "y_mean": 0.0007754583683839833,
+      "y_std": 0.053448636230202184,
+      "y_min": -0.3002784466916288,
+      "y_max": 0.27576174843098267
+    },
+    {
+      "record": "test_arrow_no_extrapolation",
+      "split": "test",
+      "sample_count": 32000,
+      "u_shape": "(32000,)",
+      "y_shape": "(32000,)",
+      "sampling_time_s": 0.0016384041943147375,
+      "state_initialization_window_length": 50,
+      "u_mean": 0.006215306127548724,
+      "u_std": 0.01767064712072592,
+      "u_min": -0.08748562437861693,
+      "u_max": 0.10105800884845084,
+      "y_mean": 0.0007881185579564433,
+      "y_std": 0.042976037822600455,
+      "y_min": -0.23228469313182284,
+      "y_max": 0.2282511817304301
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/external/silverbox/Silverbox/SilverboxFiles/README.m",
+      "size_bytes": 1148,
+      "sha256": "90c365916d60afc3cb208f772be40918175370cbcf43d1ada3df19b8a2c58ae8"
+    },
+    {
+      "path": "data/raw/external/silverbox/Silverbox/SilverboxFiles/README.txt",
+      "size_bytes": 1148,
+      "sha256": "90c365916d60afc3cb208f772be40918175370cbcf43d1ada3df19b8a2c58ae8"
+    },
+    {
+      "path": "data/raw/external/silverbox/Silverbox/SilverboxFiles/SNLS80mV.csv",
+      "size_bytes": 2649634,
+      "sha256": "ae62d5a91230c10f76e6dd02c8a4fac3c9d4d8a95fbf50e87cb0c4885003e0f1"
+    },
+    {
+      "path": "data/raw/external/silverbox/Silverbox/SilverboxFiles/SNLS80mV.mat",
+      "size_bytes": 2097520,
+      "sha256": "5c7413a52255af0cb4e2f93fb6903beb92b08965ba1e6ad0a6ffedfed8477ed4"
+    },
+    {
+      "path": "data/raw/external/silverbox/Silverbox/SilverboxFiles/Schroeder80mV.csv",
+      "size_bytes": 2891573,
+      "sha256": "b22cbcba9c59d9b4b1b379967b669dc32959e515b24784da3254505f8563e36c"
+    },
+    {
+      "path": "data/raw/external/silverbox/Silverbox/SilverboxFiles/Schroeder80mV.mat",
+      "size_bytes": 2097520,
+      "sha256": "ec5a9740a4789aa20b9d84f387424c0218e843844807b30b367c218778339fb6"
+    },
+    {
+      "path": "data/raw/external/silverbox/Silverbox/SilverboxFiles.zip",
+      "size_bytes": 5793999,
+      "sha256": "2398dda503ac4c30f46c7a1ba09d8a8864d001cc71bbeb59f207a054cc592d8c"
+    }
+  ],
+  "data_file_locations": [
+    "/mnt/robotwin-assets/Meta-SINDy/data/raw/external/silverbox/Silverbox/SilverboxFiles/Schroeder80mV.mat",
+    "/mnt/robotwin-assets/Meta-SINDy/data/raw/external/silverbox/Silverbox/SilverboxFiles/SNLS80mV.mat"
+  ]
+}

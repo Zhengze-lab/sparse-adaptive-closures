@@ -1,0 +1,176 @@
+{
+  "experiment_id": "E6_cascaded_tanks_slot_output_error",
+  "summary": {
+    "test_b0_nrmse": 0.5386502216209509,
+    "test_b3_nrmse": 0.329923957008933,
+    "test_improvement_percent": 38.7498707387331
+  },
+  "metric_rows": [
+    {
+      "model": "B0_linear_outflow",
+      "split": "estimation",
+      "n_samples": 1024,
+      "score_start_index": 50,
+      "sampling_time_s": 4.0,
+      "rmse": 1.1823823130342974,
+      "mae": 1.0379213440485233,
+      "nrmse": 0.5328739413967583,
+      "fit_percent": 46.712605860324175,
+      "bias": 0.18084644137806696,
+      "max_abs_error": 2.6056066180810706
+    },
+    {
+      "model": "B0_linear_outflow",
+      "split": "test",
+      "n_samples": 1024,
+      "score_start_index": 50,
+      "sampling_time_s": 4.0,
+      "rmse": 1.1419342212700407,
+      "mae": 1.0198469983300875,
+      "nrmse": 0.5386502216209509,
+      "fit_percent": 46.13497783790491,
+      "bias": 0.03524605166998529,
+      "max_abs_error": 2.7066271343737816
+    },
+    {
+      "model": "B3_sqrt_outflow_slot",
+      "split": "estimation",
+      "n_samples": 1024,
+      "score_start_index": 50,
+      "sampling_time_s": 4.0,
+      "rmse": 0.6339399989546887,
+      "mae": 0.47104555537491155,
+      "nrmse": 0.28570294238006155,
+      "fit_percent": 71.42970576199384,
+      "bias": 0.040464359898485666,
+      "max_abs_error": 2.9816561235607812
+    },
+    {
+      "model": "B3_sqrt_outflow_slot",
+      "split": "test",
+      "n_samples": 1024,
+      "score_start_index": 50,
+      "sampling_time_s": 4.0,
+      "rmse": 0.6994361866065414,
+      "mae": 0.5497220174904539,
+      "nrmse": 0.329923957008933,
+      "fit_percent": 67.0076042991067,
+      "bias": -0.06898110288102532,
+      "max_abs_error": 2.96403145834441
+    }
+  ],
+  "parameters": [
+    {
+      "model": "B0_linear_outflow",
+      "parameter": "a1",
+      "value": 0.014054934722972385
+    },
+    {
+      "model": "B0_linear_outflow",
+      "parameter": "a2",
+      "value": 1.5489233671044782
+    },
+    {
+      "model": "B0_linear_outflow",
+      "parameter": "a3",
+      "value": 0.014055352136748179
+    },
+    {
+      "model": "B0_linear_outflow",
+      "parameter": "b",
+      "value": 0.00026248288391286876
+    },
+    {
+      "model": "B0_linear_outflow",
+      "parameter": "x10_estimation",
+      "value": 0.03239336969077478
+    },
+    {
+      "model": "B0_linear_outflow",
+      "parameter": "start_index",
+      "value": 1
+    },
+    {
+      "model": "B0_linear_outflow",
+      "parameter": "x10_test_initialized",
+      "value": 0.03473484343219838
+    },
+    {
+      "model": "B3_sqrt_outflow_slot",
+      "parameter": "k1",
+      "value": 3.873018467419106e-05
+    },
+    {
+      "model": "B3_sqrt_outflow_slot",
+      "parameter": "k2",
+      "value": 72.07173634999414
+    },
+    {
+      "model": "B3_sqrt_outflow_slot",
+      "parameter": "k3",
+      "value": 0.034718935615832384
+    },
+    {
+      "model": "B3_sqrt_outflow_slot",
+      "parameter": "b",
+      "value": 1.5509723103369693e-08
+    },
+    {
+      "model": "B3_sqrt_outflow_slot",
+      "parameter": "x10_estimation",
+      "value": 1.3714184639955033e-06
+    },
+    {
+      "model": "B3_sqrt_outflow_slot",
+      "parameter": "start_index",
+      "value": 1
+    },
+    {
+      "model": "B3_sqrt_outflow_slot",
+      "parameter": "x10_test_initialized",
+      "value": 1.4074155216241497e-06
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/CascadedTanksOverflow.MOV",
+      "size_bytes": 1521149,
+      "sha256": "4e5f555938344b1fbfd5de747c87bff97a8a541ad1ac96982fe75c9ba09974ae"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/CascadedTanksSetup1.JPG",
+      "size_bytes": 1985905,
+      "sha256": "6658de11c06b98fe82464a0cc73a9ab25fe5672a8774904f47f8002b5266499d"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/CascadedTanksSetup2.JPG",
+      "size_bytes": 1852315,
+      "sha256": "9988337c0050d357b16d0f53537d1f4db0991e1ebef4ad25b914e1a51922bd65"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/Thumbs.db",
+      "size_bytes": 42496,
+      "sha256": "19dac1b7282e36376e164b9e471ddd7057e579a5479e91992074e49231ddc3d6"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/TanksBenchmark.pdf",
+      "size_bytes": 2169671,
+      "sha256": "91597add858efdec98cc1bfabd7b87867c5c3cb8a0ec10976ceed9acdee81b39"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/dataBenchmark.csv",
+      "size_bytes": 30014,
+      "sha256": "ef2388ed822f3aef4aa80d6b0f2b466dd80b361786b3eafc7a2957c31ea323a7"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/dataBenchmark.mat",
+      "size_bytes": 24401,
+      "sha256": "cb2f88d4388be4d3f2a24c6402fba804976aac5f2e1f26cda59ea0a38d016eab"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles.zip",
+      "size_bytes": 7520592,
+      "sha256": "eb0fa05851e8a7136846c2e3b61fbef87def78d0852c86ab91b02ac5db541b51"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+model,start,success,status,message,nfev,cost,c,beta0,beta2,beta2_scaled,b,x20_fit_mean,x20_fit_std,b_scale,beta2_scale
+windowed_slot,beta2_scaled_0,False,0,The maximum number of function evaluations is exceeded.,35,286.909124506271,49.13645317611855,1.0563923383697993,-3909.8238786912752,-0.17499273598602952,-115.51542933974889,-0.12216994308088225,1.9297087941191047,11.824968512998186,22342.778153965286

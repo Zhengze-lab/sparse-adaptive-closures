@@ -1,0 +1,53 @@
+{
+  "experiment_id": "E8_pmsm_temperature_slot",
+  "description": "Real PMSM thermal RC test: fixed cooling coefficient vs speed-adaptive cooling coefficient slot.",
+  "source_dataset": "Kaggle Electric Motor Temperature",
+  "source_url": "https://www.kaggle.com/datasets/wkirgsn/electric-motor-temperature",
+  "download_command": "kaggle datasets download -d wkirgsn/electric-motor-temperature",
+  "license": "CC-BY-SA-4.0",
+  "citation_note": "Dataset owner requests citation of the associated PMSM temperature-estimation papers.",
+  "sample_time_s": 0.5,
+  "target_temperature": "pm",
+  "coolant_temperature": "coolant",
+  "train_profile_count": 10,
+  "test_profile_count": 6,
+  "min_profile_length": 12000,
+  "savgol_window": 501,
+  "savgol_polyorder": 3,
+  "edge_trim": 300,
+  "prediction_sample_stride": 50,
+  "models": {
+    "B0_fixed_cooling": "dT/dt = q_loss(i,torque,speed) - h0*(T-Tcoolant)",
+    "B3_speed_adaptive_cooling_slot": "dT/dt = q_loss(i,torque,speed) - (h0+h1*|speed|)*(T-Tcoolant)",
+    "B3_operating_adaptive_cooling_slot": "dT/dt = q_loss(i,torque,speed) - h(speed,current,power)*(T-Tcoolant)",
+    "B1_full_linear_features": "wider linear feature model over thermal and operating variables"
+  },
+  "created_at_utc": "2026-06-14T03:58:12.502019+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "pandas": "3.0.3",
+    "kaggle": "2.2.1"
+  },
+  "outputs": {
+    "metrics_json": "results/e8_pmsm_temperature_slot/metrics.json",
+    "metrics_by_split_csv": "results/e8_pmsm_temperature_slot/metrics_by_split.csv",
+    "metrics_by_profile_csv": "results/e8_pmsm_temperature_slot/metrics_by_profile.csv",
+    "coefficients_csv": "results/e8_pmsm_temperature_slot/coefficients.csv",
+    "prediction_sample_csv": "results/e8_pmsm_temperature_slot/prediction_sample.csv"
+  },
+  "raw_files": [
+    {
+      "path": "data/raw/external/pmsm_temperature/electric-motor-temperature.zip",
+      "size_bytes": 122212134,
+      "sha256": "10e49e6220fa3c8a9d22c8bab8280ffe2d5e1e3380a6a18bcfc64ea2e8b56b92"
+    },
+    {
+      "path": "data/raw/external/pmsm_temperature/measures_v2.csv",
+      "size_bytes": 300061411,
+      "sha256": "78f3d150f0f2ad9c5dc7ff24dd12c00d386ad530f48c1589ad24fcd88867d3ad"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+name: sparse-adaptive-closures
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - numpy=2.4.6
+  - scipy=1.16.3
+  - scikit-learn=1.8.0
+  - pandas>=2.2
+  - matplotlib>=3.9
+  - pip:
+      - pysindy==2.1.0
+      - derivative==0.6.3
+      - nonlinear-benchmarks==1.0.1
+      - kaggle>=2.2

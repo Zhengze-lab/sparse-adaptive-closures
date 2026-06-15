@@ -1,0 +1,61 @@
+{
+  "experiment_id": "BATT3c_lfp_discharge_ocv_current_sign_ecm",
+  "description": "Rerun ohmic and constant first-order ECM using discharge OCV and audit current sign convention.",
+  "source_dataset": "battery_lfp_ocv_dyn",
+  "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+  "source_doi": "10.17632/p8kf893yv3.1",
+  "license": "CC BY 4.0",
+  "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+  "ocv_grid_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_grid.csv",
+  "ocv_curve": "discharge",
+  "dynamic_script": "script1",
+  "current_conventions": {
+    "I_model=-I_raw": "same as BATT-3; batt3 current_a field",
+    "I_model=I_raw": "opposite sign of BATT-3 current_a field"
+  },
+  "fit_stride": 20,
+  "prediction_sample_stride": 30,
+  "initialization_window_s": 300.0,
+  "score_start_s": 300.0,
+  "least_squares_loss": "soft_l1",
+  "least_squares_f_scale_v": 0.02,
+  "max_nfev_ohmic": 80,
+  "max_nfev_ecm": 120,
+  "ocv_training_temperatures_c": [
+    -25,
+    -5,
+    5,
+    15,
+    25,
+    45
+  ],
+  "heldout_temperature_validation_c": [
+    -15,
+    35
+  ],
+  "created_at_utc": "2026-06-13T09:27:21.942033+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "script": "scripts/run_batt3c_discharge_ocv_ecm.py",
+  "outputs": {
+    "metrics_by_trajectory_csv": "results/battery_lfp_discharge_ocv_ecm/metrics_by_trajectory.csv",
+    "metrics_by_split_csv": "results/battery_lfp_discharge_ocv_ecm/metrics_by_split.csv",
+    "predictions_sample_csv": "results/battery_lfp_discharge_ocv_ecm/predictions_sample.csv",
+    "fit_summary_csv": "results/battery_lfp_discharge_ocv_ecm/fit_summary.csv",
+    "improvement_vs_ocv_csv": "results/battery_lfp_discharge_ocv_ecm/improvement_vs_ocv.csv",
+    "metrics_json": "results/battery_lfp_discharge_ocv_ecm/metrics.json",
+    "figures": [
+      "results/battery_lfp_discharge_ocv_ecm/figures/current_sign_rmse_by_split.svg",
+      "results/battery_lfp_discharge_ocv_ecm/figures/current_sign_rmse_by_split_zh.svg",
+      "results/battery_lfp_discharge_ocv_ecm/figures/ohmic_resistance_by_sign.svg",
+      "results/battery_lfp_discharge_ocv_ecm/figures/ohmic_resistance_by_sign_zh.svg"
+    ],
+    "provenance_json": "data/provenance/batt3c_discharge_ocv_ecm_provenance.json"
+  },
+  "test_usage_rule": "Global ECM parameters are fitted only on split=train for each current convention. Non-train records use only the initialization prefix for initial-state estimation.",
+  "next_action": "Use the better current convention as the BATT-4 baseline if the corrected ECM produces physically plausible parameters and improves validation RMSE."
+}

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="490.0" y="28" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold">Public real-system validation screening and segment robustness</text>
+<text x="262.0" y="40" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">Cascaded Tanks</text>
+<line x1="82" y1="318" x2="442" y2="318" stroke="#333"/>
+<line x1="82" y1="58" x2="82" y2="318" stroke="#333"/>
+<rect x="122" y="115.12194310118802" width="36" height="202.87805689881196" fill="#9E7B55"/>
+<text x="140" y="110.12194310118802" text-anchor="middle" font-family="Arial" font-size="10">0.552</text>
+<rect x="166" y="191.46990628127244" width="36" height="126.53009371872756" fill="#2E8B6F"/>
+<text x="184" y="186.46990628127244" text-anchor="middle" font-family="Arial" font-size="10">0.344</text>
+<text x="162" y="342" text-anchor="middle" font-family="Arial" font-size="12">validation</text>
+<rect x="272" y="114.875" width="36" height="203.125" fill="#9E7B55"/>
+<text x="290" y="109.875" text-anchor="middle" font-family="Arial" font-size="10">0.553</text>
+<rect x="316" y="181.7018909273517" width="36" height="136.2981090726483" fill="#2E8B6F"/>
+<text x="334" y="176.7018909273517" text-anchor="middle" font-family="Arial" font-size="10">0.371</text>
+<text x="312" y="342" text-anchor="middle" font-family="Arial" font-size="12">test</text>
+<text x="262.0" y="374" text-anchor="middle" font-family="Arial" font-size="12">official-test segments improved: 6/7 (86%)</text>
+<text x="700.0" y="40" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold">EMPS</text>
+<line x1="520" y1="318" x2="880" y2="318" stroke="#333"/>
+<line x1="520" y1="58" x2="520" y2="318" stroke="#333"/>
+<rect x="560" y="145.73445234615772" width="36" height="172.26554765384228" fill="#9E7B55"/>
+<text x="578" y="140.73445234615772" text-anchor="middle" font-family="Arial" font-size="10">0.062</text>
+<rect x="604" y="163.8305261821053" width="36" height="154.1694738178947" fill="#2E8B6F"/>
+<text x="622" y="158.8305261821053" text-anchor="middle" font-family="Arial" font-size="10">0.055</text>
+<rect x="646" y="171.24555818214782" width="30" height="146.75444181785218" fill="#4E79A7"/>
+<text x="661" y="166.24555818214782" text-anchor="middle" font-family="Arial" font-size="10">0.053</text>
+<text x="600" y="342" text-anchor="middle" font-family="Arial" font-size="12">validation</text>
+<rect x="710" y="114.875" width="36" height="203.125" fill="#9E7B55"/>
+<text x="728" y="109.875" text-anchor="middle" font-family="Arial" font-size="10">0.073</text>
+<rect x="754" y="129.61354313807306" width="36" height="188.38645686192694" fill="#2E8B6F"/>
+<text x="772" y="124.61354313807306" text-anchor="middle" font-family="Arial" font-size="10">0.067</text>
+<rect x="796" y="135.83130485952478" width="30" height="182.16869514047522" fill="#4E79A7"/>
+<text x="811" y="130.83130485952478" text-anchor="middle" font-family="Arial" font-size="10">0.065</text>
+<text x="750" y="342" text-anchor="middle" font-family="Arial" font-size="12">test</text>
+<text x="700.0" y="374" text-anchor="middle" font-family="Arial" font-size="12">official-test segments improved: 10/10 (100%)</text>
+<rect x="82" y="394" width="18" height="12" fill="#9E7B55"/>
+<text x="108" y="404" font-family="Arial" font-size="11">B0 physical baseline</text>
+<rect x="342" y="394" width="18" height="12" fill="#2E8B6F"/>
+<text x="368" y="404" font-family="Arial" font-size="11">selected slot</text>
+<rect x="602" y="394" width="18" height="12" fill="#4E79A7"/>
+<text x="628" y="404" font-family="Arial" font-size="11">free B1 baseline</text>
+</svg>

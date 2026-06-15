@@ -1,0 +1,82 @@
+{
+  "audit_id": "battery_ecm_source_audit",
+  "created_date": "2026-06-13",
+  "purpose": "Select an open battery dataset for a semi-real ECM coefficient-slot experiment.",
+  "status": "BATT-0 complete; BATT-1 data download and variable audit complete; BATT-2 OCV calibration complete; BATT-3 constant ECM baseline complete; BATT-3b OCV/residual diagnostics complete; BATT-3c discharge-OCV current-sign corrected ECM complete; BATT-4a R0-slot diagnostics complete; BATT-4b residual/dynamic-slot diagnostics complete; BATT-4c narrow dynamic q_tau pilot complete; BATT-4d cell-transfer/SOC/OCV alignment diagnostics complete.",
+  "primary_candidate": {
+    "name": "Lithium-ion Battery OCV and Dynamic Test Data of a LiFePO4 cylindrical cell",
+    "url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+    "doi": "10.17632/p8kf893yv3.1",
+    "license": "CC BY 4.0",
+    "selection_reason": "Contains OCV and dynamic tests for an A123 26650 m1b LiFePO4 cell across -25 to 45 degC, directly matching first-order ECM coefficient-slot identification."
+  },
+  "candidate_sources": [
+    {
+      "rank": 1,
+      "name": "Lithium-ion Battery OCV and Dynamic Test Data of a LiFePO4 cylindrical cell",
+      "url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+      "doi": "10.17632/p8kf893yv3.1",
+      "license": "CC BY 4.0",
+      "audited_uses": [
+        "OCV calibration",
+        "dynamic voltage prediction",
+        "temperature-dependent ECM parameter functions",
+        "UDDS drive-cycle validation"
+      ],
+      "decision": "Use first."
+    },
+    {
+      "rank": 2,
+      "name": "LG 18650HG2 Li-ion Battery Data and Example Deep Neural Network xEV SOC Estimator Script",
+      "url": "https://data.mendeley.com/datasets/cp3473x7xv/3",
+      "doi": "10.17632/cp3473x7xv.3",
+      "license": "CC BY 4.0",
+      "audited_uses": [
+        "external generalization",
+        "drive-cycle voltage and SOC-estimation comparison",
+        "ML baseline context"
+      ],
+      "decision": "Use as a second source or external validation after the LiFePO4 ECM pipeline is working."
+    },
+    {
+      "rank": 3,
+      "name": "CALCE Battery Data",
+      "url": "https://calce.umd.edu/battery-data",
+      "doi": null,
+      "license": "Open access data page; per-dataset citation and usage details must be checked before use.",
+      "audited_uses": [
+        "OCV measurements",
+        "dynamic driving profiles",
+        "impedance measurements",
+        "multi-chemistry extension"
+      ],
+      "decision": "Reserve for later extension."
+    },
+    {
+      "rank": 4,
+      "name": "NASA Li-ion Battery Aging Datasets",
+      "url": "https://data.nasa.gov/dataset/li-ion-battery-aging-datasets",
+      "doi": null,
+      "license": "Not specified on the audited portal page.",
+      "audited_uses": [
+        "charge/discharge/EIS aging records",
+        "voltage/current/temperature/time measurements"
+      ],
+      "decision": "Backup only because the task is aging/RUL-oriented and license status needs additional review."
+    },
+    {
+      "rank": 5,
+      "name": "Comprehensive battery aging dataset: capacity and impedance fade measurements of a lithium-ion NMC/C-SiO cell",
+      "url": "https://www.nature.com/articles/s41597-024-03831-x",
+      "doi": "10.1038/s41597-024-03831-x",
+      "license": "Check linked data repository before use.",
+      "audited_uses": [
+        "raw log voltage/current/temperature/SOC/OCV",
+        "pulse-pattern impedance estimation",
+        "aging and SOH extension"
+      ],
+      "decision": "High-value later dataset, but too large and complex for the first ECM pass."
+    }
+  ],
+  "next_action": "Use BATT-4a/BATT-4c/BATT-4d as same-cell positive evidence plus cross-cell boundary diagnosis; obtain cell-specific OCV/SOC calibration before claiming cross-cell generalization."
+}

@@ -1,0 +1,152 @@
+{
+  "dataset_id": "pysindy_e2c_duffing_noisy_state",
+  "experiment_id": "E2c_duffing_noisy_state_pysindy",
+  "created_at_utc": "2026-06-11T08:30:14.159914+00:00",
+  "source_name": "DSINDy PS2 / WSINDy default Duffing parameters",
+  "source_urls": [
+    "https://www.osti.gov/servlets/purl/2417947",
+    "https://github.com/MathBioCU/WSINDy_ODE"
+  ],
+  "source_access_date": "2026-06-10",
+  "source_experiment": "E2a_duffing_unforced",
+  "source_script": "scripts/run_e2a_duffing_unforced.py",
+  "script": "scripts/run_pysindy_e2c_duffing_noisy_state.py",
+  "purpose": "Transfer the E1c validated PySINDy optimizer backends to the Duffing stiffness coefficient slot under state-observation noise.",
+  "parameters": {
+    "eta": 0.2,
+    "kappa": 0.2,
+    "epsilon": 1.0
+  },
+  "time_grid": {
+    "train_t_end": 10.0,
+    "rollout_t_end": 25.0,
+    "dt": 0.01
+  },
+  "initial_conditions": {
+    "train": [
+      [
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        2.0
+      ],
+      [
+        -2.0,
+        -2.0
+      ],
+      [
+        1.0,
+        0.0
+      ]
+    ],
+    "test": [
+      [
+        -1.0,
+        1.0
+      ],
+      [
+        2.0,
+        -1.0
+      ],
+      [
+        0.5,
+        -0.5
+      ]
+    ]
+  },
+  "candidate_slots": [
+    {
+      "name": "stiffness",
+      "g": "-x1",
+      "coefficient_function": "p_k(x1)"
+    }
+  ],
+  "expected_coefficients": {
+    "0": 0.2,
+    "1": 0.0,
+    "2": 1.0,
+    "3": 0.0,
+    "4": 0.0
+  },
+  "noise_model": {
+    "type": "Gaussian state-observation noise on training library inputs",
+    "relative_to": "per-state standard deviation over clean training trajectories",
+    "levels": [
+      0.0,
+      0.005,
+      0.01,
+      0.03,
+      0.05
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "derivative_target": "clean true derivatives"
+  },
+  "optimizer_specs": [
+    {
+      "name": "custom_stlsq_t1e-3",
+      "family": "custom_stlsq",
+      "threshold": 0.001,
+      "alpha": 0.0,
+      "regularizer": "",
+      "reg_weight_lam": ""
+    },
+    {
+      "name": "pysindy_stlsq_t1e-3",
+      "family": "pysindy_stlsq",
+      "threshold": 0.001,
+      "alpha": 0.0,
+      "regularizer": "",
+      "reg_weight_lam": ""
+    },
+    {
+      "name": "pysindy_stlsq_t1e-2",
+      "family": "pysindy_stlsq",
+      "threshold": 0.01,
+      "alpha": 0.0,
+      "regularizer": "",
+      "reg_weight_lam": ""
+    },
+    {
+      "name": "pysindy_sr3_l0_lam1e-4",
+      "family": "pysindy_sr3",
+      "threshold": "",
+      "alpha": "",
+      "regularizer": "L0",
+      "reg_weight_lam": 0.0001
+    }
+  ],
+  "outputs": {
+    "clean_trajectory_csv": "data/generated/e2_duffing/e2c_duffing_clean_reference_trajectories.csv",
+    "noisy_sample_csv": "data/generated/e2_duffing/e2c_duffing_noisy_state_seed0_training_sample.csv",
+    "seed_metrics_csv": "results/pysindy_e2c_duffing_noisy_state/seed_metrics.csv",
+    "summary_by_noise_optimizer_csv": "results/pysindy_e2c_duffing_noisy_state/summary_by_noise_optimizer.csv",
+    "coefficients_seed0_csv": "results/pysindy_e2c_duffing_noisy_state/coefficients_seed0.csv",
+    "metrics_json": "results/pysindy_e2c_duffing_noisy_state/metrics.json",
+    "figures": [
+      "results/pysindy_e2c_duffing_noisy_state/figures/support_precision.svg",
+      "results/pysindy_e2c_duffing_noisy_state/figures/support_precision_zh.svg",
+      "results/pysindy_e2c_duffing_noisy_state/figures/active_terms.svg",
+      "results/pysindy_e2c_duffing_noisy_state/figures/active_terms_zh.svg",
+      "results/pysindy_e2c_duffing_noisy_state/figures/coefficient_grid_nrmse.svg",
+      "results/pysindy_e2c_duffing_noisy_state/figures/coefficient_grid_nrmse_zh.svg",
+      "results/pysindy_e2c_duffing_noisy_state/figures/test_rollout_nrmse.svg",
+      "results/pysindy_e2c_duffing_noisy_state/figures/test_rollout_nrmse_zh.svg"
+    ]
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "scikit_learn": "1.8.0",
+    "pysindy": "2.1.0"
+  },
+  "dependency_note": "PySINDy 2.1.0 required numpy>=2.0; local qpth 0.0.18 declares numpy<2 but is not used by these experiments."
+}

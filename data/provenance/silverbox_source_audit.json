@@ -1,0 +1,41 @@
+{
+  "dataset_id": "silverbox_source_audit",
+  "experiment_stage": "SB-0-pre",
+  "access_date": "2026-06-13",
+  "status": "source_audited_and_sb0_downloaded",
+  "local_dependency_status": {
+    "python_import": "nonlinear_benchmarks",
+    "installed": true,
+    "checked_on": "2026-06-13",
+    "package_version": "1.0.1",
+    "next_action": "SB-0 through SB-2b completed; Silverbox downgraded to a risk case; proceed to battery ECM semi-real positive-case preparation"
+  },
+  "sources": [
+    {
+      "name": "Nonlinear Benchmark Silverbox",
+      "url": "https://www.nonlinearbenchmark.org/benchmarks/silverbox",
+      "audited_information": "Silverbox is an electronic implementation of the Duffing oscillator; the dataset contains V1 input and V2 measured output; cite Wigren and Schoukens ECC 2013."
+    },
+    {
+      "name": "Wigren and Schoukens 2013 ECC",
+      "doi": "10.23919/ECC.2013.6669201",
+      "citation": "T. Wigren and J. Schoukens. Three free data sets for development and benchmarking in nonlinear system identification. 2013 European Control Conference (ECC), pp. 2933-2938."
+    },
+    {
+      "name": "nonlinear_benchmarks official dataloader",
+      "url": "https://github.com/MaartenSchoukens/nonlinear_benchmarks",
+      "audited_information": "The official dataloader supports nonlinear_benchmarks.Silverbox(), returns train_val plus test_multisine, test_arrow_full, and test_arrow_no_extrapolation, with test state_initialization_window_length=50."
+    }
+  ],
+  "modeling_decision": {
+    "not_full_state_ode_data": true,
+    "preferred_route": "output-error fitting with latent velocity/state initialization",
+    "diagnostic_route": "smoothed derivative or integral-form regression after output-state reconstruction",
+    "first_candidate_slot": "Duffing-like stiffness p_k(y)=beta0+beta2*y^2 with input u kept in the known forcing term"
+  },
+  "planned_outputs": [
+    "data/raw/external/silverbox/",
+    "data/provenance/silverbox_data_audit_provenance.json",
+    "results/silverbox_data_audit/"
+  ]
+}

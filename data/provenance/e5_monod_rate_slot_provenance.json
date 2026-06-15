@@ -1,0 +1,112 @@
+{
+  "dataset_id": "e5_monod_rate_trajectories",
+  "experiment_id": "E5_monod_michaelis_menten_rate_slot",
+  "created_at_utc": "2026-06-15T02:25:05.429118+00:00",
+  "source_name": "Standard Monod/Michaelis-Menten saturating reaction-rate benchmark",
+  "source_urls": [
+    "synthetic truth generated in script",
+    "https://www.nature.com/articles/s41598-020-61174-0"
+  ],
+  "source_access_date": "2026-06-13",
+  "equation_reference": "Batch biomass-substrate balance with Monod/Michaelis-Menten saturating growth rate.",
+  "parameters": {
+    "mu_max": 1.2,
+    "k_s": 0.35,
+    "yield_y": 0.55
+  },
+  "initial_conditions": {
+    "train_local": [
+      [
+        0.045,
+        1.1
+      ],
+      [
+        0.06,
+        1.3
+      ],
+      [
+        0.055,
+        1.55
+      ]
+    ],
+    "train_wide": [
+      [
+        0.05,
+        0.25
+      ],
+      [
+        0.065,
+        0.45
+      ],
+      [
+        0.04,
+        0.75
+      ],
+      [
+        0.055,
+        1.0
+      ],
+      [
+        0.05,
+        1.65
+      ]
+    ],
+    "test_interp": [
+      [
+        0.052,
+        0.6
+      ],
+      [
+        0.07,
+        1.2
+      ],
+      [
+        0.045,
+        1.45
+      ]
+    ],
+    "test_extrap": [
+      [
+        0.05,
+        0.08
+      ],
+      [
+        0.055,
+        2.25
+      ],
+      [
+        0.08,
+        2.6
+      ]
+    ]
+  },
+  "time_grid": {
+    "t_end": 5.5,
+    "dt": 0.01
+  },
+  "noise_model": null,
+  "candidate_slots": [
+    {
+      "name": "growth_rate",
+      "g": "X",
+      "coefficient_function": "mu(S)"
+    }
+  ],
+  "software": {
+    "python": "3.13.9",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "pysindy": "2.1.0",
+    "pysindy_sindy_pi_available": true
+  },
+  "script": "scripts/run_e5_monod_rate_slot.py",
+  "outputs": {
+    "trajectory_csv": "data/generated/e5_monod_rate/e5_monod_rate_trajectories.csv",
+    "rollout_summary_csv": "results/e5_monod_rate_slot/rollout_summary.csv",
+    "rollout_samples_csv": "results/e5_monod_rate_slot/rollout_samples.csv",
+    "coefficients_csv": "results/e5_monod_rate_slot/coefficients.csv",
+    "gain_schedule_csv": "results/e5_monod_rate_slot/gain_schedule.csv",
+    "model_coefficients_csv": "results/e5_monod_rate_slot/model_coefficients.csv",
+    "metrics_json": "results/e5_monod_rate_slot/metrics.json"
+  }
+}

@@ -1,0 +1,19 @@
+model,feature_set,threshold,active_terms,R0_ohm,cost,optimality,nfev,success,message,a_tau_1_per_s,b_C_v_per_a_s,tau_s,R1_equiv_ohm,C1_equiv_f,design_rows,linear_fit_nrmse
+BATT3c_constant_ohmic,constant,,1,0.031193116517605556,5.18153762790014,0.02934982588443168,21,True,`ftol` termination condition is satisfied.,,,,,,,
+BATT3c_constant_ecm,constant,,3,0.028098750611024906,4.72471382239619,0.0013535336930954845,30,True,`ftol` termination condition is satisfied.,0.004853652574359768,9.761248220714291e-05,206.03040384115405,0.02011113912907512,10244.591443519545,,
+BATT4a_R0_slot_filtered_T_only_STLSQ_dense,T_only,0.0,3,,,,,,,,,,,,7718,0.6408037769026655
+BATT4a_R0_slot_filtered_T_only_STLSQ_t0.01,T_only,0.01,3,,,,,,,,,,,,7718,0.6408037769026655
+BATT4a_R0_slot_filtered_T_only_STLSQ_t0.05,T_only,0.05,0,,,,,,,,,,,,7718,1.074854391589236
+BATT4a_R0_slot_filtered_T_only_STLSQ_t0.1,T_only,0.1,0,,,,,,,,,,,,7718,1.074854391589236
+BATT4a_R0_slot_filtered_T_SOC_STLSQ_dense,T_SOC,0.0,6,,,,,,,,,,,,7718,0.6380253078598714
+BATT4a_R0_slot_filtered_T_SOC_STLSQ_t0.01,T_SOC,0.01,6,,,,,,,,,,,,7718,0.6380253078598714
+BATT4a_R0_slot_filtered_T_SOC_STLSQ_t0.05,T_SOC,0.05,0,,,,,,,,,,,,7718,1.074854391589236
+BATT4a_R0_slot_filtered_T_SOC_STLSQ_t0.1,T_SOC,0.1,0,,,,,,,,,,,,7718,1.074854391589236
+BATT4a_R0_slot_filtered_T_SOC_Ilinear_STLSQ_dense,T_SOC_Ilinear,0.0,7,,,,,,,,,,,,7718,0.6380378949089616
+BATT4a_R0_slot_filtered_T_SOC_Ilinear_STLSQ_t0.01,T_SOC_Ilinear,0.01,6,,,,,,,,,,,,7718,0.6380253078598714
+BATT4a_R0_slot_filtered_T_SOC_Ilinear_STLSQ_t0.05,T_SOC_Ilinear,0.05,2,,,,,,,,,,,,7718,0.7322568848129342
+BATT4a_R0_slot_filtered_T_SOC_Ilinear_STLSQ_t0.1,T_SOC_Ilinear,0.1,0,,,,,,,,,,,,7718,1.074854391589236
+BATT4a_R0_slot_filtered_T_SOC_Isat_STLSQ_dense,T_SOC_Isat,0.0,9,,,,,,,,,,,,7718,0.620821920187999
+BATT4a_R0_slot_filtered_T_SOC_Isat_STLSQ_t0.01,T_SOC_Isat,0.01,7,,,,,,,,,,,,7718,0.6210054489860141
+BATT4a_R0_slot_filtered_T_SOC_Isat_STLSQ_t0.05,T_SOC_Isat,0.05,4,,,,,,,,,,,,7718,0.7182585763825627
+BATT4a_R0_slot_filtered_T_SOC_Isat_STLSQ_t0.1,T_SOC_Isat,0.1,0,,,,,,,,,,,,7718,1.074854391589236

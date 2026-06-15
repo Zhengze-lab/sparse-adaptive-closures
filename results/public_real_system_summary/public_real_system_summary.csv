@@ -1,0 +1,5 @@
+case_id,system,role,source,metric,baseline,slot_model,baseline_error,slot_error,improvement_percent
+E6,Cascaded Tanks,real positive,Nonlinear Benchmark / 4TU ResearchData,rollout NRMSE,B0 linear outflow,B3 level-adaptive sqrt outflow slot,0.5386502216209509,0.329923957008933,38.7498707387331
+E7,EMPS,real positive,Nonlinear Benchmark EMPS,inverse-dynamics force NRMSE,B0 symmetric Coulomb friction,B3 asymmetric friction slot,0.07196356738410793,0.0670009531898922,6.896009153809194
+E8,PMSM motor temperature,engineering boundary,Kaggle Electric Motor Temperature,PM-temperature rollout NRMSE,B0 fixed cooling coefficient,B3 operating-adaptive cooling slot,0.3123728225889525,0.33660975418255307,-7.758975762591758
+E9,ORNL building thermal,application boundary,figshare / Scientific Data,mean-zone-temperature rollout NRMSE,B0 fixed envelope coefficient,B3 weather-adaptive envelope slot,225.26934696578624,206.7111240886524,8.23823708245243

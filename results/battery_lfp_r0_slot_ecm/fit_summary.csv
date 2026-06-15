@@ -1,0 +1,10 @@
+model,threshold,active_terms,R0_ohm,cost,optimality,nfev,success,message,a_tau_1_per_s,b_C_v_per_a_s,tau_s,R1_equiv_ohm,C1_equiv_f,design_rows,linear_fit_nrmse
+BATT3c_constant_ohmic,,1,0.031193116517605556,5.18153762790014,0.02934982588443168,21,True,`ftol` termination condition is satisfied.,,,,,,,
+BATT3c_constant_ecm,,3,0.028098750611024906,4.72471382239619,0.0013535336930954845,30,True,`ftol` termination condition is satisfied.,0.004853652574359768,9.761248220714291e-05,206.03040384115405,0.02011113912907512,10244.591443519545,,
+BATT4a_R0_slot_STLSQ_dense,0.0,10,,,,,,,,,,,,7718,0.6239011967291668
+BATT4a_R0_slot_STLSQ_t0.0001,0.0001,10,,,,,,,,,,,,7718,0.6239011967291668
+BATT4a_R0_slot_STLSQ_t0.0005,0.0005,10,,,,,,,,,,,,7718,0.6239011967291668
+BATT4a_R0_slot_STLSQ_t0.001,0.001,10,,,,,,,,,,,,7718,0.6239011967291668
+BATT4a_R0_slot_STLSQ_t0.002,0.002,10,,,,,,,,,,,,7718,0.623900577574395
+BATT4a_R0_slot_STLSQ_t0.005,0.005,10,,,,,,,,,,,,7718,0.6238518340646169
+BATT4a_R0_slot_STLSQ_t0.01,0.01,9,,,,,,,,,,,,7718,0.623973607475912

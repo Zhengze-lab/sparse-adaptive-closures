@@ -1,0 +1,69 @@
+{
+  "experiment_id": "BATT4b_lfp_r0_residual_diagnostics",
+  "description": "Residual and dynamic-slot diagnostics after the physics-filtered BATT-4a R0(T) coefficient slot.",
+  "source_dataset": "battery_lfp_ocv_dyn",
+  "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+  "source_doi": "10.17632/p8kf893yv3.1",
+  "license": "CC BY 4.0",
+  "baseline_experiment": "BATT4a2_lfp_filtered_r0_slot_ecm",
+  "selected_r0_model": "BATT4a_R0_slot_filtered_T_only_STLSQ_dense",
+  "selected_feature_set": "T_only",
+  "ocv_curve": "discharge",
+  "current_convention": "I_model=I_raw",
+  "feature_scaling": "Tn=T/25",
+  "score_start_s": 300.0,
+  "initialization_window_s": 300.0,
+  "fit_stride": 20,
+  "prediction_sample_stride": 30,
+  "dynamic_tau_grid_s": [
+    20.0,
+    50.0,
+    100.0,
+    200.0,
+    500.0,
+    1000.0
+  ],
+  "residual_feature_names": [
+    "current_a",
+    "abs_current_a",
+    "soc",
+    "temperature_c",
+    "time_since_score_s",
+    "q_tau_20s",
+    "q_tau_50s",
+    "q_tau_100s",
+    "q_tau_200s",
+    "q_tau_500s",
+    "q_tau_1000s"
+  ],
+  "created_at_utc": "2026-06-13T10:12:29.997320+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "script": "scripts/run_batt4b_r0_residual_diagnostics.py",
+  "inputs": {
+    "batt4a2_coefficients_csv": "results/battery_lfp_r0_slot_filtered_ecm/coefficients.csv",
+    "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+    "ocv_grid_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_grid.csv"
+  },
+  "outputs": {
+    "residual_samples_csv": "results/battery_lfp_r0_residual_diagnostics/residual_samples.csv",
+    "split_metrics_csv": "results/battery_lfp_r0_residual_diagnostics/split_metrics.csv",
+    "record_residual_summary_csv": "results/battery_lfp_r0_residual_diagnostics/record_residual_summary.csv",
+    "residual_feature_summary_csv": "results/battery_lfp_r0_residual_diagnostics/residual_feature_summary.csv",
+    "dynamic_proxy_scan_csv": "results/battery_lfp_r0_residual_diagnostics/dynamic_proxy_scan.csv",
+    "metrics_json": "results/battery_lfp_r0_residual_diagnostics/metrics.json",
+    "figures": [
+      "results/battery_lfp_r0_residual_diagnostics/figures/validation_residual_feature_r2.svg",
+      "results/battery_lfp_r0_residual_diagnostics/figures/validation_residual_feature_r2_zh.svg",
+      "results/battery_lfp_r0_residual_diagnostics/figures/dynamic_proxy_scan.svg",
+      "results/battery_lfp_r0_residual_diagnostics/figures/dynamic_proxy_scan_zh.svg"
+    ],
+    "provenance_json": "data/provenance/batt4b_r0_residual_diagnostics_provenance.json"
+  },
+  "test_usage_rule": "The R0(T) coefficients come from BATT-4a2 train-only fitting. BATT-4b uses non-train prefixes only for SOC initialization and performs post-hoc diagnostics.",
+  "next_action": "Use the residual diagnostics to decide whether to run a dynamic-slot pilot for a_tau/b_C or to prioritize cell-transfer/SOC/OCV correction."
+}

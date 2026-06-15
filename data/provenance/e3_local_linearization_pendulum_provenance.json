@@ -1,0 +1,159 @@
+{
+  "dataset_id": "e3_local_linearization_pendulum_trajectories",
+  "experiment_id": "E3_local_linearization_pendulum",
+  "created_at_utc": "2026-06-15T07:59:25.477308+00:00",
+  "source_name": "Classical nonlinear pendulum and small-angle local-linearization benchmark",
+  "source_urls": [
+    "synthetic truth generated in script"
+  ],
+  "source_access_date": "2026-06-13",
+  "equation_reference": "Full nonlinear pendulum with small-angle local-linearization baseline.",
+  "parameters": {
+    "g_over_l": 1.0,
+    "damping_c": 0.05
+  },
+  "initial_conditions": {
+    "train_small": [
+      [
+        0.05,
+        0.0
+      ],
+      [
+        -0.1,
+        0.05
+      ],
+      [
+        0.2,
+        -0.1
+      ],
+      [
+        -0.3,
+        0.1
+      ],
+      [
+        0.35,
+        0.0
+      ],
+      [
+        -0.35,
+        0.0
+      ]
+    ],
+    "train_medium": [
+      [
+        0.45,
+        0.0
+      ],
+      [
+        -0.45,
+        0.0
+      ],
+      [
+        0.7,
+        0.0
+      ],
+      [
+        -0.8,
+        0.2
+      ],
+      [
+        1.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.0
+      ],
+      [
+        0.6,
+        -0.5
+      ],
+      [
+        -0.6,
+        0.5
+      ]
+    ],
+    "test_interp": [
+      [
+        1.1,
+        0.0
+      ],
+      [
+        -1.1,
+        0.0
+      ],
+      [
+        0.9,
+        0.7
+      ],
+      [
+        -0.9,
+        -0.7
+      ],
+      [
+        0.4,
+        1.0
+      ]
+    ],
+    "test_extrap": [
+      [
+        1.5,
+        0.0
+      ],
+      [
+        -1.6,
+        0.0
+      ],
+      [
+        2.0,
+        0.0
+      ],
+      [
+        -2.2,
+        0.0
+      ],
+      [
+        2.4,
+        -0.2
+      ],
+      [
+        -2.4,
+        0.2
+      ]
+    ]
+  },
+  "time_grid": {
+    "t_end": 20.0,
+    "dt": 0.01
+  },
+  "noise_model": null,
+  "candidate_slots": [
+    {
+      "name": "stiffness",
+      "g": "-theta",
+      "coefficient_function": "p_k(theta)"
+    }
+  ],
+  "expected_coefficients": {
+    "theta^0": 1.0,
+    "theta^2": -0.16666666666666666,
+    "theta^4": 0.008333333333333333,
+    "theta^6": -0.0001984126984126984
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "pysindy": "2.1.0"
+  },
+  "script": "scripts/run_e3_local_linearization_pendulum.py",
+  "outputs": {
+    "trajectory_csv": "data/generated/e3_pendulum/e3_local_linearization_pendulum_trajectories.csv",
+    "rollout_summary_csv": "results/e3_local_linearization_pendulum/rollout_summary.csv",
+    "rollout_samples_csv": "results/e3_local_linearization_pendulum/rollout_samples.csv",
+    "coefficients_csv": "results/e3_local_linearization_pendulum/coefficients.csv",
+    "gain_schedule_csv": "results/e3_local_linearization_pendulum/gain_schedule.csv",
+    "model_coefficients_csv": "results/e3_local_linearization_pendulum/model_coefficients.csv",
+    "metrics_json": "results/e3_local_linearization_pendulum/metrics.json"
+  }
+}

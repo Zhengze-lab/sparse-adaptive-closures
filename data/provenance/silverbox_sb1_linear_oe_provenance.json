@@ -1,0 +1,39 @@
+{
+  "experiment_id": "SB1_silverbox_linear_output_error",
+  "description": "Linear second-order output-error baseline for the Silverbox input-output benchmark.",
+  "source_dataset": "silverbox_data_audit",
+  "dataloader": "nonlinear_benchmarks.Silverbox",
+  "train_fit_fraction": 0.8,
+  "state_initialization_window": 50,
+  "fit_residual_stride": 5,
+  "fit_max_nfev": 100,
+  "init_max_nfev": 60,
+  "savgol_window": 101,
+  "savgol_polyorder": 3,
+  "parameterization": {
+    "c": "positive damping, c=exp(log_c)",
+    "k": "positive stiffness, k=exp(log_k)",
+    "b": "signed input gain, b=b_scale*b_scaled",
+    "x20": "signed initial latent velocity, x20=x2_scale*x20_scaled"
+  },
+  "test_usage_rule": "Official test records are used only after selecting the baseline by internal train_val validation.",
+  "created_at_utc": "2026-06-13T06:42:45.748081+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "nonlinear-benchmarks": "1.0.1",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "source_files": {
+    "raw_audit_provenance": "data/provenance/silverbox_data_audit_provenance.json",
+    "raw_audit_metrics": "results/silverbox_data_audit/metrics.json"
+  },
+  "outputs": {
+    "candidate_starts_csv": "results/silverbox_sb1_linear_oe/candidate_starts.csv",
+    "metrics_by_record_csv": "results/silverbox_sb1_linear_oe/metrics_by_record.csv",
+    "metrics_json": "results/silverbox_sb1_linear_oe/metrics.json",
+    "hashes_json": "results/silverbox_sb1_linear_oe/hashes.json",
+    "figures": "results/silverbox_sb1_linear_oe/figures/"
+  }
+}

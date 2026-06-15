@@ -1,0 +1,7 @@
+feature,coefficient,expected_coefficient,abs_error,active
+1,0,0,0,False
+x1,0,0,0,False
+x1^2,0,0,0,False
+mu,0.9999999999999939,1,6.106226635438361e-15,True
+mu*x1,0,0,0,False
+mu*x1^2,-0.9999999999999986,-1,1.443289932012704e-15,True

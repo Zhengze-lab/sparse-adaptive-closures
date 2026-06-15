@@ -1,0 +1,64 @@
+{
+  "experiment_id": "BATT4d_lfp_cell_transfer_alignment",
+  "description": "Diagnose whether the A003 cell-transfer failure is dominated by SOC/OCV/cell offset rather than R0(T) or q_tau dynamics.",
+  "source_dataset": "battery_lfp_ocv_dyn",
+  "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+  "source_doi": "10.17632/p8kf893yv3.1",
+  "license": "CC BY 4.0",
+  "baseline_experiment": "BATT4a2_lfp_filtered_r0_slot_ecm",
+  "dynamic_experiment": "BATT4c_lfp_narrow_dynamic_pilot",
+  "target_split": "test_cell_transfer",
+  "target_record": "A003_25_+25C",
+  "selected_r0_model": "BATT4a_R0_slot_filtered_T_only_STLSQ_dense",
+  "selected_feature_set": "T_only",
+  "ocv_curve": "discharge",
+  "current_convention": "I_model=I_raw",
+  "score_start_s": 300.0,
+  "initialization_window_s": 300.0,
+  "prediction_sample_stride": 60,
+  "soc_delta_grid": [
+    -0.6,
+    0.2,
+    0.005
+  ],
+  "s0_grid": [
+    0.2,
+    0.99,
+    0.01
+  ],
+  "q_grid_ah": [
+    1.6,
+    3.2,
+    0.05
+  ],
+  "diagnostic_warning": "Rows with uses_scored_target=true are oracle diagnostics and must not be reported as deployable prediction models.",
+  "created_at_utc": "2026-06-13T10:59:47.164796+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "script": "scripts/run_batt4d_cell_transfer_alignment.py",
+  "inputs": {
+    "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+    "ocv_grid_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_grid.csv",
+    "batt4a2_coefficients_csv": "results/battery_lfp_r0_slot_filtered_ecm/coefficients.csv",
+    "batt4c_metrics_json": "results/battery_lfp_narrow_dynamic_pilot/metrics.json"
+  },
+  "outputs": {
+    "correction_summary_csv": "results/battery_lfp_cell_transfer_alignment/correction_summary.csv",
+    "soc_delta_scan_csv": "results/battery_lfp_cell_transfer_alignment/soc_delta_scan.csv",
+    "s0_capacity_scan_csv": "results/battery_lfp_cell_transfer_alignment/s0_capacity_scan.csv",
+    "ocv_curve_summary_csv": "results/battery_lfp_cell_transfer_alignment/ocv_curve_summary.csv",
+    "prediction_sample_csv": "results/battery_lfp_cell_transfer_alignment/prediction_sample.csv",
+    "metrics_json": "results/battery_lfp_cell_transfer_alignment/metrics.json",
+    "figures": [
+      "results/battery_lfp_cell_transfer_alignment/figures/cell_transfer_correction_rmse.svg",
+      "results/battery_lfp_cell_transfer_alignment/figures/cell_transfer_correction_rmse_zh.svg"
+    ],
+    "provenance_json": "data/provenance/batt4d_cell_transfer_alignment_provenance.json"
+  },
+  "test_usage_rule": "BATT-4d is diagnostic. Prefix-only rows use only the first 300 s for calibration; oracle rows use scored A003 residuals and are not deployable model-selection evidence.",
+  "next_action": "If cross-cell performance is required, obtain or construct cell-specific OCV/SOC calibration before expanding R0 or dynamic coefficient slots."
+}

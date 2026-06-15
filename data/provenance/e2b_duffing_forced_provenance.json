@@ -1,0 +1,75 @@
+{
+  "dataset_id": "e2b_duffing_forced_trajectories",
+  "experiment_id": "E2b_duffing_forced",
+  "created_at_utc": "2026-06-10T08:20:59.821244+00:00",
+  "source_name": "DORA forced Duffing generator",
+  "source_urls": [
+    "https://github.com/maneesh51/Benchmark-Tasks",
+    "https://raw.githubusercontent.com/maneesh51/Benchmark-Tasks/main/DORA_generator.py"
+  ],
+  "source_commit": "a39f9fd06035c6b8693199c5705acb4b4c9a164f",
+  "source_access_date": "2026-06-10",
+  "source_provenance_note": "Synthetic forced Duffing parameters are taken from the DORA generator; literature and license provenance remain weaker than DSINDy/WSINDy.",
+  "equation_reference": "Forced Duffing equation from the DORA generator: q1_dot=q2, q2_dot=-c*q2-k*q1-beta*q1^3+A*cos(omega*t+phi).",
+  "parameters": {
+    "eta": 0.3,
+    "kappa": -1.0,
+    "epsilon": 1.0,
+    "omega": 1.5,
+    "phi": 0.0
+  },
+  "initial_conditions": {
+    "shared_x0": [
+      0.05,
+      0.05
+    ]
+  },
+  "forcing": {
+    "form": "u(t)=A*cos(omega*t+phi)",
+    "train_amplitudes": [
+      0.46,
+      0.49
+    ],
+    "test_amplitudes": [
+      0.2,
+      0.35,
+      0.48,
+      0.58,
+      0.75
+    ],
+    "known_in_fixed_model": true,
+    "used_inside_coefficient_function": false
+  },
+  "time_grid": {
+    "train_end": 60.0,
+    "rollout_end": 80.0,
+    "dt": 0.05
+  },
+  "noise_model": null,
+  "candidate_slots": [
+    {
+      "name": "stiffness",
+      "g": "-x1",
+      "coefficient_function": "p_k(x1)"
+    }
+  ],
+  "expected_coefficients": {
+    "x1^0": -1.0,
+    "x1^2": 1.0
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "1.26.4",
+    "scipy": "1.16.3"
+  },
+  "script": "scripts/run_e2b_duffing_forced.py",
+  "outputs": {
+    "trajectory_csv": "data/generated/e2_duffing/e2b_duffing_forced_trajectories.csv",
+    "rollout_summary_csv": "results/e2b_duffing_forced/rollout_summary.csv",
+    "rollout_samples_csv": "results/e2b_duffing_forced/rollout_samples.csv",
+    "vector_field_summary_csv": "results/e2b_duffing_forced/vector_field_summary.csv",
+    "coefficients_csv": "results/e2b_duffing_forced/coefficients.csv",
+    "model_coefficients_csv": "results/e2b_duffing_forced/model_coefficients.csv",
+    "metrics_json": "results/e2b_duffing_forced/metrics.json"
+  }
+}

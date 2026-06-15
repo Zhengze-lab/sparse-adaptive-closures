@@ -1,0 +1,28 @@
+{
+  "experiment_id": "slot_screening",
+  "created_utc": "2026-06-15T07:59:41.181193+00:00",
+  "python": "3.13.9",
+  "numpy": "2.4.6",
+  "scipy": "1.16.3",
+  "config": {
+    "experiment_id": "slot_screening",
+    "random_seed": 20260615,
+    "stlsq_threshold": 1e-08,
+    "stlsq_max_iter": 30,
+    "condition_limit_for_selection": 10000000000.0,
+    "min_train_residual_reduction": 0.001,
+    "selection_rule": "choose the physically admissible candidate with finite identifiable design and lowest validation rollout NRMSE",
+    "test_usage_rule": "test_extrap splits are used only after the slot/library decision is frozen"
+  },
+  "inputs": [
+    "scripts/run_e3_local_linearization_pendulum.py",
+    "scripts/run_e4_velocity_drag.py",
+    "scripts/run_e5_monod_rate_slot.py"
+  ],
+  "outputs": [
+    "results/slot_screening/slot_screening_candidates.csv",
+    "results/slot_screening/slot_screening_decisions.csv",
+    "results/slot_screening/metrics.json",
+    "results/slot_screening/figures/slot_screening.pdf"
+  ]
+}

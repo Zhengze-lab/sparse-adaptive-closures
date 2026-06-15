@@ -1,0 +1,33 @@
+{
+  "dataset_id": "battery_lfp_ocv_dyn",
+  "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+  "download_url": "https://data.mendeley.com/public-api/zip/p8kf893yv3/download/1",
+  "doi": "10.17632/p8kf893yv3.1",
+  "license": "CC BY 4.0",
+  "audit_date": "2026-06-13",
+  "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+  "zip_size_bytes": 463016714,
+  "zip_sha256": "5f758b8dae788d63569a982a04c3cd87e8bc940481a5fc69d569e25f1f3732ff",
+  "file_count": 86,
+  "mat_file_count": 32,
+  "xlsx_file_count": 54,
+  "mat_series_count": 92,
+  "top_level_folders": [
+    "CCCV",
+    "DYNdata",
+    "Miscellaneous",
+    "OCVdata"
+  ],
+  "result_files": {
+    "zip_files": "results/battery_lfp_ocv_dyn_audit/zip_files.csv",
+    "folder_summary": "results/battery_lfp_ocv_dyn_audit/folder_summary.csv",
+    "mat_variables": "results/battery_lfp_ocv_dyn_audit/mat_variables.csv",
+    "mat_series_summary": "results/battery_lfp_ocv_dyn_audit/mat_series_summary.csv"
+  },
+  "next_action": "Inspect OCVdata and DYNdata variables to implement BATT-2 OCV calibration and data-loading adapters.",
+  "script": "scripts/audit_battery_lfp_ocv_dyn.py",
+  "notes": [
+    "The audit reads files from the zip archive without extracting the full dataset.",
+    "Per-file SHA256 values are computed from uncompressed file bytes inside the zip."
+  ]
+}

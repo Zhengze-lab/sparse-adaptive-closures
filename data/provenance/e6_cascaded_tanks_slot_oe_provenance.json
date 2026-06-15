@@ -1,0 +1,78 @@
+{
+  "experiment_id": "E6_cascaded_tanks_slot_output_error",
+  "description": "Real cascaded-tanks output-error test: local linear outflow vs level-adaptive square-root outflow slot.",
+  "source_dataset": "Cascaded Tanks benchmark",
+  "source_url": "https://www.nonlinearbenchmark.org/benchmarks/cascaded-tanks",
+  "source_data_url": "https://data.4tu.nl/file/d4810b78-6cdd-48fe-8950-9bd601e5f47f/3b697e42-01a4-4979-a370-813a456c36f5",
+  "dataloader": "nonlinear_benchmarks.Cascaded_Tanks",
+  "citation": "M. Schoukens, P. Mattsson, T. Wigren, and J. P. Noel. Cascaded tanks benchmark combining soft and hard nonlinearities. Workshop on Nonlinear System Identification Benchmarks, Brussels, 2016.",
+  "sampling_time_s": 4.0,
+  "state_initialization_window": 50,
+  "fit_stride": 4,
+  "prediction_sample_stride": 4,
+  "fit_max_nfev": 80,
+  "init_max_nfev": 80,
+  "models": {
+    "B0_linear_outflow": "dx1=-a1*x1+b*u; dx2=a2*x1-a3*x2; y=x2",
+    "B3_sqrt_outflow_slot": "dx1=-k1*sqrt(x1)+b*u; dx2=k2*sqrt(x1)-k3*sqrt(x2); y=x2"
+  },
+  "test_usage_rule": "The benchmark test record is used only for final evaluation; the first 50 samples are used for state initialization.",
+  "created_at_utc": "2026-06-15T07:11:58.716365+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "nonlinear-benchmarks": "1.0.1"
+  },
+  "outputs": {
+    "metrics_json": "results/e6_cascaded_tanks_slot_oe/metrics.json",
+    "metrics_by_split_csv": "results/e6_cascaded_tanks_slot_oe/metrics_by_split.csv",
+    "parameters_csv": "results/e6_cascaded_tanks_slot_oe/parameters.csv",
+    "prediction_sample_csv": "results/e6_cascaded_tanks_slot_oe/prediction_sample.csv",
+    "rollout_svg": "results/e6_cascaded_tanks_slot_oe/figures/rollout.svg",
+    "rollout_zh_svg": "results/e6_cascaded_tanks_slot_oe/figures/rollout_zh.svg"
+  },
+  "raw_files": [
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/CascadedTanksOverflow.MOV",
+      "size_bytes": 1521149,
+      "sha256": "4e5f555938344b1fbfd5de747c87bff97a8a541ad1ac96982fe75c9ba09974ae"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/CascadedTanksSetup1.JPG",
+      "size_bytes": 1985905,
+      "sha256": "6658de11c06b98fe82464a0cc73a9ab25fe5672a8774904f47f8002b5266499d"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/CascadedTanksSetup2.JPG",
+      "size_bytes": 1852315,
+      "sha256": "9988337c0050d357b16d0f53537d1f4db0991e1ebef4ad25b914e1a51922bd65"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/Thumbs.db",
+      "size_bytes": 42496,
+      "sha256": "19dac1b7282e36376e164b9e471ddd7057e579a5479e91992074e49231ddc3d6"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/TanksBenchmark.pdf",
+      "size_bytes": 2169671,
+      "sha256": "91597add858efdec98cc1bfabd7b87867c5c3cb8a0ec10976ceed9acdee81b39"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/dataBenchmark.csv",
+      "size_bytes": 30014,
+      "sha256": "ef2388ed822f3aef4aa80d6b0f2b466dd80b361786b3eafc7a2957c31ea323a7"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/dataBenchmark.mat",
+      "size_bytes": 24401,
+      "sha256": "cb2f88d4388be4d3f2a24c6402fba804976aac5f2e1f26cda59ea0a38d016eab"
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles.zip",
+      "size_bytes": 7520592,
+      "sha256": "eb0fa05851e8a7136846c2e3b61fbef87def78d0852c86ab91b02ac5db541b51"
+    }
+  ]
+}

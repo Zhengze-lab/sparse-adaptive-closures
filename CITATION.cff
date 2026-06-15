@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this experimental code, please cite the software release."
+title: "Sparse adaptive closures for regime-aware gray-box ODEs: experimental code"
+type: software
+authors:
+  - family-names: Li
+    given-names: Ao-Jin
+  - family-names: Li
+    given-names: Jintao
+  - family-names: He
+    given-names: Sicheng
+  - family-names: Sun
+    given-names: Feng
+  - family-names: Yu
+    given-names: Shui
+  - family-names: Li
+    given-names: Yun
+repository-code: "TO_BE_ADDED"
+abstract: "Experimental code and reproducibility artifacts for sparse adaptive closures in regime-aware gray-box ODE models."
+keywords:
+  - sparse identification
+  - gray-box modeling
+  - differential equations
+  - SINDy
+  - regime-aware modeling
+license: "MIT"
+date-released: "2026-06-15"

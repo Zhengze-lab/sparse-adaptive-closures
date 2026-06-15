@@ -1,0 +1,522 @@
+{
+  "experiment_id": "BATT3_lfp_constant_first_order_ecm",
+  "status": "complete",
+  "config": {
+    "experiment_id": "BATT3_lfp_constant_first_order_ecm",
+    "description": "Constant first-order Thevenin/RC ECM output-error baseline using BATT-2 OCV_mean(s,T).",
+    "source_dataset": "battery_lfp_ocv_dyn",
+    "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+    "source_doi": "10.17632/p8kf893yv3.1",
+    "license": "CC BY 4.0",
+    "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+    "ocv_grid_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_grid.csv",
+    "dyn_root": "DYNData",
+    "dyn_script": "script1",
+    "q_nominal_ah": 2.5,
+    "ocv_curve": "mean",
+    "ocv_training_temperatures_c": [
+      -25,
+      -5,
+      5,
+      15,
+      25,
+      45
+    ],
+    "heldout_temperature_validation_c": [
+      -15,
+      35
+    ],
+    "stress_test_amplitude_token": 50,
+    "fit_stride": 20,
+    "prediction_sample_stride": 30,
+    "initialization_window_s": 300.0,
+    "score_start_s": 300.0,
+    "least_squares_loss": "soft_l1",
+    "least_squares_f_scale_v": 0.02,
+    "max_nfev_ohmic": 80,
+    "max_nfev_ecm": 120,
+    "model_sign_convention": "raw dataset current is converted to discharge-positive current I=-current_raw; Vhat=OCV(s,T)-R0*I-v1."
+  },
+  "raw_zip_sha256": "5f758b8dae788d63569a982a04c3cd87e8bc940481a5fc69d569e25f1f3732ff",
+  "record_count": 14,
+  "train_record_count": 7,
+  "record_summary": [
+    {
+      "record": "A002_05_-15C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_05_N15.mat",
+      "cell_id": "A002",
+      "amplitude_token": 5,
+      "temperature_c": -15,
+      "split": "validation_temperature",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -2.502558712960145,
+      "current_max_a": 1.3755292749332406,
+      "voltage_min_v": 2.329595142496127,
+      "voltage_max_v": 3.552051544189453,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.1954910659944367
+    },
+    {
+      "record": "A002_05_-25C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_05_N25.mat",
+      "cell_id": "A002",
+      "amplitude_token": 5,
+      "temperature_c": -25,
+      "split": "train",
+      "n_samples": 39305,
+      "duration_s": 39304.0,
+      "current_min_a": -2.501990011476525,
+      "current_max_a": 1.378215680509268,
+      "voltage_min_v": 1.901702786375399,
+      "voltage_max_v": 3.551889657974243,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.1306700799146343
+    },
+    {
+      "record": "A002_05_+35C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_05_P35.mat",
+      "cell_id": "A002",
+      "amplitude_token": 5,
+      "temperature_c": 35,
+      "split": "validation_temperature",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -2.5017298120642826,
+      "current_max_a": 1.382713538916272,
+      "voltage_min_v": 3.159221103747615,
+      "voltage_max_v": 3.5763370990753174,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.1918036146658064
+    },
+    {
+      "record": "A002_10_-5C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_10_N05.mat",
+      "cell_id": "A002",
+      "amplitude_token": 10,
+      "temperature_c": -5,
+      "split": "train",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -2.5002135140702353,
+      "current_max_a": 1.3839071229926294,
+      "voltage_min_v": 2.9010835834000446,
+      "voltage_max_v": 3.5860514640808105,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.202826318355731
+    },
+    {
+      "record": "A002_10_-15C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_10_N15.mat",
+      "cell_id": "A002",
+      "amplitude_token": 10,
+      "temperature_c": -15,
+      "split": "validation_temperature",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -2.500198125542548,
+      "current_max_a": 1.3456582159781811,
+      "voltage_min_v": 2.371290727253017,
+      "voltage_max_v": 3.586356878258381,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.190031671607686
+    },
+    {
+      "record": "A002_10_+5C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_10_P05.mat",
+      "cell_id": "A002",
+      "amplitude_token": 10,
+      "temperature_c": 5,
+      "split": "train",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -2.4988337796940026,
+      "current_max_a": 1.356953453426613,
+      "voltage_min_v": 3.084293391677395,
+      "voltage_max_v": 3.5722897052764893,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.185969461906665
+    },
+    {
+      "record": "A002_10_+15C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_10_P15.mat",
+      "cell_id": "A002",
+      "amplitude_token": 10,
+      "temperature_c": 15,
+      "split": "train",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -2.5002212524414062,
+      "current_max_a": 1.3752795346919362,
+      "voltage_min_v": 3.128828695155826,
+      "voltage_max_v": 3.5870227813720703,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.2021304945766493
+    },
+    {
+      "record": "A002_10_+45C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_10_P45.mat",
+      "cell_id": "A002",
+      "amplitude_token": 10,
+      "temperature_c": 45,
+      "split": "train",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -2.499179570044157,
+      "current_max_a": 1.3842437091627602,
+      "voltage_min_v": 3.1616461828117233,
+      "voltage_max_v": 3.5823267971012065,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.1954634837882017
+    },
+    {
+      "record": "A002_15_-5C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_15_N05.mat",
+      "cell_id": "A002",
+      "amplitude_token": 15,
+      "temperature_c": -5,
+      "split": "train",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -3.214626739034748,
+      "current_max_a": 2.1466200452256907,
+      "voltage_min_v": 2.862734736498804,
+      "voltage_max_v": 3.5845929084531334,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.186504516825968
+    },
+    {
+      "record": "A002_15_-15C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_15_N15.mat",
+      "cell_id": "A002",
+      "amplitude_token": 15,
+      "temperature_c": -15,
+      "split": "validation_temperature",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -3.2182763104236995,
+      "current_max_a": 2.1507025493480203,
+      "voltage_min_v": 2.331672826332267,
+      "voltage_max_v": 3.5852245193631025,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.1840798876964893
+    },
+    {
+      "record": "A002_20_-15C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_20_N15.mat",
+      "cell_id": "A002",
+      "amplitude_token": 20,
+      "temperature_c": -15,
+      "split": "validation_temperature",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -4.20938326302782,
+      "current_max_a": 2.957036609862559,
+      "voltage_min_v": 2.286297153577213,
+      "voltage_max_v": 3.573099136352539,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.185297277811681
+    },
+    {
+      "record": "A002_20_+25C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_20_P25.mat",
+      "cell_id": "A002",
+      "amplitude_token": 20,
+      "temperature_c": 25,
+      "split": "train",
+      "n_samples": 37660,
+      "duration_s": 37659.0,
+      "current_min_a": -4.205383763482099,
+      "current_max_a": 3.0235455540416654,
+      "voltage_min_v": 3.1210366874005055,
+      "voltage_max_v": 3.558365821838379,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.193645585939076
+    },
+    {
+      "record": "A002_50_+25C",
+      "filename": "DYNdata/A002_DYN/A002_DYN_50_P25.mat",
+      "cell_id": "A002",
+      "amplitude_token": 50,
+      "temperature_c": 25,
+      "split": "test_high_amplitude",
+      "n_samples": 39760,
+      "duration_s": 39759.0,
+      "current_min_a": -10.138016835809902,
+      "current_max_a": 7.938226886622086,
+      "voltage_min_v": 3.0538853590771247,
+      "voltage_max_v": 3.595243403875374,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 2.050409185975795
+    },
+    {
+      "record": "A003_25_+25C",
+      "filename": "DYNdata/A002_DYN/A003_DYN_25_P25.mat",
+      "cell_id": "A003",
+      "amplitude_token": 25,
+      "temperature_c": 25,
+      "split": "test_cell_transfer",
+      "n_samples": 47386,
+      "duration_s": 47385.0,
+      "current_min_a": -5.197799833264245,
+      "current_max_a": 3.842295331022921,
+      "voltage_min_v": 1.9005628143561528,
+      "voltage_max_v": 3.5892507276289973,
+      "net_discharge_ah_min": 0.0,
+      "net_discharge_ah_max": 1.914021188218095
+    }
+  ],
+  "fit_summary": {
+    "ohmic_only": {
+      "params": {
+        "R0_ohm": 4.595315116128689e-11
+      },
+      "cost": 11.992081556768097,
+      "optimality": 0.008459862008922783,
+      "nfev": 18,
+      "success": true,
+      "message": "`ftol` termination condition is satisfied."
+    },
+    "constant_ecm": {
+      "params": {
+        "R0_ohm": 3.9161131183531367e-28,
+        "a_tau_1_per_s": 0.005505683095459587,
+        "b_C_v_per_a_s": 1.0000000000000001e-07,
+        "tau_s": 181.63050481868044,
+        "R1_equiv_ohm": 1.8163050481868047e-05,
+        "C1_equiv_f": 10000000.0
+      },
+      "cost": 11.742160156256709,
+      "optimality": 0.0029679037084202175,
+      "nfev": 64,
+      "success": true,
+      "message": "`ftol` termination condition is satisfied."
+    }
+  },
+  "train_initial_states": {
+    "ocv_only": {
+      "A002_05_-25C": {
+        "s0": 0.7967106651001701,
+        "v10": 0.0
+      },
+      "A002_10_-5C": {
+        "s0": 0.9138410247932438,
+        "v10": 0.0
+      },
+      "A002_10_+5C": {
+        "s0": 0.9239608261488702,
+        "v10": 0.0
+      },
+      "A002_10_+15C": {
+        "s0": 0.9353865580960696,
+        "v10": 0.0
+      },
+      "A002_10_+45C": {
+        "s0": 0.9477895969864929,
+        "v10": 0.0
+      },
+      "A002_15_-5C": {
+        "s0": 0.9091931859732114,
+        "v10": 0.0
+      },
+      "A002_20_+25C": {
+        "s0": 0.9436406801216085,
+        "v10": 0.0
+      }
+    },
+    "ohmic_only": {
+      "A002_05_-25C": {
+        "s0": 0.7967095010054779,
+        "v10": 0.0
+      },
+      "A002_10_-5C": {
+        "s0": 0.913841727727889,
+        "v10": 0.0
+      },
+      "A002_10_+5C": {
+        "s0": 0.9239275190773757,
+        "v10": 0.0
+      },
+      "A002_10_+15C": {
+        "s0": 0.9354007371710322,
+        "v10": 0.0
+      },
+      "A002_10_+45C": {
+        "s0": 0.9477696511382997,
+        "v10": 0.0
+      },
+      "A002_15_-5C": {
+        "s0": 0.9091941500147677,
+        "v10": 0.0
+      },
+      "A002_20_+25C": {
+        "s0": 0.9436406801403521,
+        "v10": 0.0
+      }
+    },
+    "constant_ecm": {
+      "A002_05_-25C": {
+        "s0": 0.7966693299049732,
+        "v10": -0.3003399567643012
+      },
+      "A002_10_-5C": {
+        "s0": 0.9137924750374483,
+        "v10": -0.3329218551489824
+      },
+      "A002_10_+5C": {
+        "s0": 0.923822915841143,
+        "v10": -0.32384528160408665
+      },
+      "A002_10_+15C": {
+        "s0": 0.9352993077993063,
+        "v10": -0.3497303650267835
+      },
+      "A002_10_+45C": {
+        "s0": 0.9477895439863182,
+        "v10": -0.35136009031843446
+      },
+      "A002_15_-5C": {
+        "s0": 0.9091479467122779,
+        "v10": -0.33231220427785846
+      },
+      "A002_20_+25C": {
+        "s0": 0.9435165837658768,
+        "v10": -0.3137658483815712
+      }
+    }
+  },
+  "split_summary": {
+    "constant_ecm:test_cell_transfer": {
+      "model": "constant_ecm",
+      "split": "test_cell_transfer",
+      "n_score": 47086,
+      "rmse_mv": 452.9329523034353,
+      "mae_mv": 260.88010361157126,
+      "max_abs_mv": 1348.7620120833599,
+      "bias_mv": 259.86543223395415,
+      "nrmse": 1.136611531140425
+    },
+    "constant_ecm:test_high_amplitude": {
+      "model": "constant_ecm",
+      "split": "test_high_amplitude",
+      "n_score": 39460,
+      "rmse_mv": 37.41936992069095,
+      "mae_mv": 29.125921833872148,
+      "max_abs_mv": 178.73743889606519,
+      "bias_mv": 25.951612632768743,
+      "nrmse": 0.8302445716939645
+    },
+    "constant_ecm:train": {
+      "model": "constant_ecm",
+      "split": "train",
+      "n_score": 263165,
+      "rmse_mv": 94.51108246822511,
+      "mae_mv": 51.5103596204117,
+      "max_abs_mv": 662.8250184186146,
+      "bias_mv": 45.11845329906482,
+      "nrmse": 0.4661753984237118
+    },
+    "constant_ecm:validation_temperature": {
+      "model": "constant_ecm",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 154.65823591895796,
+      "mae_mv": 105.00583522916841,
+      "max_abs_mv": 761.8621013626954,
+      "bias_mv": 103.32955373165329,
+      "nrmse": 0.9186353833633345
+    },
+    "ocv_only:test_cell_transfer": {
+      "model": "ocv_only",
+      "split": "test_cell_transfer",
+      "n_score": 47086,
+      "rmse_mv": 452.9625263466791,
+      "mae_mv": 260.93679598549187,
+      "max_abs_mv": 1348.7614926744418,
+      "bias_mv": 259.58223135216866,
+      "nrmse": 1.1366857456536383
+    },
+    "ocv_only:test_high_amplitude": {
+      "model": "ocv_only",
+      "split": "test_high_amplitude",
+      "n_score": 39460,
+      "rmse_mv": 37.59886715940856,
+      "mae_mv": 29.038332049051355,
+      "max_abs_mv": 231.9718098278276,
+      "bias_mv": 25.60470772548145,
+      "nrmse": 0.8342271777184703
+    },
+    "ocv_only:train": {
+      "model": "ocv_only",
+      "split": "train",
+      "n_score": 263165,
+      "rmse_mv": 94.20342049890627,
+      "mae_mv": 51.33280583511992,
+      "max_abs_mv": 662.8224102820333,
+      "bias_mv": 44.84068022934578,
+      "nrmse": 0.46465785743929605
+    },
+    "ocv_only:validation_temperature": {
+      "model": "ocv_only",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 154.3204053329441,
+      "mae_mv": 104.82842468904747,
+      "max_abs_mv": 761.857019990122,
+      "bias_mv": 103.05714986802158,
+      "nrmse": 0.9166287451261226
+    },
+    "ohmic_only:test_cell_transfer": {
+      "model": "ohmic_only",
+      "split": "test_cell_transfer",
+      "n_score": 47086,
+      "rmse_mv": 452.96252634893307,
+      "mae_mv": 260.93679599608174,
+      "max_abs_mv": 1348.7614928570104,
+      "bias_mv": 259.58223135890137,
+      "nrmse": 1.1366857456592945
+    },
+    "ohmic_only:test_high_amplitude": {
+      "model": "ohmic_only",
+      "split": "test_high_amplitude",
+      "n_score": 39460,
+      "rmse_mv": 37.59886722090186,
+      "mae_mv": 29.03833207894308,
+      "max_abs_mv": 231.9718098278276,
+      "bias_mv": 25.604707734120616,
+      "nrmse": 0.8342271790828566
+    },
+    "ohmic_only:train": {
+      "model": "ohmic_only",
+      "split": "train",
+      "n_score": 263165,
+      "rmse_mv": 94.20329251841409,
+      "mae_mv": 51.33238130314219,
+      "max_abs_mv": 662.822410380256,
+      "bias_mv": 44.83859242711349,
+      "nrmse": 0.46465722617621685
+    },
+    "ohmic_only:validation_temperature": {
+      "model": "ohmic_only",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 154.3204053490263,
+      "mae_mv": 104.82842470067756,
+      "max_abs_mv": 761.8570201655795,
+      "bias_mv": 103.0571498777019,
+      "nrmse": 0.9166287452216472
+    }
+  },
+  "outputs": {
+    "metrics_by_trajectory_csv": "results/battery_lfp_constant_ecm/metrics_by_trajectory.csv",
+    "metrics_by_split_csv": "results/battery_lfp_constant_ecm/metrics_by_split.csv",
+    "predictions_sample_csv": "results/battery_lfp_constant_ecm/predictions_sample.csv",
+    "metrics_json": "results/battery_lfp_constant_ecm/metrics.json",
+    "figures": [
+      "results/battery_lfp_constant_ecm/figures/rmse_by_split.svg",
+      "results/battery_lfp_constant_ecm/figures/rmse_by_split_zh.svg",
+      "results/battery_lfp_constant_ecm/figures/heldout_temperature_voltage_prediction.svg",
+      "results/battery_lfp_constant_ecm/figures/heldout_temperature_voltage_prediction_zh.svg"
+    ]
+  }
+}

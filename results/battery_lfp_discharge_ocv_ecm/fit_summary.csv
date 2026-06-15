@@ -1,0 +1,5 @@
+current_convention,model,cost,optimality,nfev,success,message,R0_ohm,a_tau_1_per_s,b_C_v_per_a_s,tau_s,R1_equiv_ohm,C1_equiv_f
+I_model=-I_raw,ohmic_only,5.973157647038238,0.07442870624602818,20,True,`ftol` termination condition is satisfied.,2.5618101336845915e-10,,,,,
+I_model=-I_raw,constant_ecm,5.68475197254938,0.09764092246185843,43,True,`ftol` termination condition is satisfied.,9.237796328486593e-11,0.0055421707660881486,1.69485003969322e-07,180.43471451996305,3.058097830661942e-05,5900227.020562876
+I_model=I_raw,ohmic_only,5.18153762790014,0.02934982588443168,21,True,`ftol` termination condition is satisfied.,0.031193116517605556,,,,,
+I_model=I_raw,constant_ecm,4.72471382239619,0.0013535336930954845,30,True,`ftol` termination condition is satisfied.,0.028098750611024906,0.004853652574359768,9.761248220714291e-05,206.03040384115405,0.02011113912907512,10244.591443519545

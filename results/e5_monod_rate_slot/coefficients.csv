@@ -1,0 +1,11 @@
+model,term,coefficient,reference,active
+B3_slot_polynomial,1,0.002701195884118977,,True
+B3_slot_polynomial,S,2.957210296231787,,True
+B3_slot_polynomial,S^2,-4.556099212644273,,True
+B3_slot_polynomial,S^3,3.432426054098343,,True
+B3_slot_polynomial,S^4,-0.9512443545682678,,True
+B1R_rational_full_vector_field,dX_numerator_XS,3.428571428571423,3.428571428571429,True
+B1R_rational_full_vector_field,dS_numerator_XS,6.233766233766223,6.233766233766234,True
+B1R_rational_full_vector_field,shared_denominator_S,2.857142857142853,2.857142857142857,True
+B5_sindy_pi_rational_slot,numerator_S,3.428571428571423,3.428571428571429,True
+B5_sindy_pi_rational_slot,denominator_S,2.857142857142853,2.857142857142857,True

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="430" viewBox="0 0 880 430">
+<rect width="100%" height="100%" fill="white"/>
+<text x="440.0" y="28" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold">公开真实系统：系数槽相对固定系数改善率</text>
+<line x1="342.50" y1="50" x2="342.50" y2="375" stroke="#777" stroke-dasharray="4 3"/>
+<text x="168" y="77.0" text-anchor="end" font-family="Arial" font-size="13">E6 串联水箱</text>
+<rect x="342.50" y="50" width="419.79" height="44" fill="#0072B2" opacity="0.82"/>
+<text x="768.29" y="77.0" text-anchor="start" font-family="Arial" font-size="12">38.75% (正例)</text>
+<text x="168" y="149.0" text-anchor="end" font-family="Arial" font-size="13">E7 EMPS</text>
+<rect x="342.50" y="122" width="74.71" height="44" fill="#0072B2" opacity="0.82"/>
+<text x="423.21" y="149.0" text-anchor="start" font-family="Arial" font-size="12">6.90% (正例)</text>
+<text x="168" y="221.0" text-anchor="end" font-family="Arial" font-size="13">E8 PMSM 温度</text>
+<rect x="258.44" y="194" width="84.06" height="44" fill="#D55E00" opacity="0.82"/>
+<text x="252.44" y="221.0" text-anchor="end" font-family="Arial" font-size="12">-7.76% (边界)</text>
+<text x="168" y="293.0" text-anchor="end" font-family="Arial" font-size="13">E9 建筑热动态</text>
+<rect x="342.50" y="266" width="89.25" height="44" fill="#0072B2" opacity="0.82"/>
+<text x="437.75" y="293.0" text-anchor="start" font-family="Arial" font-size="12">8.24% (边界)</text>
+<text x="180" y="412" font-family="Arial" font-size="12">改善率为正表示系数槽优于固定系数基线</text>
+</svg>

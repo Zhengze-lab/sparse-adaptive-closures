@@ -1,0 +1,48 @@
+{
+  "experiment_id": "SB2b_silverbox_windowed_output_error",
+  "description": "Windowed output-error diagnostics for Silverbox linear and stiffness-slot models.",
+  "source_dataset": "silverbox_data_audit",
+  "dataloader": "nonlinear_benchmarks.Silverbox",
+  "train_fit_fraction": 0.8,
+  "window_length": 300,
+  "state_initialization_window": 50,
+  "residual_stride": 5,
+  "fit_window_count": 12,
+  "validation_window_count": 8,
+  "test_window_count": 8,
+  "linear_max_nfev": 45,
+  "slot_max_nfev": 35,
+  "init_max_nfev": 50,
+  "max_abs_state": 5.0,
+  "max_abs_b_scaled": 10.0,
+  "max_abs_beta2_scaled": 2.0,
+  "max_abs_x20_scaled": 50.0,
+  "slot_beta2_starts_scaled": [
+    0.0
+  ],
+  "model_form_linear": "x1_dot=x2; x2_dot=-c*x2-k*x1+b*(u-u0); y=x1+y0",
+  "model_form_slot": "x1_dot=x2; x2_dot=-c*x2-x1*(beta0+beta2*x1^2)+b*(u-u0); y=x1+y0",
+  "test_usage_rule": "Official test records are used only after choosing the diagnostic setup from train_val.",
+  "created_at_utc": "2026-06-13T07:50:20.732129+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "nonlinear-benchmarks": "1.0.1",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "source_files": {
+    "raw_audit_provenance": "data/provenance/silverbox_data_audit_provenance.json",
+    "sb1_metrics": "results/silverbox_sb1_linear_oe/metrics.json",
+    "sb2_metrics": "results/silverbox_sb2_slot_oe/metrics.json"
+  },
+  "outputs": {
+    "parameters_csv": "results/silverbox_sb2b_windowed_oe/parameters.csv",
+    "slot_candidate_starts_csv": "results/silverbox_sb2b_windowed_oe/slot_candidate_starts.csv",
+    "summary_by_record_model_csv": "results/silverbox_sb2b_windowed_oe/summary_by_record_model.csv",
+    "window_metrics_csv": "results/silverbox_sb2b_windowed_oe/window_metrics.csv",
+    "metrics_json": "results/silverbox_sb2b_windowed_oe/metrics.json",
+    "hashes_json": "results/silverbox_sb2b_windowed_oe/hashes.json",
+    "figures": "results/silverbox_sb2b_windowed_oe/figures/"
+  }
+}

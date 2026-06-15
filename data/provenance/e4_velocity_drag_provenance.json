@@ -1,0 +1,118 @@
+{
+  "dataset_id": "e4_velocity_drag_trajectories",
+  "experiment_id": "E4_velocity_dependent_drag",
+  "created_at_utc": "2026-06-13T12:19:50.699746+00:00",
+  "source_name": "Synthetic low-speed linear drag to quadratic aerodynamic drag benchmark",
+  "source_urls": [
+    "synthetic truth generated in script"
+  ],
+  "source_access_date": "2026-06-13",
+  "equation_reference": "First-order forced velocity dynamics with linear-plus-quadratic drag.",
+  "parameters": {
+    "c0": 0.08,
+    "c1": 0.55
+  },
+  "input_specs": {
+    "train_low": [
+      {
+        "amplitude": 0.04,
+        "phase": 0.0,
+        "v0": 0.0
+      },
+      {
+        "amplitude": 0.07,
+        "phase": 0.9,
+        "v0": 0.03
+      },
+      {
+        "amplitude": 0.1,
+        "phase": 1.7,
+        "v0": -0.04
+      }
+    ],
+    "train_medium": [
+      {
+        "amplitude": 0.18,
+        "phase": 0.2,
+        "v0": 0.0
+      },
+      {
+        "amplitude": 0.28,
+        "phase": 1.1,
+        "v0": 0.08
+      },
+      {
+        "amplitude": 0.42,
+        "phase": 2.0,
+        "v0": -0.08
+      },
+      {
+        "amplitude": 0.55,
+        "phase": 2.8,
+        "v0": 0.05
+      }
+    ],
+    "test_interp": [
+      {
+        "amplitude": 0.35,
+        "phase": 0.55,
+        "v0": 0.12
+      },
+      {
+        "amplitude": 0.5,
+        "phase": 1.55,
+        "v0": -0.1
+      },
+      {
+        "amplitude": 0.62,
+        "phase": 2.55,
+        "v0": 0.0
+      }
+    ],
+    "test_extrap": [
+      {
+        "amplitude": 0.9,
+        "phase": 0.35,
+        "v0": 0.0
+      },
+      {
+        "amplitude": 1.1,
+        "phase": 1.35,
+        "v0": -0.18
+      },
+      {
+        "amplitude": 1.3,
+        "phase": 2.35,
+        "v0": 0.18
+      }
+    ]
+  },
+  "time_grid": {
+    "t_end": 24.0,
+    "dt": 0.02
+  },
+  "noise_model": null,
+  "candidate_slots": [
+    {
+      "name": "drag",
+      "g": "-v",
+      "coefficient_function": "p(v)=c0+c1*abs(v)"
+    }
+  ],
+  "software": {
+    "python": "3.13.9",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "pysindy": "2.1.0"
+  },
+  "script": "scripts/run_e4_velocity_drag.py",
+  "outputs": {
+    "trajectory_csv": "data/generated/e4_velocity_drag/e4_velocity_drag_trajectories.csv",
+    "rollout_summary_csv": "results/e4_velocity_drag/rollout_summary.csv",
+    "rollout_samples_csv": "results/e4_velocity_drag/rollout_samples.csv",
+    "coefficients_csv": "results/e4_velocity_drag/coefficients.csv",
+    "gain_schedule_csv": "results/e4_velocity_drag/gain_schedule.csv",
+    "model_coefficients_csv": "results/e4_velocity_drag/model_coefficients.csv",
+    "metrics_json": "results/e4_velocity_drag/metrics.json"
+  }
+}

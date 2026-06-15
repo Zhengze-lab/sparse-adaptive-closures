@@ -1,0 +1,59 @@
+{
+  "experiment_id": "BATT3_lfp_constant_first_order_ecm",
+  "description": "Constant first-order Thevenin/RC ECM output-error baseline using BATT-2 OCV_mean(s,T).",
+  "source_dataset": "battery_lfp_ocv_dyn",
+  "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+  "source_doi": "10.17632/p8kf893yv3.1",
+  "license": "CC BY 4.0",
+  "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+  "ocv_grid_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_grid.csv",
+  "dyn_root": "DYNData",
+  "dyn_script": "script1",
+  "q_nominal_ah": 2.5,
+  "ocv_curve": "mean",
+  "ocv_training_temperatures_c": [
+    -25,
+    -5,
+    5,
+    15,
+    25,
+    45
+  ],
+  "heldout_temperature_validation_c": [
+    -15,
+    35
+  ],
+  "stress_test_amplitude_token": 50,
+  "fit_stride": 20,
+  "prediction_sample_stride": 30,
+  "initialization_window_s": 300.0,
+  "score_start_s": 300.0,
+  "least_squares_loss": "soft_l1",
+  "least_squares_f_scale_v": 0.02,
+  "max_nfev_ohmic": 80,
+  "max_nfev_ecm": 120,
+  "model_sign_convention": "raw dataset current is converted to discharge-positive current I=-current_raw; Vhat=OCV(s,T)-R0*I-v1.",
+  "created_at_utc": "2026-06-13T08:56:21.747966+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "script": "scripts/run_batt3_constant_ecm.py",
+  "outputs": {
+    "metrics_by_trajectory_csv": "results/battery_lfp_constant_ecm/metrics_by_trajectory.csv",
+    "metrics_by_split_csv": "results/battery_lfp_constant_ecm/metrics_by_split.csv",
+    "predictions_sample_csv": "results/battery_lfp_constant_ecm/predictions_sample.csv",
+    "metrics_json": "results/battery_lfp_constant_ecm/metrics.json",
+    "figures": [
+      "results/battery_lfp_constant_ecm/figures/rmse_by_split.svg",
+      "results/battery_lfp_constant_ecm/figures/rmse_by_split_zh.svg",
+      "results/battery_lfp_constant_ecm/figures/heldout_temperature_voltage_prediction.svg",
+      "results/battery_lfp_constant_ecm/figures/heldout_temperature_voltage_prediction_zh.svg"
+    ],
+    "provenance_json": "data/provenance/batt3_constant_ecm_provenance.json"
+  },
+  "test_usage_rule": "Global ECM parameters are fitted only on split=train. Non-train records use only a short prefix for initial-state estimation, then score after the initialization window.",
+  "next_action": "Use BATT-3 as the constant baseline for BATT-4 coefficient-slot ECM."
+}

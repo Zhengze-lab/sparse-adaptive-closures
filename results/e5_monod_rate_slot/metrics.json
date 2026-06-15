@@ -1,0 +1,356 @@
+{
+  "experiment_id": "E5_monod_michaelis_menten_rate_slot",
+  "b0_constant_mu": 0.16912750642532762,
+  "b0_gain_schedule": {
+    "S_edges": [
+      0.0,
+      0.2,
+      0.5,
+      0.95,
+      1.55,
+      2.0
+    ],
+    "values": [
+      0.05823009007762749,
+      0.571804420821038,
+      0.7902225186527501,
+      0.9183978744578853,
+      0.9838980382569216
+    ]
+  },
+  "b3_optimizer": "PySINDy STLSQ on polynomial coefficient-slot design matrix",
+  "b1r_optimizer": "SciPy least_squares rational full-vector-field loss with independent dX/dS numerators and shared denominator",
+  "b5_optimizer": "SciPy least_squares rational coefficient-slot loss; SINDy-PI-style rational/implicit comparison",
+  "pysindy_sindy_pi_available": true,
+  "true_rational_parameters": {
+    "numerator_S": 3.428571428571429,
+    "denominator_S": 2.857142857142857
+  },
+  "true_rational_full_vector_field_parameters": {
+    "dX_numerator_XS": 3.428571428571429,
+    "dS_numerator_XS": 6.233766233766234,
+    "shared_denominator_S": 2.857142857142857
+  },
+  "b3_coefficients": {
+    "1": 0.002701195884118977,
+    "S": 2.9572102962317866,
+    "S^2": -4.5560992126442725,
+    "S^3": 3.432426054098343,
+    "S^4": -0.9512443545682678
+  },
+  "b1r_rational_full_vector_field_parameters": {
+    "dX_numerator_XS": 3.428571428571423,
+    "dS_numerator_XS": 6.233766233766223,
+    "shared_denominator_S": 2.857142857142853
+  },
+  "b5_rational_parameters": {
+    "numerator_S": 3.428571428571423,
+    "denominator_S": 2.857142857142853
+  },
+  "active_term_counts": {
+    "B0_gain_scheduled_lookup": 5,
+    "B1_full_sindy": 24,
+    "B2_free_residual_sindy": 24,
+    "B1R_rational_full_vector_field": 3,
+    "B3_slot_polynomial": 5,
+    "B5_sindy_pi_rational_slot": 2
+  },
+  "rollout_nrmse_by_split": {
+    "train_local": {
+      "B0_constant_rate": {
+        "mean_nrmse_all": 1.7037992176664625,
+        "mean_nrmse_biomass": 1.7062723316464357,
+        "mean_nrmse_substrate": 1.7062723316464343,
+        "max_nrmse_all": 1.7409435177309769,
+        "max_nrmse_biomass": 1.7416377900209865,
+        "max_nrmse_substrate": 1.7416377900209867
+      },
+      "B0_gain_scheduled_lookup": {
+        "mean_nrmse_all": 0.1358241042854815,
+        "mean_nrmse_biomass": 0.136042467555997,
+        "mean_nrmse_substrate": 0.13604246755599722,
+        "max_nrmse_all": 0.16431615905274238,
+        "max_nrmse_biomass": 0.1647985200511766,
+        "max_nrmse_substrate": 0.16479852005117662
+      },
+      "B1_full_sindy": {
+        "mean_nrmse_all": 0.007478344942540033,
+        "mean_nrmse_biomass": 0.007491044140999823,
+        "mean_nrmse_substrate": 0.007491044141000046,
+        "max_nrmse_all": 0.009389575099155082,
+        "max_nrmse_biomass": 0.009417138820492185,
+        "max_nrmse_substrate": 0.00941713882049526
+      },
+      "B2_free_residual_sindy": {
+        "mean_nrmse_all": 0.007478344942541844,
+        "mean_nrmse_biomass": 0.007491044141002164,
+        "mean_nrmse_substrate": 0.0074910441410017065,
+        "max_nrmse_all": 0.009389575099161104,
+        "max_nrmse_biomass": 0.00941713882050112,
+        "max_nrmse_substrate": 0.009417138820500425
+      },
+      "B1R_rational_full_vector_field": {
+        "mean_nrmse_all": 9.277334950073458e-17,
+        "mean_nrmse_biomass": 1.5607324555235155e-16,
+        "mean_nrmse_substrate": 5.947442357376257e-17,
+        "max_nrmse_all": 2.326250575293588e-16,
+        "max_nrmse_biomass": 3.7695733293164107e-16,
+        "max_nrmse_substrate": 1.6707532975707595e-16
+      },
+      "B3_slot_polynomial": {
+        "mean_nrmse_all": 0.007356331315322395,
+        "mean_nrmse_biomass": 0.007365718377885712,
+        "mean_nrmse_substrate": 0.0073657183778843005,
+        "max_nrmse_all": 0.012307682633331388,
+        "max_nrmse_biomass": 0.012312590824161952,
+        "max_nrmse_substrate": 0.012312590824159189
+      },
+      "B5_sindy_pi_rational_slot": {
+        "mean_nrmse_all": 1.8031402811132414e-16,
+        "mean_nrmse_biomass": 3.0998890435099184e-16,
+        "mean_nrmse_substrate": 1.1516430621830209e-16,
+        "max_nrmse_all": 2.444865816703008e-16,
+        "max_nrmse_biomass": 4.0146859517991146e-16,
+        "max_nrmse_substrate": 1.7192133748219025e-16
+      },
+      "B4_oracle_reference": {
+        "mean_nrmse_all": 0.0,
+        "mean_nrmse_biomass": 0.0,
+        "mean_nrmse_substrate": 0.0,
+        "max_nrmse_all": 0.0,
+        "max_nrmse_biomass": 0.0,
+        "max_nrmse_substrate": 0.0
+      }
+    },
+    "train_wide": {
+      "B0_constant_rate": {
+        "mean_nrmse_all": 1.5572900715575957,
+        "mean_nrmse_biomass": 1.5837001304087663,
+        "mean_nrmse_substrate": 1.5837001304087668,
+        "max_nrmse_all": 1.725485345231966,
+        "max_nrmse_biomass": 1.7267004951938631,
+        "max_nrmse_substrate": 1.7267004951938654
+      },
+      "B0_gain_scheduled_lookup": {
+        "mean_nrmse_all": 0.4872943769215687,
+        "mean_nrmse_biomass": 0.5017952785635181,
+        "mean_nrmse_substrate": 0.5017952785635182,
+        "max_nrmse_all": 1.2708646579334764,
+        "max_nrmse_biomass": 1.3119545631781926,
+        "max_nrmse_substrate": 1.3119545631781921
+      },
+      "B1_full_sindy": {
+        "mean_nrmse_all": 0.012365291564210072,
+        "mean_nrmse_biomass": 0.01266512686846738,
+        "mean_nrmse_substrate": 0.012665126868467155,
+        "max_nrmse_all": 0.02704137087693437,
+        "max_nrmse_biomass": 0.02791567905765837,
+        "max_nrmse_substrate": 0.02791567905765448
+      },
+      "B2_free_residual_sindy": {
+        "mean_nrmse_all": 0.012365291564209752,
+        "mean_nrmse_biomass": 0.01266512686846782,
+        "mean_nrmse_substrate": 0.012665126868466622,
+        "max_nrmse_all": 0.02704137087694447,
+        "max_nrmse_biomass": 0.027915679057673982,
+        "max_nrmse_substrate": 0.027915679057663328
+      },
+      "B1R_rational_full_vector_field": {
+        "mean_nrmse_all": 1.2145317149604128e-16,
+        "mean_nrmse_biomass": 9.617816017146282e-17,
+        "mean_nrmse_substrate": 1.1956052187834107e-16,
+        "max_nrmse_all": 2.233891987134158e-16,
+        "max_nrmse_biomass": 3.2208805747993205e-16,
+        "max_nrmse_substrate": 1.8592701549757608e-16
+      },
+      "B3_slot_polynomial": {
+        "mean_nrmse_all": 0.0217167667638863,
+        "mean_nrmse_biomass": 0.02207718054936868,
+        "mean_nrmse_substrate": 0.02207718054936823,
+        "max_nrmse_all": 0.050834996045849866,
+        "max_nrmse_biomass": 0.05108499761666957,
+        "max_nrmse_substrate": 0.05108499761666792
+      },
+      "B5_sindy_pi_rational_slot": {
+        "mean_nrmse_all": 1.4752827542294816e-16,
+        "mean_nrmse_biomass": 2.396641704829835e-16,
+        "mean_nrmse_substrate": 1.0782479899263134e-16,
+        "max_nrmse_all": 3.173804445613052e-16,
+        "max_nrmse_biomass": 5.133157297997051e-16,
+        "max_nrmse_substrate": 2.4518533777981996e-16
+      },
+      "B4_oracle_reference": {
+        "mean_nrmse_all": 0.0,
+        "mean_nrmse_biomass": 0.0,
+        "mean_nrmse_substrate": 0.0,
+        "max_nrmse_all": 0.0,
+        "max_nrmse_biomass": 0.0,
+        "max_nrmse_substrate": 0.0
+      }
+    },
+    "test_interp": {
+      "B0_constant_rate": {
+        "mean_nrmse_all": 1.6939394830635461,
+        "mean_nrmse_biomass": 1.704750674771355,
+        "mean_nrmse_substrate": 1.7047506747713534,
+        "max_nrmse_all": 1.774797966019367,
+        "max_nrmse_biomass": 1.7875077326143451,
+        "max_nrmse_substrate": 1.787507732614342
+      },
+      "B0_gain_scheduled_lookup": {
+        "mean_nrmse_all": 0.21858081500158236,
+        "mean_nrmse_biomass": 0.21981975224918957,
+        "mean_nrmse_substrate": 0.21981975224919,
+        "max_nrmse_all": 0.39376926844086946,
+        "max_nrmse_biomass": 0.39559228295597204,
+        "max_nrmse_substrate": 0.3955922829559751
+      },
+      "B1_full_sindy": {
+        "mean_nrmse_all": 0.011687844960538036,
+        "mean_nrmse_biomass": 0.011758893254719955,
+        "mean_nrmse_substrate": 0.011758893254718688,
+        "max_nrmse_all": 0.016803560968938733,
+        "max_nrmse_biomass": 0.01692645587815382,
+        "max_nrmse_substrate": 0.01692645587815181
+      },
+      "B2_free_residual_sindy": {
+        "mean_nrmse_all": 0.011687844960536905,
+        "mean_nrmse_biomass": 0.01175889325471747,
+        "mean_nrmse_substrate": 0.011758893254717956,
+        "max_nrmse_all": 0.016803560968939712,
+        "max_nrmse_biomass": 0.01692645587815306,
+        "max_nrmse_substrate": 0.01692645587815332
+      },
+      "B1R_rational_full_vector_field": {
+        "mean_nrmse_all": 9.472682535346899e-17,
+        "mean_nrmse_biomass": 1.4076013866782832e-16,
+        "mean_nrmse_substrate": 3.1784486276301493e-17,
+        "max_nrmse_all": 2.0202944891570406e-16,
+        "max_nrmse_biomass": 4.2228041600348497e-16,
+        "max_nrmse_substrate": 5.79898706888584e-17
+      },
+      "B3_slot_polynomial": {
+        "mean_nrmse_all": 0.010888054230097735,
+        "mean_nrmse_biomass": 0.010957697340145662,
+        "mean_nrmse_substrate": 0.010957697340145392,
+        "max_nrmse_all": 0.01787838009562482,
+        "max_nrmse_biomass": 0.018009135826676216,
+        "max_nrmse_substrate": 0.01800913582667442
+      },
+      "B5_sindy_pi_rational_slot": {
+        "mean_nrmse_all": 1.7865427810608082e-16,
+        "mean_nrmse_biomass": 3.6442449906870517e-16,
+        "mean_nrmse_substrate": 2.7373557577040087e-17,
+        "max_nrmse_all": 3.0928020722743794e-16,
+        "max_nrmse_biomass": 6.453374219732177e-16,
+        "max_nrmse_substrate": 5.566874967693177e-17
+      },
+      "B4_oracle_reference": {
+        "mean_nrmse_all": 0.0,
+        "mean_nrmse_biomass": 0.0,
+        "mean_nrmse_substrate": 0.0,
+        "max_nrmse_all": 0.0,
+        "max_nrmse_biomass": 0.0,
+        "max_nrmse_substrate": 0.0
+      }
+    },
+    "test_extrap": {
+      "B0_constant_rate": {
+        "mean_nrmse_all": 1.3858602124395096,
+        "mean_nrmse_biomass": 1.5209254809926023,
+        "mean_nrmse_substrate": 1.5209254809926083,
+        "max_nrmse_all": 1.7392657594174152,
+        "max_nrmse_biomass": 1.7393443886167508,
+        "max_nrmse_substrate": 1.739344388616753
+      },
+      "B0_gain_scheduled_lookup": {
+        "mean_nrmse_all": 0.37957739724050127,
+        "mean_nrmse_biomass": 0.5409986727895709,
+        "mean_nrmse_substrate": 0.5409986727895725,
+        "max_nrmse_all": 0.9512810168545341,
+        "max_nrmse_biomass": 1.434896011375091,
+        "max_nrmse_substrate": 1.4348960113750941
+      },
+      "B1_full_sindy": {
+        "mean_nrmse_all": 1.2150127783513247,
+        "mean_nrmse_biomass": 1.235390010346223,
+        "mean_nrmse_substrate": 1.2353900103461692,
+        "max_nrmse_all": 1.867935797685675,
+        "max_nrmse_biomass": 1.868020243835179,
+        "max_nrmse_substrate": 1.8680202438350584
+      },
+      "B2_free_residual_sindy": {
+        "mean_nrmse_all": 1.2150127783513467,
+        "mean_nrmse_biomass": 1.2353900103462072,
+        "mean_nrmse_substrate": 1.2353900103461959,
+        "max_nrmse_all": 1.8679357976857438,
+        "max_nrmse_biomass": 1.86802024383518,
+        "max_nrmse_substrate": 1.8680202438351472
+      },
+      "B1R_rational_full_vector_field": {
+        "mean_nrmse_all": 2.2562197350052224e-16,
+        "mean_nrmse_biomass": 3.8935774242611183e-16,
+        "mean_nrmse_substrate": 1.4382527241681605e-16,
+        "max_nrmse_all": 5.09513841122613e-16,
+        "max_nrmse_biomass": 8.728780648616119e-16,
+        "max_nrmse_substrate": 3.281548719797674e-16
+      },
+      "B3_slot_polynomial": {
+        "mean_nrmse_all": 1.2818333881342854,
+        "mean_nrmse_biomass": 1.296976342145732,
+        "mean_nrmse_substrate": 1.29697634214573,
+        "max_nrmse_all": 1.9642153607032329,
+        "max_nrmse_biomass": 1.964304159485308,
+        "max_nrmse_substrate": 1.964304159485306
+      },
+      "B5_sindy_pi_rational_slot": {
+        "mean_nrmse_all": 1.8885776503024343e-16,
+        "mean_nrmse_biomass": 3.8369344619813466e-16,
+        "mean_nrmse_substrate": 4.3125174493781644e-17,
+        "max_nrmse_all": 5.660633906712966e-16,
+        "max_nrmse_biomass": 1.151080338594404e-15,
+        "max_nrmse_substrate": 1.2878916317778818e-16
+      },
+      "B4_oracle_reference": {
+        "mean_nrmse_all": 0.0,
+        "mean_nrmse_biomass": 0.0,
+        "mean_nrmse_substrate": 0.0,
+        "max_nrmse_all": 0.0,
+        "max_nrmse_biomass": 0.0,
+        "max_nrmse_substrate": 0.0
+      }
+    }
+  },
+  "coefficient_function": {
+    "grid_nrmse": 6.591200883048093e-16,
+    "support_precision": 1.0,
+    "support_recall": 1.0,
+    "B3_slot_polynomial": {
+      "grid_rmse": 2.183224542509527,
+      "grid_nrmse": 9.530336631424614,
+      "max_abs_error": 8.250833445884798,
+      "grid_min_pred": -7.190833445884799,
+      "grid_max_pred": 0.9777731644209702,
+      "active_terms": [
+        "1",
+        "S",
+        "S^2",
+        "S^3",
+        "S^4"
+      ]
+    },
+    "B5_sindy_pi_rational_slot": {
+      "grid_rmse": 1.5099226909815888e-16,
+      "grid_nrmse": 6.591200883048093e-16,
+      "max_abs_error": 6.661338147750939e-16,
+      "grid_min_pred": 0.0,
+      "grid_max_pred": 1.0599999999999994,
+      "active_terms": [
+        "numerator_S",
+        "denominator_S"
+      ],
+      "support_precision": 1.0,
+      "support_recall": 1.0
+    }
+  }
+}

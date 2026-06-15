@@ -1,0 +1,259 @@
+{
+  "experiment_id": "BATT2_lfp_ocv_calibration",
+  "status": "complete",
+  "config": {
+    "experiment_id": "BATT2_lfp_ocv_calibration",
+    "description": "OCV(SOC,T) calibration from LiFePO4 OCV data for the battery ECM route.",
+    "source_dataset": "battery_lfp_ocv_dyn",
+    "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+    "source_doi": "10.17632/p8kf893yv3.1",
+    "license": "CC BY 4.0",
+    "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+    "soc_grid_start": 0.02,
+    "soc_grid_end": 0.98,
+    "soc_grid_count": 97,
+    "used_scripts": {
+      "script1": "discharge curve; SOC = 1 - normalized disAh",
+      "script3": "charge curve; SOC = normalized chgAh"
+    },
+    "excluded_ocv_files": "A002_02 repeat OCV files are excluded from first-pass calibration and reserved for repeatability checks.",
+    "heldout_temperatures_c": [
+      -15,
+      35
+    ],
+    "training_temperatures_c": [
+      -25,
+      -5,
+      5,
+      15,
+      25,
+      45
+    ],
+    "models": [
+      "linear_temperature_interpolation",
+      "least_squares_polynomial_soc7_temp2"
+    ]
+  },
+  "raw_zip_sha256": "5f758b8dae788d63569a982a04c3cd87e8bc940481a5fc69d569e25f1f3732ff",
+  "curve_count": 16,
+  "temperatures_c": [
+    -25,
+    -15,
+    -5,
+    5,
+    15,
+    25,
+    35,
+    45
+  ],
+  "soc_grid_count": 97,
+  "primary_model": "linear_temperature_interpolation:mean",
+  "primary_heldout_rmse_mv": 15.158397729454796,
+  "primary_heldout_max_abs_mv": 45.728116112528916,
+  "model_summary": {
+    "linear_temperature_interpolation:discharge": {
+      "rmse_mv": 32.64470639888932,
+      "max_abs_mv": 94.63298320770264,
+      "n_points": 194
+    },
+    "least_squares_polynomial_soc7_temp2:discharge": {
+      "rmse_mv": 36.37789611899312,
+      "max_abs_mv": 100.90550700963962,
+      "n_points": 194
+    },
+    "poly_features:discharge": {
+      "feature_names": [
+        "Tn^0*soc^0",
+        "Tn^0*soc^1",
+        "Tn^0*soc^2",
+        "Tn^0*soc^3",
+        "Tn^0*soc^4",
+        "Tn^0*soc^5",
+        "Tn^0*soc^6",
+        "Tn^0*soc^7",
+        "Tn^1*soc^0",
+        "Tn^1*soc^1",
+        "Tn^1*soc^2",
+        "Tn^1*soc^3",
+        "Tn^1*soc^4",
+        "Tn^1*soc^5",
+        "Tn^1*soc^6",
+        "Tn^1*soc^7",
+        "Tn^2*soc^0",
+        "Tn^2*soc^1",
+        "Tn^2*soc^2",
+        "Tn^2*soc^3",
+        "Tn^2*soc^4",
+        "Tn^2*soc^5",
+        "Tn^2*soc^6",
+        "Tn^2*soc^7"
+      ],
+      "coefficients": [
+        2.6694405712231326,
+        11.398360670177283,
+        -93.96164189133636,
+        396.8534938737989,
+        -917.7167179151569,
+        1173.2060477969317,
+        -776.7359730418681,
+        207.66302578120545,
+        0.29648345296064266,
+        1.6182585745672347,
+        -29.268258821171944,
+        143.03703822554903,
+        -344.79098561166546,
+        446.754986640031,
+        -297.261944306364,
+        79.65446611655881,
+        -0.32082053438149066,
+        -2.6058731717728296,
+        39.31319785986396,
+        -184.94716547618827,
+        440.18109999979725,
+        -568.9022942326536,
+        379.21636065407324,
+        -101.97828642111129
+      ]
+    },
+    "linear_temperature_interpolation:charge": {
+      "rmse_mv": 5.243108078368645,
+      "max_abs_mv": 16.826846039001975,
+      "n_points": 194
+    },
+    "least_squares_polynomial_soc7_temp2:charge": {
+      "rmse_mv": 9.068260846684987,
+      "max_abs_mv": 30.528644365080293,
+      "n_points": 194
+    },
+    "poly_features:charge": {
+      "feature_names": [
+        "Tn^0*soc^0",
+        "Tn^0*soc^1",
+        "Tn^0*soc^2",
+        "Tn^0*soc^3",
+        "Tn^0*soc^4",
+        "Tn^0*soc^5",
+        "Tn^0*soc^6",
+        "Tn^0*soc^7",
+        "Tn^1*soc^0",
+        "Tn^1*soc^1",
+        "Tn^1*soc^2",
+        "Tn^1*soc^3",
+        "Tn^1*soc^4",
+        "Tn^1*soc^5",
+        "Tn^1*soc^6",
+        "Tn^1*soc^7",
+        "Tn^2*soc^0",
+        "Tn^2*soc^1",
+        "Tn^2*soc^2",
+        "Tn^2*soc^3",
+        "Tn^2*soc^4",
+        "Tn^2*soc^5",
+        "Tn^2*soc^6",
+        "Tn^2*soc^7"
+      ],
+      "coefficients": [
+        2.8341424439312113,
+        8.489122310054059,
+        -69.22712202775213,
+        299.3936613158769,
+        -717.2388864605759,
+        952.683995211042,
+        -655.1504473786343,
+        181.69776868910847,
+        -0.02456051029711814,
+        0.22079746021581906,
+        -2.7611606753617632,
+        14.545938313739532,
+        -39.396598841811056,
+        56.72455746780831,
+        -41.166584347122374,
+        11.747599263823615,
+        -0.007767732737145209,
+        0.20168349992190357,
+        0.13455257390639344,
+        -8.762427522479683,
+        41.96084140066015,
+        -82.92334245068561,
+        74.46874138212769,
+        -25.030901949008076
+      ]
+    },
+    "linear_temperature_interpolation:mean": {
+      "rmse_mv": 15.158397729454796,
+      "max_abs_mv": 45.728116112528916,
+      "n_points": 194
+    },
+    "least_squares_polynomial_soc7_temp2:mean": {
+      "rmse_mv": 18.03942919910974,
+      "max_abs_mv": 52.55968414984391,
+      "n_points": 194
+    },
+    "poly_features:mean": {
+      "feature_names": [
+        "Tn^0*soc^0",
+        "Tn^0*soc^1",
+        "Tn^0*soc^2",
+        "Tn^0*soc^3",
+        "Tn^0*soc^4",
+        "Tn^0*soc^5",
+        "Tn^0*soc^6",
+        "Tn^0*soc^7",
+        "Tn^1*soc^0",
+        "Tn^1*soc^1",
+        "Tn^1*soc^2",
+        "Tn^1*soc^3",
+        "Tn^1*soc^4",
+        "Tn^1*soc^5",
+        "Tn^1*soc^6",
+        "Tn^1*soc^7",
+        "Tn^2*soc^0",
+        "Tn^2*soc^1",
+        "Tn^2*soc^2",
+        "Tn^2*soc^3",
+        "Tn^2*soc^4",
+        "Tn^2*soc^5",
+        "Tn^2*soc^6",
+        "Tn^2*soc^7"
+      ],
+      "coefficients": [
+        2.7517915075771735,
+        9.94374149011577,
+        -81.59438195954488,
+        348.1235775948402,
+        -817.4778021878716,
+        1062.9450215039933,
+        -715.9432102102556,
+        194.6803972351581,
+        0.1359614713316326,
+        0.9195280173920227,
+        -16.014709748270576,
+        78.79148826966056,
+        -192.093792226776,
+        251.7397720539681,
+        -169.21426432677526,
+        45.70103269019957,
+        -0.1642941335592804,
+        -1.2020948359260186,
+        19.723875216890093,
+        -96.85479649935577,
+        241.07097070027956,
+        -325.91281834173475,
+        226.84255101814364,
+        -63.50459418507095
+      ]
+    }
+  },
+  "outputs": {
+    "ocv_curves_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_curves.csv",
+    "ocv_grid_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_grid.csv",
+    "metrics_by_curve_csv": "results/battery_lfp_ocv_calibration/metrics_by_curve.csv",
+    "heldout_predictions_csv": "results/battery_lfp_ocv_calibration/heldout_predictions.csv",
+    "figures": [
+      "results/battery_lfp_ocv_calibration/figures/ocv_curves_by_temperature.svg",
+      "results/battery_lfp_ocv_calibration/figures/ocv_curves_by_temperature_zh.svg",
+      "results/battery_lfp_ocv_calibration/figures/heldout_ocv_error.svg",
+      "results/battery_lfp_ocv_calibration/figures/heldout_ocv_error_zh.svg"
+    ]
+  }
+}

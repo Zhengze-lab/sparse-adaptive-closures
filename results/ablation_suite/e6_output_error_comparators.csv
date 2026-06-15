@@ -1,0 +1,11 @@
+case_id,model,n,mean_nrmse,std_nrmse,split,nrmse,rmse,active_terms,nfev,n_windows
+E6,B0_linear_outflow,80,0.5420645425758392,0.01523925196713627,,,,,,
+E6,B3_sqrt_outflow_slot,80,0.32882924685881587,0.015019217229704201,,,,,,
+E6,B1_windowed_linear_OE,,,,estimation,38.34979059318359,85.09351008438185,14,20,3
+E6,B1_windowed_linear_OE,,,,test,21.20058149628224,44.94506555399782,14,20,3
+E6,B2_windowed_residual_OE,,,,estimation,39.27182384916809,87.1393894738823,14,20,3
+E6,B2_windowed_residual_OE,,,,test,22.464080304260804,47.6236730611529,14,20,3
+E6,B1_proxy_state_sindy,,,,estimation,2.7088104438645617,6.010520142517756,9,proxy_state_regression,
+E6,B1_proxy_state_sindy,,,,test,2.9199158018450957,6.190198469277629,9,proxy_state_regression,
+E6,B2_proxy_residual_sindy,,,,estimation,0.9518754746187251,2.1120956345701964,10,proxy_state_regression,
+E6,B2_proxy_residual_sindy,,,,test,1.101184006088445,2.3345014073948027,10,proxy_state_regression,

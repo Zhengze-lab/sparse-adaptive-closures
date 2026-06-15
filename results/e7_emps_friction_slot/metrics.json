@@ -1,0 +1,300 @@
+{
+  "experiment_id": "E7_emps_friction_slot",
+  "summary": {
+    "test_b0_symmetric_nrmse": 0.07196356738410793,
+    "test_b3_asymmetric_slot_nrmse": 0.0670009531898922,
+    "test_b1_full_polynomial_nrmse": 0.06456448592595525,
+    "test_b3_vs_b0_improvement_percent": 6.896009153809194,
+    "test_b3_vs_b1_gap_nrmse": 0.0024364672639369533
+  },
+  "metric_rows": [
+    {
+      "model": "B0_viscous",
+      "split": "train",
+      "n_samples": 2480,
+      "dt_s": 0.009999839611225525,
+      "rmse_n": 9.129921901317891,
+      "mae_n": 7.7960954884669,
+      "nrmse": 0.17105548419475045,
+      "fit_percent": 82.89445158052496,
+      "relative_error_percent": 17.070867107664764,
+      "bias_n": 7.339218838399486e-14,
+      "max_abs_error_n": 35.45696687867513
+    },
+    {
+      "model": "B0_viscous",
+      "split": "test",
+      "n_samples": 2480,
+      "dt_s": 0.010000080189889182,
+      "rmse_n": 9.655548759566692,
+      "mae_n": 8.05297405913189,
+      "nrmse": 0.17003737226935325,
+      "fit_percent": 82.99626277306467,
+      "relative_error_percent": 16.972463409519285,
+      "bias_n": 0.04698782862307933,
+      "max_abs_error_n": 34.710391800950134
+    },
+    {
+      "model": "B0_symmetric_coulomb",
+      "split": "train",
+      "n_samples": 2480,
+      "dt_s": 0.009999839611225525,
+      "rmse_n": 3.2104055932194653,
+      "mae_n": 1.8693494993413173,
+      "nrmse": 0.060149198333276054,
+      "fit_percent": 93.98508016667239,
+      "relative_error_percent": 6.002724649335961,
+      "bias_n": -4.941710123544439e-14,
+      "max_abs_error_n": 42.102422293553076
+    },
+    {
+      "model": "B0_symmetric_coulomb",
+      "split": "test",
+      "n_samples": 2480,
+      "dt_s": 0.010000080189889182,
+      "rmse_n": 4.086441260036183,
+      "mae_n": 2.63472276399821,
+      "nrmse": 0.07196356738410793,
+      "fit_percent": 92.8036432615892,
+      "relative_error_percent": 7.1831209689035305,
+      "bias_n": 0.030287968625425408,
+      "max_abs_error_n": 43.089732124499236
+    },
+    {
+      "model": "B3_asymmetric_friction_slot",
+      "split": "train",
+      "n_samples": 2480,
+      "dt_s": 0.009999839611225525,
+      "rmse_n": 2.8958132146160067,
+      "mae_n": 1.3943927339295101,
+      "nrmse": 0.05425508968397588,
+      "fit_percent": 94.57449103160242,
+      "relative_error_percent": 5.41450880847005,
+      "bias_n": -1.22167509083914e-14,
+      "max_abs_error_n": 40.761195934883375
+    },
+    {
+      "model": "B3_asymmetric_friction_slot",
+      "split": "test",
+      "n_samples": 2480,
+      "dt_s": 0.010000080189889182,
+      "rmse_n": 3.804639896679052,
+      "mae_n": 2.3192868260599204,
+      "nrmse": 0.0670009531898922,
+      "fit_percent": 93.29990468101079,
+      "relative_error_percent": 6.687772289358758,
+      "bias_n": 0.030258082509835214,
+      "max_abs_error_n": 40.57398460203885
+    },
+    {
+      "model": "B1_full_polynomial_inverse",
+      "split": "train",
+      "n_samples": 2480,
+      "dt_s": 0.009999839611225525,
+      "rmse_n": 2.7224266551052345,
+      "mae_n": 1.342088252442774,
+      "nrmse": 0.051006570998871265,
+      "fit_percent": 94.89934290011287,
+      "relative_error_percent": 5.090315573560083,
+      "bias_n": 2.888012409863633e-15,
+      "max_abs_error_n": 36.901565443325
+    },
+    {
+      "model": "B1_full_polynomial_inverse",
+      "split": "test",
+      "n_samples": 2480,
+      "dt_s": 0.010000080189889182,
+      "rmse_n": 3.6662854387498554,
+      "mae_n": 2.301714494713193,
+      "nrmse": 0.06456448592595525,
+      "fit_percent": 93.54355140740448,
+      "relative_error_percent": 6.444573685817911,
+      "bias_n": 0.03319946080186634,
+      "max_abs_error_n": 37.40949820203019
+    }
+  ],
+  "coefficients": [
+    {
+      "model": "B0_viscous",
+      "feature": "acc",
+      "coefficient": 95.10153962227918
+    },
+    {
+      "model": "B0_viscous",
+      "feature": "v",
+      "coefficient": 411.07761723938336
+    },
+    {
+      "model": "B0_viscous",
+      "feature": "1",
+      "coefficient": -3.121255939621225
+    },
+    {
+      "model": "B0_symmetric_coulomb",
+      "feature": "acc",
+      "coefficient": 95.27255449853185
+    },
+    {
+      "model": "B0_symmetric_coulomb",
+      "feature": "v",
+      "coefficient": 210.96492608562804
+    },
+    {
+      "model": "B0_symmetric_coulomb",
+      "feature": "sign(v)",
+      "coefficient": 19.444618739218196
+    },
+    {
+      "model": "B0_symmetric_coulomb",
+      "feature": "1",
+      "coefficient": -3.15008818538718
+    },
+    {
+      "model": "B3_asymmetric_friction_slot",
+      "feature": "acc",
+      "coefficient": 95.31514190636526
+    },
+    {
+      "model": "B3_asymmetric_friction_slot",
+      "feature": "v_pos",
+      "coefficient": 174.94531513600933
+    },
+    {
+      "model": "B3_asymmetric_friction_slot",
+      "feature": "I_pos",
+      "coefficient": 19.326487903430785
+    },
+    {
+      "model": "B3_asymmetric_friction_slot",
+      "feature": "v_neg",
+      "coefficient": 247.20596680690383
+    },
+    {
+      "model": "B3_asymmetric_friction_slot",
+      "feature": "sign_neg",
+      "coefficient": 19.53818375577695
+    },
+    {
+      "model": "B3_asymmetric_friction_slot",
+      "feature": "1",
+      "coefficient": -0.21169585234644564
+    },
+    {
+      "model": "B1_full_polynomial_inverse",
+      "feature": "acc",
+      "coefficient": 95.28355945211506
+    },
+    {
+      "model": "B1_full_polynomial_inverse",
+      "feature": "v",
+      "coefficient": 331.8462017131856
+    },
+    {
+      "model": "B1_full_polynomial_inverse",
+      "feature": "sign(v)",
+      "coefficient": 16.0706285475504
+    },
+    {
+      "model": "B1_full_polynomial_inverse",
+      "feature": "abs(v)",
+      "coefficient": -17.50769356611005
+    },
+    {
+      "model": "B1_full_polynomial_inverse",
+      "feature": "v*abs(v)",
+      "coefficient": -801.6095397916854
+    },
+    {
+      "model": "B1_full_polynomial_inverse",
+      "feature": "v^2",
+      "coefficient": -123.77994221307057
+    },
+    {
+      "model": "B1_full_polynomial_inverse",
+      "feature": "acc*v",
+      "coefficient": -3.2314519329305087
+    },
+    {
+      "model": "B1_full_polynomial_inverse",
+      "feature": "1",
+      "coefficient": -0.8343252083639486
+    }
+  ],
+  "raw_files": [
+    {
+      "path": "data/raw/external/emps/EMPS/DATA_EMPS.mat",
+      "size_bytes": 626039,
+      "sha256": "6cf6814ae14618795da0101aae2bb97ff0c6351b0501b5492751b02b07facf7e"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/DATA_EMPS_PULSES.mat",
+      "size_bytes": 630990,
+      "sha256": "0eab75bb1f6b16228ee78791343a88bf9bfd9a51036ac9807d7b5fc11c0e1704"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/EMPS.jpg",
+      "size_bytes": 215668,
+      "sha256": "057871cfaee1970010befc28083ea1a948347cf28d442e410a95570771c3ca28"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/EMPS.zip",
+      "size_bytes": 1949929,
+      "sha256": "f0e575c2aba2cb1e236516eefb17674b7e1e4a28de6bfcdc5b5ad68193ef9f59"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/EMPS_Description.pdf",
+      "size_bytes": 556542,
+      "sha256": "c55700774db197693f2ec3f9b2bf394337a68afe97b1e9666642775655feeb6a"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/README.txt",
+      "size_bytes": 1616,
+      "sha256": "0ffc03ef3cb82650fbc1db073762d549c00ea8f4633acfc5ca28c704bb3cd6c7"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Script_IDIM_LS.m",
+      "size_bytes": 3510,
+      "sha256": "6794f48e70d2bb755f9be82b107ce3eb3f90114eb750fde87f7d3c0f746ef77c"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Script_IDIM_LS_Asym_Fric.m",
+      "size_bytes": 3667,
+      "sha256": "45025471413d9cdc33dbef3d30ce19c97a7b8037afc70cb6bb128cef7706a1b2"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Script_IDIM_LS_CTV.m",
+      "size_bytes": 3169,
+      "sha256": "be003808b08c1fa8413dcbb47d000dfe4d23ca7d3b1a01367fee81194f1b1b22"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Simulation_EMPS.m",
+      "size_bytes": 2832,
+      "sha256": "cbd9562ce562399db5c6df4ca20cdde4b5ebae53e8b8cd1865b39ab3c8c9bd83"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Simulation_EMPS_Validation.m",
+      "size_bytes": 2915,
+      "sha256": "936bdd8f0ca17cfab12997daf7e81aa69c2b685d08c8545400bde19b21f76fdf"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Simulink_EMPS_Rigide.slx",
+      "size_bytes": 21994,
+      "sha256": "8f30f5392fc593b6e88125404ce1661f0ac7c2c2f00582e33c1531235c02289d"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Simulink_EMPS_Rigide_Pulse.slx",
+      "size_bytes": 22531,
+      "sha256": "548f838ad85dc9fac38a092df03755827d3c2e76bd8a9ba89a7de36c529fd9e3"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/diffcent.m",
+      "size_bytes": 383,
+      "sha256": "14696c5e8acb2183a09961390c9654650094da7b8dbd209b6767243ed6b03893"
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/nu2stab.m",
+      "size_bytes": 737,
+      "sha256": "86eab49d22b0afe3f6c877fccebac70a558dc71c29edfa5aba3ba6574620ff18"
+    }
+  ]
+}

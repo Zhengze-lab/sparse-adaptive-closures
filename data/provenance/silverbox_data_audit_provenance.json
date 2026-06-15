@@ -1,0 +1,30 @@
+{
+  "dataset_id": "silverbox_data_audit",
+  "experiment_id": "SB-0",
+  "description": "Official Silverbox data loading and split audit; no model is trained.",
+  "source_url": "https://www.nonlinearbenchmark.org/benchmarks/silverbox",
+  "dataloader_url": "https://github.com/MaartenSchoukens/nonlinear_benchmarks",
+  "citation": "T. Wigren and J. Schoukens. Three free data sets for development and benchmarking in nonlinear system identification. 2013 European Control Conference (ECC), pp. 2933-2938. doi:10.23919/ECC.2013.6669201.",
+  "raw_dir": "data/raw/external/silverbox",
+  "official_test_initialization_window": 50,
+  "created_at_utc": "2026-06-13T06:13:23.249017+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "nonlinear-benchmarks": "1.0.1",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3"
+  },
+  "data_file_locations": [
+    "/mnt/robotwin-assets/Meta-SINDy/data/raw/external/silverbox/Silverbox/SilverboxFiles/Schroeder80mV.mat",
+    "/mnt/robotwin-assets/Meta-SINDy/data/raw/external/silverbox/Silverbox/SilverboxFiles/SNLS80mV.mat"
+  ],
+  "outputs": {
+    "dataset_summary_csv": "results/silverbox_data_audit/dataset_summary.csv",
+    "raw_files_csv": "results/silverbox_data_audit/raw_files.csv",
+    "metrics_json": "results/silverbox_data_audit/metrics.json",
+    "hashes_json": "results/silverbox_data_audit/hashes.json"
+  },
+  "model_training": "none",
+  "test_usage_rule": "Test records are audited only; they must not be used for model selection."
+}

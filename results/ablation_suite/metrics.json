@@ -1,0 +1,224 @@
+{
+  "created_at_utc": "2026-06-15T07:14:32.263048+00:00",
+  "key_findings": {
+    "E3_slot_selection": [
+      {
+        "case_id": "E3",
+        "ablation": "slot_selection",
+        "variant": "correct_stiffness_theta",
+        "threshold": 1e-08,
+        "library": "theta^0,theta^2,theta^4,theta^6",
+        "train_trajectories": 8,
+        "test_extrap_mean_nrmse": 0.0007072745043075452,
+        "test_extrap_std_nrmse": 0.0006612607240100314,
+        "coefficient_grid_nrmse": 0.0020616283865686337,
+        "active_terms": 4
+      },
+      {
+        "case_id": "E3",
+        "ablation": "slot_selection",
+        "variant": "wrong_damping_theta",
+        "threshold": 1e-08,
+        "library": "theta^0,theta^2,theta^4,theta^6",
+        "train_trajectories": 8,
+        "test_extrap_mean_nrmse": 1.4065122171341633,
+        "test_extrap_std_nrmse": 0.4263445593558761,
+        "coefficient_grid_nrmse": "",
+        "active_terms": 4
+      }
+    ],
+    "E4_slot_selection": [
+      {
+        "case_id": "E4",
+        "ablation": "slot_selection",
+        "variant": "v_abs",
+        "threshold": 1e-08,
+        "library": "1,abs(v)",
+        "train_trajectories": 7,
+        "test_extrap_mean_nrmse": 1.4046291524162653e-16,
+        "test_extrap_std_nrmse": 3.397301601648414e-17,
+        "coefficient_grid_nrmse": 4.965124928255334e-16,
+        "active_terms": 2
+      },
+      {
+        "case_id": "E4",
+        "ablation": "slot_selection",
+        "variant": "u_abs",
+        "threshold": 1e-08,
+        "library": "1,abs(u)",
+        "train_trajectories": 7,
+        "test_extrap_mean_nrmse": 0.2668614050011391,
+        "test_extrap_std_nrmse": 0.035438027974767104,
+        "coefficient_grid_nrmse": 1.303825059117633,
+        "active_terms": 2
+      }
+    ],
+    "E5_library_family": [
+      {
+        "case_id": "E5",
+        "ablation": "library_family",
+        "variant": "S_rational",
+        "threshold": "",
+        "library": "a*S/(1+b*S)",
+        "train_trajectories": 8,
+        "test_extrap_mean_nrmse": 1.8885776503024343e-16,
+        "test_extrap_std_nrmse": 3.266697537453889e-16,
+        "coefficient_grid_nrmse": 6.591200883048093e-16,
+        "active_terms": 2
+      }
+    ],
+    "E6_free_oe_comparators_test": [
+      {
+        "case_id": "E6",
+        "model": "B1_windowed_linear_OE",
+        "split": "test",
+        "nrmse": 21.20058149628224,
+        "rmse": 44.94506555399782,
+        "active_terms": 14,
+        "nfev": 20,
+        "n_windows": 3
+      },
+      {
+        "case_id": "E6",
+        "model": "B2_windowed_residual_OE",
+        "split": "test",
+        "nrmse": 22.464080304260804,
+        "rmse": 47.6236730611529,
+        "active_terms": 14,
+        "nfev": 20,
+        "n_windows": 3
+      },
+      {
+        "case_id": "E6",
+        "model": "B1_proxy_state_sindy",
+        "split": "test",
+        "nrmse": 2.9199158018450957,
+        "rmse": 6.190198469277629,
+        "active_terms": 9,
+        "nfev": "proxy_state_regression"
+      },
+      {
+        "case_id": "E6",
+        "model": "B2_proxy_residual_sindy",
+        "split": "test",
+        "nrmse": 1.101184006088445,
+        "rmse": 2.3345014073948027,
+        "active_terms": 10,
+        "nfev": "proxy_state_regression"
+      }
+    ],
+    "E7_bootstrap": [
+      {
+        "case_id": "E7",
+        "model": "B0_symmetric_coulomb",
+        "n": 80,
+        "mean_nrmse": 0.07197792214529604,
+        "std_nrmse": 0.00025746714664895545
+      },
+      {
+        "case_id": "E7",
+        "model": "B3_asymmetric_friction_slot",
+        "n": 80,
+        "mean_nrmse": 0.06705081479646187,
+        "std_nrmse": 0.0002569172800266411
+      },
+      {
+        "case_id": "E7",
+        "model": "B1_full_polynomial_inverse",
+        "n": 80,
+        "mean_nrmse": 0.06471729676915461,
+        "std_nrmse": 0.0003139459133668554
+      }
+    ],
+    "battery_physical_constraint": [
+      {
+        "case_id": "Battery",
+        "ablation": "physical_constraint",
+        "model": "unconstrained_broad_R0",
+        "active_terms": "10",
+        "validation_rmse_mv": "69.9114980066268",
+        "validation_r0_negative_fraction": "0.11447002141327624",
+        "high_amplitude_rmse_mv": "281.1028184877777",
+        "high_amplitude_r0_negative_fraction": "0.5393056259503295",
+        "cell_transfer_rmse_mv": "436.8409390673976",
+        "cell_transfer_r0_negative_fraction": "0.4965594868963174"
+      },
+      {
+        "case_id": "Battery",
+        "ablation": "physical_constraint",
+        "model": "physical_filtered_T_only",
+        "active_terms": "3",
+        "validation_rmse_mv": "71.83994372929314",
+        "validation_r0_negative_fraction": "0.0",
+        "high_amplitude_rmse_mv": "24.06134807798182",
+        "high_amplitude_r0_negative_fraction": "0.0",
+        "cell_transfer_rmse_mv": "436.5653478288773",
+        "cell_transfer_r0_negative_fraction": "0.0"
+      },
+      {
+        "case_id": "Battery",
+        "ablation": "physical_constraint",
+        "model": "validation_optimized_broad_still_negative",
+        "active_terms": "4",
+        "validation_rmse_mv": "69.0911517958361",
+        "validation_r0_negative_fraction": "0.10603854389721627",
+        "high_amplitude_rmse_mv": "16.402985504110546",
+        "high_amplitude_r0_negative_fraction": "0.36388748099341106",
+        "cell_transfer_rmse_mv": "436.0527528386082",
+        "cell_transfer_r0_negative_fraction": "0.3254682920613346"
+      }
+    ],
+    "E4_noise_highest": [
+      {
+        "case_id": "E4",
+        "noise_level": 0.05,
+        "method": "finite_difference",
+        "test_extrap_mean_nrmse": 0.005799926269687222,
+        "active_terms": 2,
+        "c0_hat": 0.08412419468024819,
+        "c1_hat": 0.5381208276392294
+      },
+      {
+        "case_id": "E4",
+        "noise_level": 0.05,
+        "method": "savgol",
+        "test_extrap_mean_nrmse": 0.0008447497095773375,
+        "active_terms": 2,
+        "c0_hat": 0.07516167280864969,
+        "c1_hat": 0.5554368323423714
+      },
+      {
+        "case_id": "E4",
+        "noise_level": 0.05,
+        "method": "integral",
+        "test_extrap_mean_nrmse": 0.00420634418893961,
+        "active_terms": 2,
+        "c0_hat": 0.07979181466979327,
+        "c1_hat": 0.5445852287402999
+      }
+    ]
+  },
+  "statistical_rows": [
+    {
+      "case_id": "E3",
+      "model": "B3_correct_stiffness",
+      "n": 24,
+      "mean_nrmse": 0.0007127867313604133,
+      "std_nrmse": 3.832128261737132e-05
+    },
+    {
+      "case_id": "E4",
+      "model": "B3_velocity_adaptive",
+      "n": 24,
+      "mean_nrmse": 1.5100575839799558e-16,
+      "std_nrmse": 6.878524725341252e-17
+    },
+    {
+      "case_id": "E5",
+      "model": "B5_rational_slot",
+      "n": 24,
+      "mean_nrmse": 1.8738134458343498e-16,
+      "std_nrmse": 2.4241074057696005e-17
+    }
+  ]
+}

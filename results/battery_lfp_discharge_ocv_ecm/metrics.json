@@ -1,0 +1,435 @@
+{
+  "experiment_id": "BATT3c_lfp_discharge_ocv_current_sign_ecm",
+  "status": "complete",
+  "config": {
+    "experiment_id": "BATT3c_lfp_discharge_ocv_current_sign_ecm",
+    "description": "Rerun ohmic and constant first-order ECM using discharge OCV and audit current sign convention.",
+    "source_dataset": "battery_lfp_ocv_dyn",
+    "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+    "source_doi": "10.17632/p8kf893yv3.1",
+    "license": "CC BY 4.0",
+    "raw_zip": "data/raw/external/battery_lfp_ocv_dyn/p8kf893yv3_v1.zip",
+    "ocv_grid_csv": "data/processed/battery_lfp_ocv_dyn/batt2_ocv_grid.csv",
+    "ocv_curve": "discharge",
+    "dynamic_script": "script1",
+    "current_conventions": {
+      "I_model=-I_raw": "same as BATT-3; batt3 current_a field",
+      "I_model=I_raw": "opposite sign of BATT-3 current_a field"
+    },
+    "fit_stride": 20,
+    "prediction_sample_stride": 30,
+    "initialization_window_s": 300.0,
+    "score_start_s": 300.0,
+    "least_squares_loss": "soft_l1",
+    "least_squares_f_scale_v": 0.02,
+    "max_nfev_ohmic": 80,
+    "max_nfev_ecm": 120,
+    "ocv_training_temperatures_c": [
+      -25,
+      -5,
+      5,
+      15,
+      25,
+      45
+    ],
+    "heldout_temperature_validation_c": [
+      -15,
+      35
+    ]
+  },
+  "raw_zip_sha256": "5f758b8dae788d63569a982a04c3cd87e8bc940481a5fc69d569e25f1f3732ff",
+  "record_count": 14,
+  "fit_summary": [
+    {
+      "current_convention": "I_model=-I_raw",
+      "ohmic_only": {
+        "params": {
+          "R0_ohm": 2.5618101336845915e-10
+        },
+        "cost": 5.973157647038238,
+        "optimality": 0.07442870624602818,
+        "nfev": 20,
+        "success": true,
+        "message": "`ftol` termination condition is satisfied."
+      },
+      "constant_ecm": {
+        "params": {
+          "R0_ohm": 9.237796328486593e-11,
+          "a_tau_1_per_s": 0.0055421707660881486,
+          "b_C_v_per_a_s": 1.69485003969322e-07,
+          "tau_s": 180.43471451996305,
+          "R1_equiv_ohm": 3.058097830661942e-05,
+          "C1_equiv_f": 5900227.020562876
+        },
+        "cost": 5.68475197254938,
+        "optimality": 0.09764092246185843,
+        "nfev": 43,
+        "success": true,
+        "message": "`ftol` termination condition is satisfied."
+      }
+    },
+    {
+      "current_convention": "I_model=I_raw",
+      "ohmic_only": {
+        "params": {
+          "R0_ohm": 0.031193116517605556
+        },
+        "cost": 5.18153762790014,
+        "optimality": 0.02934982588443168,
+        "nfev": 21,
+        "success": true,
+        "message": "`ftol` termination condition is satisfied."
+      },
+      "constant_ecm": {
+        "params": {
+          "R0_ohm": 0.028098750611024906,
+          "a_tau_1_per_s": 0.004853652574359768,
+          "b_C_v_per_a_s": 9.761248220714291e-05,
+          "tau_s": 206.03040384115405,
+          "R1_equiv_ohm": 0.02011113912907512,
+          "C1_equiv_f": 10244.591443519545
+        },
+        "cost": 4.72471382239619,
+        "optimality": 0.0013535336930954845,
+        "nfev": 30,
+        "success": true,
+        "message": "`ftol` termination condition is satisfied."
+      }
+    }
+  ],
+  "validation_rank_by_rmse": [
+    {
+      "current_convention": "I_model=I_raw",
+      "model": "constant_ecm",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 79.30612770895797,
+      "mae_mv": 52.233483250734345,
+      "max_abs_mv": 445.4817489887657,
+      "bias_mv": 9.538916939340881,
+      "nrmse": 0.4710606880913597
+    },
+    {
+      "current_convention": "I_model=I_raw",
+      "model": "ohmic_only",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 80.47388633937413,
+      "mae_mv": 52.38010633439122,
+      "max_abs_mv": 442.72574662536226,
+      "bias_mv": 12.569714067155475,
+      "nrmse": 0.47799691357430335
+    },
+    {
+      "current_convention": "I_model=-I_raw",
+      "model": "ocv_only",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 91.38858065613626,
+      "mae_mv": 58.39846435657141,
+      "max_abs_mv": 554.2883876815328,
+      "bias_mv": 19.1407416168144,
+      "nrmse": 0.5428277603662349
+    },
+    {
+      "current_convention": "I_model=I_raw",
+      "model": "ocv_only",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 91.38858065613626,
+      "mae_mv": 58.39846435657141,
+      "max_abs_mv": 554.2883876815328,
+      "bias_mv": 19.1407416168144,
+      "nrmse": 0.5428277603662349
+    },
+    {
+      "current_convention": "I_model=-I_raw",
+      "model": "ohmic_only",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 91.3885807599835,
+      "mae_mv": 58.39846442072202,
+      "max_abs_mv": 554.2883886596787,
+      "bias_mv": 19.14074167078055,
+      "nrmse": 0.5428277609830644
+    },
+    {
+      "current_convention": "I_model=-I_raw",
+      "model": "constant_ecm",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 91.99425599227935,
+      "mae_mv": 58.65501652334495,
+      "max_abs_mv": 554.2969458697806,
+      "bias_mv": 19.55565697149482,
+      "nrmse": 0.5464253366046131
+    }
+  ],
+  "best_validation_model": {
+    "current_convention": "I_model=I_raw",
+    "model": "constant_ecm",
+    "split": "validation_temperature",
+    "n_score": 186800,
+    "rmse_mv": 79.30612770895797,
+    "mae_mv": 52.233483250734345,
+    "max_abs_mv": 445.4817489887657,
+    "bias_mv": 9.538916939340881,
+    "nrmse": 0.4710606880913597
+  },
+  "split_summary": {
+    "I_model=-I_raw:constant_ecm:test_cell_transfer": {
+      "model": "constant_ecm",
+      "split": "test_cell_transfer",
+      "n_score": 47086,
+      "rmse_mv": 436.5923057539074,
+      "mae_mv": 243.71020790374865,
+      "max_abs_mv": 1319.043797688975,
+      "bias_mv": 234.54935996129228,
+      "nrmse": 1.0956055341158573
+    },
+    "I_model=-I_raw:constant_ecm:test_high_amplitude": {
+      "model": "constant_ecm",
+      "split": "test_high_amplitude",
+      "n_score": 39460,
+      "rmse_mv": 26.563523695560118,
+      "mae_mv": 15.771809278341795,
+      "max_abs_mv": 190.09799894281133,
+      "bias_mv": 1.6107382264670538,
+      "nrmse": 0.5893798158559576
+    },
+    "I_model=-I_raw:constant_ecm:train": {
+      "model": "constant_ecm",
+      "split": "train",
+      "n_score": 263165,
+      "rmse_mv": 60.328107465842415,
+      "mae_mv": 30.216137697826927,
+      "max_abs_mv": 490.37091020096216,
+      "bias_mv": 7.963858308360309,
+      "nrmse": 0.2975680607985078
+    },
+    "I_model=-I_raw:constant_ecm:validation_temperature": {
+      "model": "constant_ecm",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 91.99425599227935,
+      "mae_mv": 58.65501652334495,
+      "max_abs_mv": 554.2969458697806,
+      "bias_mv": 19.55565697149482,
+      "nrmse": 0.5464253366046131
+    },
+    "I_model=-I_raw:ocv_only:test_cell_transfer": {
+      "model": "ocv_only",
+      "split": "test_cell_transfer",
+      "n_score": 47086,
+      "rmse_mv": 436.6435772917556,
+      "mae_mv": 243.88625112359298,
+      "max_abs_mv": 1319.0429218692973,
+      "bias_mv": 234.23270696471732,
+      "nrmse": 1.0957341973558385
+    },
+    "I_model=-I_raw:ocv_only:test_high_amplitude": {
+      "model": "ocv_only",
+      "split": "test_high_amplitude",
+      "n_score": 39460,
+      "rmse_mv": 27.184160313577383,
+      "mae_mv": 15.758196112735444,
+      "max_abs_mv": 261.43831964685836,
+      "bias_mv": 1.2238888393901661,
+      "nrmse": 0.6031502289921341
+    },
+    "I_model=-I_raw:ocv_only:train": {
+      "model": "ocv_only",
+      "split": "train",
+      "n_score": 263165,
+      "rmse_mv": 59.88782414017522,
+      "mae_mv": 30.009681786605164,
+      "max_abs_mv": 490.4080055779376,
+      "bias_mv": 7.72684359595277,
+      "nrmse": 0.2953963656977641
+    },
+    "I_model=-I_raw:ocv_only:validation_temperature": {
+      "model": "ocv_only",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 91.38858065613626,
+      "mae_mv": 58.39846435657141,
+      "max_abs_mv": 554.2883876815328,
+      "bias_mv": 19.1407416168144,
+      "nrmse": 0.5428277603662349
+    },
+    "I_model=-I_raw:ohmic_only:test_cell_transfer": {
+      "model": "ohmic_only",
+      "split": "test_cell_transfer",
+      "n_score": 47086,
+      "rmse_mv": 436.64357730272764,
+      "mae_mv": 243.8862511818604,
+      "max_abs_mv": 1319.0429228870873,
+      "bias_mv": 234.23270700225078,
+      "nrmse": 1.095734197383372
+    },
+    "I_model=-I_raw:ohmic_only:test_high_amplitude": {
+      "model": "ohmic_only",
+      "split": "test_high_amplitude",
+      "n_score": 39460,
+      "rmse_mv": 27.184160744762096,
+      "mae_mv": 15.758196305525274,
+      "max_abs_mv": 261.43831964685836,
+      "bias_mv": 1.2238888875520706,
+      "nrmse": 0.6031502385590715
+    },
+    "I_model=-I_raw:ohmic_only:train": {
+      "model": "ohmic_only",
+      "split": "train",
+      "n_score": 263165,
+      "rmse_mv": 59.87935231556944,
+      "mae_mv": 30.01228781971092,
+      "max_abs_mv": 490.4429882388461,
+      "bias_mv": 7.6612748823451025,
+      "nrmse": 0.2953545784691362
+    },
+    "I_model=-I_raw:ohmic_only:validation_temperature": {
+      "model": "ohmic_only",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 91.3885807599835,
+      "mae_mv": 58.39846442072202,
+      "max_abs_mv": 554.2883886596787,
+      "bias_mv": 19.14074167078055,
+      "nrmse": 0.5428277609830644
+    },
+    "I_model=I_raw:constant_ecm:test_cell_transfer": {
+      "model": "constant_ecm",
+      "split": "test_cell_transfer",
+      "n_score": 47086,
+      "rmse_mv": 435.7990305199436,
+      "mae_mv": 243.6041992792394,
+      "max_abs_mv": 1286.7264768538835,
+      "bias_mv": 227.5922895337066,
+      "nrmse": 1.0936148514470296
+    },
+    "I_model=I_raw:constant_ecm:test_high_amplitude": {
+      "model": "constant_ecm",
+      "split": "test_high_amplitude",
+      "n_score": 39460,
+      "rmse_mv": 35.15674271056976,
+      "mae_mv": 19.555094427838277,
+      "max_abs_mv": 199.74196578876933,
+      "bias_mv": -7.322716353200869,
+      "nrmse": 0.78004239130045
+    },
+    "I_model=I_raw:constant_ecm:train": {
+      "model": "constant_ecm",
+      "split": "train",
+      "n_score": 263165,
+      "rmse_mv": 52.442672171675596,
+      "mae_mv": 25.858187745120837,
+      "max_abs_mv": 432.16758717531746,
+      "bias_mv": 0.4869851337294436,
+      "nrmse": 0.2586731942495134
+    },
+    "I_model=I_raw:constant_ecm:validation_temperature": {
+      "model": "constant_ecm",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 79.30612770895797,
+      "mae_mv": 52.233483250734345,
+      "max_abs_mv": 445.4817489887657,
+      "bias_mv": 9.538916939340881,
+      "nrmse": 0.4710606880913597
+    },
+    "I_model=I_raw:ocv_only:test_cell_transfer": {
+      "model": "ocv_only",
+      "split": "test_cell_transfer",
+      "n_score": 47086,
+      "rmse_mv": 436.6435772917556,
+      "mae_mv": 243.88625112359298,
+      "max_abs_mv": 1319.0429218692973,
+      "bias_mv": 234.23270696471732,
+      "nrmse": 1.0957341973558385
+    },
+    "I_model=I_raw:ocv_only:test_high_amplitude": {
+      "model": "ocv_only",
+      "split": "test_high_amplitude",
+      "n_score": 39460,
+      "rmse_mv": 27.184160313577383,
+      "mae_mv": 15.758196112735444,
+      "max_abs_mv": 261.43831964685836,
+      "bias_mv": 1.2238888393901661,
+      "nrmse": 0.6031502289921341
+    },
+    "I_model=I_raw:ocv_only:train": {
+      "model": "ocv_only",
+      "split": "train",
+      "n_score": 263165,
+      "rmse_mv": 59.88782414017522,
+      "mae_mv": 30.009681786605164,
+      "max_abs_mv": 490.4080055779376,
+      "bias_mv": 7.72684359595277,
+      "nrmse": 0.2953963656977641
+    },
+    "I_model=I_raw:ocv_only:validation_temperature": {
+      "model": "ocv_only",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 91.38858065613626,
+      "mae_mv": 58.39846435657141,
+      "max_abs_mv": 554.2883876815328,
+      "bias_mv": 19.1407416168144,
+      "nrmse": 0.5428277603662349
+    },
+    "I_model=I_raw:ohmic_only:test_cell_transfer": {
+      "model": "ohmic_only",
+      "split": "test_cell_transfer",
+      "n_score": 47086,
+      "rmse_mv": 436.2182971136297,
+      "mae_mv": 244.36958470037442,
+      "max_abs_mv": 1283.262758340078,
+      "bias_mv": 229.66256028385905,
+      "nrmse": 1.0946669790137746
+    },
+    "I_model=I_raw:ohmic_only:test_high_amplitude": {
+      "model": "ohmic_only",
+      "split": "test_high_amplitude",
+      "n_score": 39460,
+      "rmse_mv": 41.62984728742219,
+      "mae_mv": 22.89408601161979,
+      "max_abs_mv": 273.56976105273924,
+      "bias_mv": -4.640403157634785,
+      "nrmse": 0.9236647972450087
+    },
+    "I_model=I_raw:ohmic_only:train": {
+      "model": "ohmic_only",
+      "split": "train",
+      "n_score": 263165,
+      "rmse_mv": 53.25813135645518,
+      "mae_mv": 26.176342134967044,
+      "max_abs_mv": 423.3825962570439,
+      "bias_mv": 2.1310866087597895,
+      "nrmse": 0.26269544222758207
+    },
+    "I_model=I_raw:ohmic_only:validation_temperature": {
+      "model": "ohmic_only",
+      "split": "validation_temperature",
+      "n_score": 186800,
+      "rmse_mv": 80.47388633937413,
+      "mae_mv": 52.38010633439122,
+      "max_abs_mv": 442.72574662536226,
+      "bias_mv": 12.569714067155475,
+      "nrmse": 0.47799691357430335
+    }
+  },
+  "outputs": {
+    "metrics_by_trajectory_csv": "results/battery_lfp_discharge_ocv_ecm/metrics_by_trajectory.csv",
+    "metrics_by_split_csv": "results/battery_lfp_discharge_ocv_ecm/metrics_by_split.csv",
+    "predictions_sample_csv": "results/battery_lfp_discharge_ocv_ecm/predictions_sample.csv",
+    "fit_summary_csv": "results/battery_lfp_discharge_ocv_ecm/fit_summary.csv",
+    "improvement_vs_ocv_csv": "results/battery_lfp_discharge_ocv_ecm/improvement_vs_ocv.csv",
+    "metrics_json": "results/battery_lfp_discharge_ocv_ecm/metrics.json",
+    "figures": [
+      "results/battery_lfp_discharge_ocv_ecm/figures/current_sign_rmse_by_split.svg",
+      "results/battery_lfp_discharge_ocv_ecm/figures/current_sign_rmse_by_split_zh.svg",
+      "results/battery_lfp_discharge_ocv_ecm/figures/ohmic_resistance_by_sign.svg",
+      "results/battery_lfp_discharge_ocv_ecm/figures/ohmic_resistance_by_sign_zh.svg"
+    ]
+  }
+}

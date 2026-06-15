@@ -1,0 +1,87 @@
+{
+  "dataset_id": "pysindy_e1e_vdp_savgol_scan",
+  "experiment_id": "E1e_vdp_savgol_scan",
+  "created_at_utc": "2026-06-13T03:46:55.851935+00:00",
+  "system": "E1e_vdp",
+  "source_experiment": "E1d_vdp_derivative_estimation_pysindy",
+  "source_script": "scripts/run_pysindy_e1d_vdp_derivative_estimation.py",
+  "script": "scripts/run_pysindy_e1e_e2e_savgol_scan.py",
+  "purpose": "Tune Savitzky-Golay derivative-estimation parameters for Van der Pol coefficient-slot discovery.",
+  "equation_reference": "Van der Pol coefficient slot p_c(x1, mu)=mu-mu*x1^2 in dx2=-x1+x2*p_c.",
+  "candidate_slots": [
+    {
+      "name": "damping",
+      "g": "x2",
+      "coefficient_function": "p_c(x1, mu)"
+    }
+  ],
+  "scan_config": {
+    "experiment_id": "E1e_E2e_savgol_parameter_scan",
+    "description": "Savitzky-Golay derivative-estimation parameter scan for coefficient-slot SINDy.",
+    "source_experiments": [
+      "E1d_vdp_derivative_estimation_pysindy",
+      "E2d_duffing_derivative_estimation_pysindy"
+    ],
+    "noise_levels_relative_state_std": [
+      0.0,
+      0.005,
+      0.01,
+      0.03,
+      0.05
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "window_lengths": [
+      5,
+      7,
+      9,
+      11,
+      15,
+      21,
+      31
+    ],
+    "polyorders": [
+      2,
+      3,
+      4
+    ],
+    "finite_difference_order": 2,
+    "smoother_mode": "interp",
+    "optimizer": {
+      "name": "pysindy_stlsq_t1e-2",
+      "family": "pysindy_stlsq",
+      "threshold": 0.01,
+      "alpha": 0.0,
+      "max_iter": 20
+    },
+    "active_threshold": 1e-06
+  },
+  "outputs": {
+    "seed_metrics_csv": "results/pysindy_e1e_vdp_savgol_scan/seed_metrics.csv",
+    "summary_by_noise_savgol_csv": "results/pysindy_e1e_vdp_savgol_scan/summary_by_noise_savgol.csv",
+    "best_by_noise_csv": "results/pysindy_e1e_vdp_savgol_scan/best_by_noise.csv",
+    "coefficients_seed0_csv": "results/pysindy_e1e_vdp_savgol_scan/coefficients_seed0.csv",
+    "metrics_json": "results/pysindy_e1e_vdp_savgol_scan/metrics.json",
+    "figures": [
+      "results/pysindy_e1e_vdp_savgol_scan/figures/high_noise_derivative_dx2_nrmse.svg",
+      "results/pysindy_e1e_vdp_savgol_scan/figures/high_noise_derivative_dx2_nrmse_zh.svg",
+      "results/pysindy_e1e_vdp_savgol_scan/figures/high_noise_coefficient_grid_nrmse.svg",
+      "results/pysindy_e1e_vdp_savgol_scan/figures/high_noise_coefficient_grid_nrmse_zh.svg",
+      "results/pysindy_e1e_vdp_savgol_scan/figures/high_noise_rollout_nrmse.svg",
+      "results/pysindy_e1e_vdp_savgol_scan/figures/high_noise_rollout_nrmse_zh.svg"
+    ]
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "scikit_learn": "1.8.0",
+    "pysindy": "2.1.0"
+  },
+  "dependency_note": "PySINDy 2.1.0 required numpy>=2.0; local qpth 0.0.18 declares numpy<2 but is not used by these experiments."
+}

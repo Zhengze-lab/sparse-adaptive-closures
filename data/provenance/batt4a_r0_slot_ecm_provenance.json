@@ -1,0 +1,92 @@
+{
+  "experiment_id": "BATT4a_lfp_r0_slot_ecm",
+  "description": "Coefficient-slot ECM with R0(SOC,T,|I|), fixed OCV_discharge and I_model=I_raw from BATT-3c.",
+  "source_dataset": "battery_lfp_ocv_dyn",
+  "source_url": "https://data.mendeley.com/datasets/p8kf893yv3/1",
+  "source_doi": "10.17632/p8kf893yv3.1",
+  "license": "CC BY 4.0",
+  "baseline_experiment": "BATT3c_lfp_discharge_ocv_current_sign_ecm",
+  "ocv_curve": "discharge",
+  "current_convention": "I_model=I_raw",
+  "r0_slot": "R0(s,T,|I|)",
+  "feature_definition": "sc=s-0.5, Tn=T/25, In=|I|/2",
+  "feature_names": [
+    "1",
+    "sc",
+    "sc^2",
+    "Tn",
+    "Tn^2",
+    "sc*Tn",
+    "In",
+    "sc*In",
+    "Tn*In",
+    "In^2"
+  ],
+  "soc_center": 0.5,
+  "temperature_scale_c": 25.0,
+  "current_scale_a": 2.0,
+  "fit_abs_current_min_a": 0.1,
+  "fit_stride": 20,
+  "prediction_sample_stride": 30,
+  "initialization_window_s": 300.0,
+  "score_start_s": 300.0,
+  "least_squares_loss": "soft_l1",
+  "least_squares_f_scale_v": 0.02,
+  "state_refit_max_nfev": 80,
+  "alternating_iterations": 3,
+  "pysindy_optimizer": "STLSQ",
+  "pysindy_alpha": 1e-08,
+  "pysindy_max_iter": 30,
+  "pysindy_normalize_columns": false,
+  "thresholds": [
+    0.0,
+    0.0001,
+    0.0005,
+    0.001,
+    0.002,
+    0.005,
+    0.01
+  ],
+  "active_threshold": 1e-07,
+  "ocv_training_temperatures_c": [
+    -25,
+    -5,
+    5,
+    15,
+    25,
+    45
+  ],
+  "heldout_temperature_validation_c": [
+    -15,
+    35
+  ],
+  "created_at_utc": "2026-06-13T09:47:08.467261+00:00",
+  "python": "3.13.9",
+  "platform": "Linux-6.17.0-20-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "pysindy": "2.1.0"
+  },
+  "script": "scripts/run_batt4a_r0_slot_ecm.py",
+  "outputs": {
+    "metrics_by_trajectory_csv": "results/battery_lfp_r0_slot_ecm/metrics_by_trajectory.csv",
+    "metrics_by_split_csv": "results/battery_lfp_r0_slot_ecm/metrics_by_split.csv",
+    "predictions_sample_csv": "results/battery_lfp_r0_slot_ecm/predictions_sample.csv",
+    "coefficients_csv": "results/battery_lfp_r0_slot_ecm/coefficients.csv",
+    "threshold_summary_csv": "results/battery_lfp_r0_slot_ecm/threshold_summary.csv",
+    "improvement_vs_batt3c_constant_ecm_csv": "results/battery_lfp_r0_slot_ecm/improvement_vs_batt3c_constant_ecm.csv",
+    "fit_summary_csv": "results/battery_lfp_r0_slot_ecm/fit_summary.csv",
+    "metrics_json": "results/battery_lfp_r0_slot_ecm/metrics.json",
+    "figures": [
+      "results/battery_lfp_r0_slot_ecm/figures/rmse_by_split.svg",
+      "results/battery_lfp_r0_slot_ecm/figures/rmse_by_split_zh.svg",
+      "results/battery_lfp_r0_slot_ecm/figures/r0_profiles.svg",
+      "results/battery_lfp_r0_slot_ecm/figures/r0_profiles_zh.svg"
+    ],
+    "provenance_json": "data/provenance/batt4a_r0_slot_ecm_provenance.json"
+  },
+  "test_usage_rule": "R0 slot coefficients are fitted only on split=train. Non-train records use only the initialization prefix for initial SOC estimation.",
+  "baseline_rule": "Compare BATT-4a against the BATT-3c OCV_discharge + I_model=I_raw constant ECM baseline.",
+  "next_action": "If R0 slot improves validation without worsening high-amplitude behavior, proceed to dynamic slots; otherwise diagnose feature library, positivity constraints, and current-amplitude extrapolation."
+}

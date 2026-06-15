@@ -1,0 +1,15 @@
+case_id,candidate_id,candidate_label,coefficient_slot,slot_input_z,candidate_library,physical_admissible,expected_correct,train_residual_reduction,train_residual_nrmse,validation_rollout_nrmse,test_rollout_nrmse,condition_number,sensitivity_energy,active_terms,validation_rank,selected_by_protocol
+E3_pendulum,stiffness_theta_even,stiffness theta even,stiffness coefficient,theta,"1, theta^2, theta^4, theta^6",True,True,1,1.136381885e-08,5.682704258e-07,0.0007072745043,63.26200132,0.4964821616,4,1,True
+E3_pendulum,free_additive_theta_odd,free additive theta odd,additive residual,theta,"theta, theta^3, theta^5",False,False,0.9999999978,3.138339544e-06,6.835657102e-05,0.0139664568,14.01954763,0.4877321972,3,2,False
+E3_pendulum,stiffness_omega_even,stiffness omega even,stiffness coefficient,omega,"1, omega^2, omega^4, omega^6",True,False,0.7152446194,0.03544996497,0.3452187985,66.29837391,26.5453256,0.4425234208,4,3,False
+E3_pendulum,damping_theta_even,damping theta even,damping coefficient,theta,"1, theta^2, theta^4, theta^6",True,False,0.1198915682,0.06232293991,0.4932559481,1.406512217,24.66985563,0.4309681737,4,4,False
+E3_pendulum,damping_omega_even,damping omega even,damping coefficient,omega,"1, omega^2, omega^4, omega^6",True,False,0.004322320578,0.06628865795,0.5670475127,99,71.36654559,0.4689721455,4,5,False
+E4_drag,free_additive_v,free additive v,additive residual,v,"v, v*abs(v)",False,False,1,2.196939608e-16,1.764005726e-16,1.840885906e-16,5.373566286,0.3106201191,2,1,False
+E4_drag,drag_v_abs,drag v abs,drag coefficient,v,"1, abs(v)",True,True,1,2.196939608e-16,1.952434643e-16,1.896805263e-16,5.373566286,0.3106201191,2,2,True
+E4_drag,drag_u_abs,drag u abs,drag coefficient,u,"1, abs(u)",True,False,0.8066885803,0.1353299826,0.1065452522,0.266861405,2.95130359,0.2879861161,2,3,False
+E4_drag,input_gain_u,input gain u,input gain,u,"1, abs(u), u",True,False,0.2315897021,0.2698123713,0.4660426661,0.8368731613,4.995472925,0.2762038742,3,4,False
+E5_monod,growth_rate_rational_S,growth rate rational S,growth rate,S,a*S/(1+b*S),True,True,1,1.417031064e-16,1.786542781e-16,1.88857765e-16,7.16749006,0.08003781227,2,1,True
+E5_monod,growth_rate_poly_S,growth rate poly S,growth rate,S,"1, S, S^2, S^3, S^4",True,False,0.9994196868,0.02065480756,0.01088805423,1.281833388,127.4310671,0.8201708563,5,2,False
+E5_monod,growth_rate_poly_X,growth rate poly X,growth rate,X,"1, X, X^2, X^3",True,False,0.3103570328,0.7120362092,0.8126211345,6.219563309,250.1867499,1.05661556,4,3,False
+E5_monod,substrate_consumption_poly_S,substrate consumption poly S,substrate consumption,S,"1, S, S^2, S^3, S^4",True,False,0.6724598833,0.4907069095,1.175658195,26.47094258,119.0640653,0.7186467522,5,4,False
+E5_monod,free_additive_poly_S,free additive poly S,additive residual,S,"1, S, S^2, S^3, S^4",False,False,0.05708359018,0.8325810473,2.063478531,40.08477481,212.7902089,2.247741803,5,5,False

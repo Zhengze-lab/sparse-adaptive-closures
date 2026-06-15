@@ -1,0 +1,11 @@
+case_id,model,bootstrap_index,test_nrmse,train_nrmse,nfev
+E6,B0_linear_outflow,0,0.5442227013645538,,saved_prediction_bootstrap
+E6,B0_linear_outflow,1,0.5244138318861711,,saved_prediction_bootstrap
+E6,B0_linear_outflow,2,0.5245735663689981,,saved_prediction_bootstrap
+E6,B0_linear_outflow,3,0.5414534717820456,,saved_prediction_bootstrap
+E6,B0_linear_outflow,4,0.5908243696108517,,saved_prediction_bootstrap
+E6,B3_sqrt_outflow_slot,0,0.3338623698626949,,saved_prediction_bootstrap
+E6,B3_sqrt_outflow_slot,1,0.3058374175875572,,saved_prediction_bootstrap
+E6,B3_sqrt_outflow_slot,2,0.3145751219373281,,saved_prediction_bootstrap
+E6,B3_sqrt_outflow_slot,3,0.31647024814942437,,saved_prediction_bootstrap
+E6,B3_sqrt_outflow_slot,4,0.3395971409225806,,saved_prediction_bootstrap

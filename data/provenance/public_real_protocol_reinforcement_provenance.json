@@ -1,0 +1,152 @@
+{
+  "experiment_id": "public_real_protocol_reinforcement",
+  "description": "Validation-screening and segment-robustness checks for public real-system E6/E7 cases.",
+  "created_for": "public real-system slot-selection protocol reinforcement.",
+  "e6": {
+    "train_fraction": 0.7,
+    "segment_length": 128,
+    "physical_slot_candidates": [
+      "B0_linear_outflow",
+      "B3_sqrt_outflow_slot"
+    ],
+    "free_predictive_baselines": [],
+    "selection_rule": "choose the physically admissible candidate with the lowest validation output-error NRMSE; official test is used only after selection"
+  },
+  "e7": {
+    "train_fraction": 0.7,
+    "segment_length": 248,
+    "physical_slot_candidates": [
+      "B0_viscous",
+      "B0_symmetric_coulomb",
+      "B3_asymmetric_friction_slot"
+    ],
+    "free_predictive_baselines": [
+      "B1_full_polynomial_inverse"
+    ],
+    "selection_rule": "choose among physical friction candidates by validation inverse-dynamics NRMSE; B1 is reported as a freer predictive baseline, not as a coefficient-slot candidate"
+  },
+  "created_at_utc": "2026-06-15T03:41:17.038747+00:00",
+  "outputs": {
+    "metrics_json": "results/public_real_protocol_reinforcement/metrics.json",
+    "candidate_screening_csv": "results/public_real_protocol_reinforcement/candidate_screening.csv",
+    "segment_metrics_csv": "results/public_real_protocol_reinforcement/segment_metrics.csv",
+    "figure_svg": "results/public_real_protocol_reinforcement/figures/public_real_protocol_reinforcement.svg"
+  },
+  "raw_files": [
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/CascadedTanksOverflow.MOV",
+      "sha256": "4e5f555938344b1fbfd5de747c87bff97a8a541ad1ac96982fe75c9ba09974ae",
+      "size_bytes": 1521149
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/CascadedTanksSetup1.JPG",
+      "sha256": "6658de11c06b98fe82464a0cc73a9ab25fe5672a8774904f47f8002b5266499d",
+      "size_bytes": 1985905
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/CascadedTanksSetup2.JPG",
+      "sha256": "9988337c0050d357b16d0f53537d1f4db0991e1ebef4ad25b914e1a51922bd65",
+      "size_bytes": 1852315
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/PicsVideo/Thumbs.db",
+      "sha256": "19dac1b7282e36376e164b9e471ddd7057e579a5479e91992074e49231ddc3d6",
+      "size_bytes": 42496
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/TanksBenchmark.pdf",
+      "sha256": "91597add858efdec98cc1bfabd7b87867c5c3cb8a0ec10976ceed9acdee81b39",
+      "size_bytes": 2169671
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/dataBenchmark.csv",
+      "sha256": "ef2388ed822f3aef4aa80d6b0f2b466dd80b361786b3eafc7a2957c31ea323a7",
+      "size_bytes": 30014
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles/dataBenchmark.mat",
+      "sha256": "cb2f88d4388be4d3f2a24c6402fba804976aac5f2e1f26cda59ea0a38d016eab",
+      "size_bytes": 24401
+    },
+    {
+      "path": "data/raw/external/cascaded_tanks/Cascaded_Tanks/CascadedTanksFiles.zip",
+      "sha256": "eb0fa05851e8a7136846c2e3b61fbef87def78d0852c86ab91b02ac5db541b51",
+      "size_bytes": 7520592
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/DATA_EMPS.mat",
+      "sha256": "6cf6814ae14618795da0101aae2bb97ff0c6351b0501b5492751b02b07facf7e",
+      "size_bytes": 626039
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/DATA_EMPS_PULSES.mat",
+      "sha256": "0eab75bb1f6b16228ee78791343a88bf9bfd9a51036ac9807d7b5fc11c0e1704",
+      "size_bytes": 630990
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/EMPS.jpg",
+      "sha256": "057871cfaee1970010befc28083ea1a948347cf28d442e410a95570771c3ca28",
+      "size_bytes": 215668
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/EMPS.zip",
+      "sha256": "f0e575c2aba2cb1e236516eefb17674b7e1e4a28de6bfcdc5b5ad68193ef9f59",
+      "size_bytes": 1949929
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/EMPS_Description.pdf",
+      "sha256": "c55700774db197693f2ec3f9b2bf394337a68afe97b1e9666642775655feeb6a",
+      "size_bytes": 556542
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/README.txt",
+      "sha256": "0ffc03ef3cb82650fbc1db073762d549c00ea8f4633acfc5ca28c704bb3cd6c7",
+      "size_bytes": 1616
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Script_IDIM_LS.m",
+      "sha256": "6794f48e70d2bb755f9be82b107ce3eb3f90114eb750fde87f7d3c0f746ef77c",
+      "size_bytes": 3510
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Script_IDIM_LS_Asym_Fric.m",
+      "sha256": "45025471413d9cdc33dbef3d30ce19c97a7b8037afc70cb6bb128cef7706a1b2",
+      "size_bytes": 3667
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Script_IDIM_LS_CTV.m",
+      "sha256": "be003808b08c1fa8413dcbb47d000dfe4d23ca7d3b1a01367fee81194f1b1b22",
+      "size_bytes": 3169
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Simulation_EMPS.m",
+      "sha256": "cbd9562ce562399db5c6df4ca20cdde4b5ebae53e8b8cd1865b39ab3c8c9bd83",
+      "size_bytes": 2832
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Simulation_EMPS_Validation.m",
+      "sha256": "936bdd8f0ca17cfab12997daf7e81aa69c2b685d08c8545400bde19b21f76fdf",
+      "size_bytes": 2915
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Simulink_EMPS_Rigide.slx",
+      "sha256": "8f30f5392fc593b6e88125404ce1661f0ac7c2c2f00582e33c1531235c02289d",
+      "size_bytes": 21994
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/Simulink_EMPS_Rigide_Pulse.slx",
+      "sha256": "548f838ad85dc9fac38a092df03755827d3c2e76bd8a9ba89a7de36c529fd9e3",
+      "size_bytes": 22531
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/diffcent.m",
+      "sha256": "14696c5e8acb2183a09961390c9654650094da7b8dbd209b6767243ed6b03893",
+      "size_bytes": 383
+    },
+    {
+      "path": "data/raw/external/emps/EMPS/nu2stab.m",
+      "sha256": "86eab49d22b0afe3f6c877fccebac70a558dc71c29edfa5aba3ba6574620ff18",
+      "size_bytes": 737
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "experiment_id": "E4_velocity_dependent_drag",
+  "b0_local_linear_c": 0.15189038175962297,
+  "true_coefficients": {
+    "1": 0.08,
+    "abs(v)": 0.55
+  },
+  "b0_gain_schedule": {
+    "abs_v_edges": [
+      0.0,
+      0.18,
+      0.38,
+      0.7,
+      1.1
+    ],
+    "values": [
+      0.15020420825091954,
+      0.24776711979407928,
+      0.3785873645312081,
+      0.5112394905523028
+    ]
+  },
+  "b3_optimizer": "PySINDy STLSQ on coefficient-slot design matrix",
+  "b3_coefficients": {
+    "1": 0.08000000000000007,
+    "abs(v)": 0.5499999999999998
+  },
+  "active_term_counts": {
+    "B0_gain_scheduled_lookup": 4,
+    "B1_full_sindy": 3,
+    "B2_free_residual_sindy": 2,
+    "B3_slot_constrained": 2
+  },
+  "rollout_nrmse_by_split": {
+    "train_low": {
+      "B0_local_linear_drag": {
+        "mean_nrmse_all": 0.09199456490279571,
+        "max_nrmse_all": 0.1738527971914746
+      },
+      "B0_gain_scheduled_lookup": {
+        "mean_nrmse_all": 0.08030318506193533,
+        "max_nrmse_all": 0.16482493374688123
+      },
+      "B1_full_sindy": {
+        "mean_nrmse_all": 7.51659362473937e-16,
+        "max_nrmse_all": 1.039232360862733e-15
+      },
+      "B2_free_residual_sindy": {
+        "mean_nrmse_all": 6.301563400477154e-16,
+        "max_nrmse_all": 1.0382552594021254e-15
+      },
+      "B3_slot_constrained": {
+        "mean_nrmse_all": 2.1291233794043873e-16,
+        "max_nrmse_all": 3.813735918596992e-16
+      },
+      "B4_oracle_reference": {
+        "mean_nrmse_all": 0.0,
+        "max_nrmse_all": 0.0
+      }
+    },
+    "train_medium": {
+      "B0_local_linear_drag": {
+        "mean_nrmse_all": 0.48293095481518844,
+        "max_nrmse_all": 0.7184088852221308
+      },
+      "B0_gain_scheduled_lookup": {
+        "mean_nrmse_all": 0.029362485280299055,
+        "max_nrmse_all": 0.03728338397516022
+      },
+      "B1_full_sindy": {
+        "mean_nrmse_all": 6.653825436664353e-16,
+        "max_nrmse_all": 6.973187389680526e-16
+      },
+      "B2_free_residual_sindy": {
+        "mean_nrmse_all": 2.228627844805142e-16,
+        "max_nrmse_all": 3.0610903750244225e-16
+      },
+      "B3_slot_constrained": {
+        "mean_nrmse_all": 1.0443542193074218e-16,
+        "max_nrmse_all": 1.466802096325787e-16
+      },
+      "B4_oracle_reference": {
+        "mean_nrmse_all": 0.0,
+        "max_nrmse_all": 0.0
+      }
+    },
+    "test_interp": {
+      "B0_local_linear_drag": {
+        "mean_nrmse_all": 0.6041997587749194,
+        "max_nrmse_all": 0.7692901927730919
+      },
+      "B0_gain_scheduled_lookup": {
+        "mean_nrmse_all": 0.030085530984196057,
+        "max_nrmse_all": 0.03821332144742616
+      },
+      "B1_full_sindy": {
+        "mean_nrmse_all": 5.669770387370365e-16,
+        "max_nrmse_all": 6.152552587508857e-16
+      },
+      "B2_free_residual_sindy": {
+        "mean_nrmse_all": 1.7640057262429114e-16,
+        "max_nrmse_all": 2.6624978513955445e-16
+      },
+      "B3_slot_constrained": {
+        "mean_nrmse_all": 1.1923092173808436e-16,
+        "max_nrmse_all": 1.9214956936027513e-16
+      },
+      "B4_oracle_reference": {
+        "mean_nrmse_all": 0.0,
+        "max_nrmse_all": 0.0
+      }
+    },
+    "test_extrap": {
+      "B0_local_linear_drag": {
+        "mean_nrmse_all": 0.9580975332945038,
+        "max_nrmse_all": 1.081726439465796
+      },
+      "B0_gain_scheduled_lookup": {
+        "mean_nrmse_all": 0.19002537817490958,
+        "max_nrmse_all": 0.24879739951780613
+      },
+      "B1_full_sindy": {
+        "mean_nrmse_all": 5.183432459085875e-16,
+        "max_nrmse_all": 5.895378582164687e-16
+      },
+      "B2_free_residual_sindy": {
+        "mean_nrmse_all": 1.8408859063666662e-16,
+        "max_nrmse_all": 2.006543460814773e-16
+      },
+      "B3_slot_constrained": {
+        "mean_nrmse_all": 1.4087967558816273e-16,
+        "max_nrmse_all": 1.665301596914792e-16
+      },
+      "B4_oracle_reference": {
+        "mean_nrmse_all": 0.0,
+        "max_nrmse_all": 0.0
+      }
+    }
+  },
+  "coefficient_function": {
+    "grid_rmse": 1.2234244369430774e-16,
+    "grid_nrmse": 4.965124928255334e-16,
+    "max_abs_error": 3.3306690738754696e-16,
+    "grid_min_pred": 0.08000000000000007,
+    "grid_max_pred": 0.9324999999999998,
+    "active_terms": [
+      "1",
+      "abs(v)"
+    ],
+    "expected_terms": [
+      "1",
+      "abs(v)"
+    ],
+    "support_precision": 1.0,
+    "support_recall": 1.0
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "dataset_id": "pysindy_e1c_regularization_probe",
+  "experiment_id": "PYS4_e1c_regularization_probe",
+  "created_at_utc": "2026-06-11T07:15:55.605171+00:00",
+  "source_experiment": "E1c_vdp_noisy_state_true_dx",
+  "source_script": "scripts/run_e1c_vdp_noisy_state_true_dx.py",
+  "script": "scripts/run_pysindy_e1c_regularization_probe.py",
+  "purpose": "Compare custom STLSQ, PySINDy STLSQ, normalized STLSQ, and SR3 on the noisy E1c coefficient-slot design matrix.",
+  "equation_reference": "Van der Pol coefficient slot p_c(x1, mu)=mu-mu*x1^2 in dx2=-x1+x2*p_c.",
+  "candidate_slots": [
+    {
+      "name": "damping",
+      "g": "x2",
+      "coefficient_function": "p_c(x1, mu)"
+    }
+  ],
+  "expected_coefficients": {
+    "1": 0.0,
+    "x1": 0.0,
+    "x1^2": 0.0,
+    "mu": 1.0,
+    "mu*x1": 0.0,
+    "mu*x1^2": -1.0
+  },
+  "noise_model": {
+    "type": "Gaussian state-observation noise on training library inputs",
+    "relative_to": "per-state standard deviation over clean training trajectories",
+    "levels": [
+      0.0,
+      0.005,
+      0.01,
+      0.03,
+      0.05
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "derivative_target": "clean true derivatives"
+  },
+  "optimizer_specs": [
+    {
+      "name": "custom_stlsq_t1e-3",
+      "family": "custom_stlsq",
+      "threshold": 0.001,
+      "alpha": 0.0,
+      "normalize_columns": false,
+      "regularizer": "",
+      "reg_weight_lam": ""
+    },
+    {
+      "name": "pysindy_stlsq_t1e-3",
+      "family": "pysindy_stlsq",
+      "threshold": 0.001,
+      "alpha": 0.0,
+      "normalize_columns": false,
+      "regularizer": "",
+      "reg_weight_lam": ""
+    },
+    {
+      "name": "pysindy_stlsq_t1e-2",
+      "family": "pysindy_stlsq",
+      "threshold": 0.01,
+      "alpha": 0.0,
+      "normalize_columns": false,
+      "regularizer": "",
+      "reg_weight_lam": ""
+    },
+    {
+      "name": "pysindy_stlsq_norm_t1e-3",
+      "family": "pysindy_stlsq",
+      "threshold": 0.001,
+      "alpha": 0.0,
+      "normalize_columns": true,
+      "regularizer": "",
+      "reg_weight_lam": ""
+    },
+    {
+      "name": "pysindy_stlsq_norm_t1e-2",
+      "family": "pysindy_stlsq",
+      "threshold": 0.01,
+      "alpha": 0.0,
+      "normalize_columns": true,
+      "regularizer": "",
+      "reg_weight_lam": ""
+    },
+    {
+      "name": "pysindy_sr3_l0_lam1e-4",
+      "family": "pysindy_sr3",
+      "threshold": "",
+      "alpha": "",
+      "normalize_columns": false,
+      "regularizer": "L0",
+      "reg_weight_lam": 0.0001
+    },
+    {
+      "name": "pysindy_sr3_l1_lam1e-4",
+      "family": "pysindy_sr3",
+      "threshold": "",
+      "alpha": "",
+      "normalize_columns": false,
+      "regularizer": "L1",
+      "reg_weight_lam": 0.0001
+    }
+  ],
+  "outputs": {
+    "seed_metrics_csv": "results/pysindy_e1c_regularization_probe/seed_metrics.csv",
+    "summary_by_noise_optimizer_csv": "results/pysindy_e1c_regularization_probe/summary_by_noise_optimizer.csv",
+    "coefficients_seed0_csv": "results/pysindy_e1c_regularization_probe/coefficients_seed0.csv",
+    "metrics_json": "results/pysindy_e1c_regularization_probe/metrics.json",
+    "figures": [
+      "results/pysindy_e1c_regularization_probe/figures/support_precision.svg",
+      "results/pysindy_e1c_regularization_probe/figures/support_precision_zh.svg",
+      "results/pysindy_e1c_regularization_probe/figures/active_terms.svg",
+      "results/pysindy_e1c_regularization_probe/figures/active_terms_zh.svg",
+      "results/pysindy_e1c_regularization_probe/figures/coefficient_grid_nrmse.svg",
+      "results/pysindy_e1c_regularization_probe/figures/coefficient_grid_nrmse_zh.svg",
+      "results/pysindy_e1c_regularization_probe/figures/interp_vector_field_nrmse.svg",
+      "results/pysindy_e1c_regularization_probe/figures/interp_vector_field_nrmse_zh.svg"
+    ]
+  },
+  "software": {
+    "python": "3.13.9",
+    "numpy": "2.4.6",
+    "scipy": "1.16.3",
+    "scikit_learn": "1.8.0",
+    "pysindy": "2.1.0"
+  },
+  "dependency_note": "PySINDy 2.1.0 required numpy>=2.0; local qpth 0.0.18 declares numpy<2 but is not used by these experiments."
+}
