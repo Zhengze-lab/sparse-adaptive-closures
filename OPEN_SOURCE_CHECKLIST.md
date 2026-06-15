@@ -8,7 +8,7 @@
 - [x] Add `KNOWN_LIMITATIONS.md`.
 - [x] Add and run `python scripts/smoke_test.py` in the staging folder.
 - [x] Add and run `python scripts/check_release_package.py --write-manifest`.
-- [ ] Update `CITATION.cff` with the final repository URL.
+- [x] Update `CITATION.cff` with the final repository URL.
 - [ ] Create a public release tag.
 - [ ] Archive the release on Zenodo or another repository and add the DOI.
 - [ ] Check third-party dataset redistribution terms.

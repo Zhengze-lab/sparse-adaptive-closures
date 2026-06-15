@@ -33,9 +33,8 @@ for sparse adaptive closures in regime-aware gray-box ODE models.
 - `python scripts/run_e6_cascaded_tanks_slot_oe.py`: passed.
 - `python scripts/run_ablation_suite.py`: passed.
 
-### Before Public Release
+### Remaining Release Metadata
 
-- Replace `TO_BE_ADDED` in `CITATION.cff` with the public repository URL.
 - Create a release tag.
 - Archive the release and add the DOI.
 - Confirm external dataset source links and redistribution notes.

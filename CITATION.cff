@@ -15,7 +15,7 @@ authors:
     given-names: Shui
   - family-names: Li
     given-names: Yun
-repository-code: "TO_BE_ADDED"
+repository-code: "https://github.com/Zhengze-lab/sparse-adaptive-closures"
 abstract: "Experimental code and reproducibility artifacts for sparse adaptive closures in regime-aware gray-box ODE models."
 keywords:
   - sparse identification
