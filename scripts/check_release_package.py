@@ -46,6 +46,7 @@ REQUIRED_DIRS = [
 ]
 
 FORBIDDEN_DIR_PARTS = {
+    ".git",
     "__pycache__",
     ".pytest_cache",
     ".mypy_cache",
@@ -99,7 +100,14 @@ TEXT_SUFFIXES = {
 
 
 def iter_files() -> list[Path]:
-    return sorted(path for path in ROOT.rglob("*") if path.is_file())
+    files: list[Path] = []
+    for path in ROOT.rglob("*"):
+        if not path.is_file():
+            continue
+        if ".git" in path.relative_to(ROOT).parts:
+            continue
+        files.append(path)
+    return sorted(files)
 
 
 def relative(path: Path) -> str:
