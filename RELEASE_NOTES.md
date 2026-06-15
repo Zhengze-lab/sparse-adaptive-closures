@@ -1,5 +1,25 @@
 # Release Notes
 
+## v0.1.2
+
+Date: 2026-06-15
+
+This release is created as a non-prerelease GitHub Release after Zenodo
+integration was enabled. It is intended to trigger Zenodo archiving and DOI
+minting for the experiment-code repository.
+
+### Validation
+
+- `python scripts/check_release_package.py --write-manifest`: passed.
+- `python scripts/smoke_test.py`: passed before release preparation.
+
+### Remaining Metadata
+
+- Add the Zenodo DOI to `CITATION.cff`, `README.md`, and release notes after
+  Zenodo finishes archiving this release.
+- Confirm external dataset source links and redistribution notes before the
+  final archival release.
+
 ## v0.1.1-staging
 
 Date: 2026-06-15
