@@ -10,7 +10,7 @@
 - [x] Add and run `python scripts/check_release_package.py --write-manifest`.
 - [x] Update `CITATION.cff` with the final repository URL.
 - [x] Create a public release tag.
-- [ ] Archive the release on Zenodo or another repository and add the DOI.
+- [x] Archive the release on Zenodo and add the DOI.
 - [ ] Check third-party dataset redistribution terms.
 - [ ] Confirm `DATA_SOURCES.md` against the final public dataset links.
 - [ ] Run `python scripts/smoke_test.py` from a clean checkout.

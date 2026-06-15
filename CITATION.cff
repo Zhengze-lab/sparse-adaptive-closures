@@ -16,6 +16,8 @@ authors:
   - family-names: Li
     given-names: Yun
 repository-code: "https://github.com/Zhengze-lab/sparse-adaptive-closures"
+doi: "10.5281/zenodo.20699268"
+url: "https://doi.org/10.5281/zenodo.20699268"
 abstract: "Experimental code and reproducibility artifacts for sparse adaptive closures in regime-aware gray-box ODE models."
 keywords:
   - sparse identification

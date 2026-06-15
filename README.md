@@ -6,6 +6,12 @@ The core idea implemented here is to keep a locally valid gray-box ODE as the tr
 
 This repository intentionally contains **experiment code only**: executable scripts, compact derived data, provenance records, frozen metrics, and regenerable experiment figures.
 
+## Archive DOI
+
+- Current archived release: `10.5281/zenodo.20699268`
+- Concept DOI for all versions: `10.5281/zenodo.20699222`
+- Zenodo record: https://zenodo.org/records/20699268
+
 ## Directory Layout
 
 ```text

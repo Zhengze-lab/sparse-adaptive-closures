@@ -8,6 +8,10 @@ This release is created as a non-prerelease GitHub Release after Zenodo
 integration was enabled. It is intended to trigger Zenodo archiving and DOI
 minting for the experiment-code repository.
 
+Zenodo DOI: `10.5281/zenodo.20699268`
+
+Concept DOI: `10.5281/zenodo.20699222`
+
 ### Validation
 
 - `python scripts/check_release_package.py --write-manifest`: passed.
@@ -15,8 +19,6 @@ minting for the experiment-code repository.
 
 ### Remaining Metadata
 
-- Add the Zenodo DOI to `CITATION.cff`, `README.md`, and release notes after
-  Zenodo finishes archiving this release.
 - Confirm external dataset source links and redistribution notes before the
   final archival release.
 
