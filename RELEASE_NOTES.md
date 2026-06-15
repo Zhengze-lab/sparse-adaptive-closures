@@ -1,5 +1,26 @@
 # Release Notes
 
+## v0.1.1-staging
+
+Date: 2026-06-15
+
+This staging release is created after enabling the GitHub repository in Zenodo
+so that Zenodo can archive the repository and mint a DOI. The experiment code,
+frozen outputs, release QA script, manifest, data-source notes, and MIT license
+are unchanged in scope from the staging package.
+
+### Validation
+
+- `python scripts/check_release_package.py --write-manifest`: passed.
+- `python scripts/smoke_test.py`: passed before release preparation.
+
+### Remaining Metadata
+
+- Add the Zenodo DOI to `CITATION.cff`, `README.md`, and release notes after
+  Zenodo finishes archiving this release.
+- Confirm external dataset source links and redistribution notes before the
+  final `v1.0.0` release.
+
 ## v0.1.0-staging
 
 Date: 2026-06-15
